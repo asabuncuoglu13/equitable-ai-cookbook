@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: tdpi
+- file: monitoring-tools
+- file: participation-tools
+- file: holistic-evaluation
+  sections:
+  - file: evaluation/eda-fin-data
+- file: red-teaming
