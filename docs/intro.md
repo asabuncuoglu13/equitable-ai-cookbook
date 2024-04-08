@@ -71,6 +71,12 @@ economy domain, we selected three use cases:
 
 ## Contents
 
+Although equitable AI requires a combined effort from multiple domains, 
+we  focus on the sociotechnical and technical techniques, particularly
+fairness, security and privacy. We do not go into details on governance,
+auditing techniques, comprehensive assurance, but we mostly on technical
+developments in fairness, security and privacy.
+
 ```{tableofcontents}
 ```
 
