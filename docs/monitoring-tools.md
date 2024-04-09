@@ -1,73 +1,31 @@
-# Monitoring Tools
+# Scanning and Monitoring Tools
 
-A monitoring solution in the deep learning and software engineering
-domains refers to systems or toolsets designed to track and analyse the
-development and deployment process. 
+A comprehensive risk assessment requires a use-case specific vulnerability, threat and asset analysis. Risk is the potential for loss or harm to an asset due to threats exploiting vulnerabilities. Although there are several risk assessment frameworks, we can summarise these different strategies in a systematic way following a component-based strategy, as it is summarised in [^1]:
 
-Improving security, privacy, and fairness in automated decision-making
-systems has been a longstanding research focus. Recent advancements in
-deep learning (DL) mechanisms have brought this issue to the forefront
-of public attention. A monitoring solution in this area can particularly 
-focus on:
+-   **Input data:** Adversarial data (e.g. bias, malicious content) can exist in input,
+-   **Algorithm design:** The algorithm design might assume the data and evaluation methods cover all the cases and business logic comprehensively,
+-   **Output decisions:** It can be open to interpretation, or falsely interpreted,
+-   **Technical flaws:** Development and testing might not be adequate to reveal the issues,
+-   **Usage flaws:** In a complex business logic, interoperability issues might occur.
 
--   **Model performance/resource utilisation monitoring:** Tracking the
-    performance metrics of deep learning models, such as accuracy,
-    precision, recall, F1 score, etc., over time or across different
-    datasets. Monitoring the resource utilization of hardware resources
-    like CPU, GPU, memory, and storage during model training or
-    inference. (e.g.
-    [Tensorboard](https://www.tensorflow.org/tensorboard),
-    [Weight&Biases](https://wandb.ai/site))
+In this five-level taxonomy, several sub-components should be scanned against multiple factors. A scanning/monitoring solution can help researchers and practitioners to track and evaluate these critical metrics and support keeping the system safe and trustworthy. Based on monitoring task, we can categorise monitoring/scanning tools into five: 
 
--   **Data quality and privacy monitoring:** Monitoring the quality,
-    volume, and distribution of data used for training and inference to
-    detect data anomalies or biases that may affect model performance.
-    (e.g. [Privado](https://www.privado.ai/), [Soda
-    Core](https://www.soda.io/platform))
+- **Model performance/resource utilisation:** Tracking the performance metrics of deep learning models, such as accuracy, precision, recall, F1 score, etc., over time or across different datasets. Monitoring the resource utilization of hardware resources
+like CPU, GPU, memory, and storage during model training or inference. (e.g. [Tensorboard](https://www.tensorflow.org/tensorboard), [Weight&Biases](https://wandb.ai/site))
 
--   **Security monitoring:** Monitoring for security vulnerabilities or
-    unauthorized access attempts in both the deep learning models and
-    software applications to ensure data integrity and resilience. (e.g.
-    [CodeQL](https://codeql.github.com/),
-    [Neptune](https://security.neptune.ai/))
+- **Data quality and privacy:** Monitoring the quality, volume, and distribution of data used for training and inference to detect data anomalies or biases that may affect model performance. (e.g. [Privado](https://www.privado.ai/), [Soda Core](https://www.soda.io/platform))
 
--   **Compliance Monitoring:** Ensuring that models and software
-    applications comply with regulatory requirements and industry
-    standards, such as GDPR, HIPAA, EU AI Act etc. (e.g.
-    [Seclea](https://www.seclea.com/solution/regulatory-compliance),
-    [ComplianceAI](https://www.compliance.ai/))
+- **Security:** Monitoring for security vulnerabilities or unauthorized access attempts in both the deep learning models and software applications to ensure data integrity and resilience. (e.g. [CodeQL](https://codeql.github.com/), [Neptune](https://security.neptune.ai/))
 
-Despite achieving fairness in DL development being a huge interest,
-limited solutions are available in the domain. For example, Microsoft
-RAI Toolbox and IBM Fair360 provide an all-in-one marketplace for
-reactive methods rather than offering a proactive monitoring solution.
+- **Compliance:** Ensuring that models and software applications comply with regulatory requirements and industry standards, such as GDPR, HIPAA, EU AI Act etc. (e.g. [Seclea](https://www.seclea.com/solution/regulatory-compliance), [ComplianceAI](https://www.compliance.ai/))
+
+- **Fairness/Vulnerability:** Despite achieving fairness in DL development being a huge interest, limited solutions are available in the domain. For example, Microsoft RAI Toolbox and IBM Fair360 provide an all-in-one marketplace for reactive methods rather than offering a proactive monitoring solution. A recent solution [Giskard](https://github.com/Giskard-AI/giskard) can be used to scan LLM models against common vulnerabilities such as hallucinations and privacy breaches following a brute-force example-based strategy.
 
 With the rapid progress in DL mechanisms, comprehending, evaluating, and
 interpreting these systems has become challenging. In this new era of
 DL, models consist of billions of parameters and can process vast
 amounts of data, making it nearly impossible to ensure privacy and
 security assurance.
-
-# Identifying the main risks through the pipeline
-
-Risk assessment should be use-case specific. Typically, algorithmic
-system risks can be summarised as follows [^1]:
-
--   **Input data:** Bias can exist in input data (mostly historical
-    bias),
-
--   **Algorithm design:** The algorithm design might assume the data and
-    evaluation methods cover all the cases and business logic
-    comprehensively,
-
--   **Output decisions:** It can be open to interpretation, or falsely
-    interpreted,
-
--   **Technical flaws:** Development and testing might not be adequate
-    to reveal the issues,
-
--   **Usage flaws:** In a complex business logic, interoperability
-    issues might occur.
 
 # Practical Steps and Integrating Monitoring Solutions
 
@@ -94,7 +52,7 @@ In the accountability ethics, transparency and accountability guidance
     such as Data Protection Impact Assessment and Equality Impact
     Assessment when applicable.
 
--   **Red teaming:** Implement \'red team testing\', operating under the
+-   **Red teaming:** Implement *red team testing*, operating under the
     assumption that all algorithmic systems have the potential to cause
     harm to some extent.
 
