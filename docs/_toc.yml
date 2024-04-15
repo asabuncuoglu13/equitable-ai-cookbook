@@ -18,6 +18,12 @@ parts:
       sections:
       - file: dataset/eda-fin-data
       - file: dataset/scraping-mosip
+  - caption: "Mitigation Strategies"
+    chapters:
+    - file: mitigation/overview
+      sections:
+      - file: mitigation/synthetic-data/overview
+      - file: mitigation/synthetic-data/mosip-bonito
   - caption: "Red Teaming"
     chapters:
     - file: red-teaming
