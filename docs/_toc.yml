@@ -9,12 +9,16 @@ parts:
     - file: intro
     - file: pi
     - file: pi-to-dpi
+  - caption: "Fairness"
+    chapters:
+    - file: fairness
   - caption: "Monitoring Tools"
     chapters:
     - file: monitoring-tools
   - caption: "Holistic Evaluation"
     chapters:
-    - file: holistic-evaluation
+    - file: evaluation
+    - file: evaluation/data
       sections:
       - file: dataset/eda-fin-data
       - file: dataset/scraping-mosip
@@ -31,3 +35,6 @@ parts:
     chapters:
     - file: participation-tools
     - file: governance
+  - caption: "References"
+    chapters:
+    - file: bibliography

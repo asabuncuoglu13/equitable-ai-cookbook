@@ -1,14 +1,213 @@
 ---
 ---
 
-%%%%%% Red Teaming %%%%%%
+
+%% Fairness %%
+
+
+@article{zemel_13,
+	title = {Learning {Fair} {Representations}},
+	abstract = {We propose a learning algorithm for fair classiﬁcation that achieves both group fairness (the proportion of members in a protected group receiving positive classiﬁcation is identical to the proportion in the population as a whole), and individual fairness (similar individuals should be treated similarly). We formulate fairness as an optimization problem of ﬁnding a good representation of the data with two competing goals: to encode the data as well as possible, while simultaneously obfuscating any information about membership in the protected group. We show positive results of our algorithm relative to other known techniques, on three datasets. Moreover, we demonstrate several advantages to our approach. First, our intermediate representation can be used for other classiﬁcation tasks (i.e., transfer learning is possible); secondly, we take a step toward learning a distance metric which can ﬁnd important dimensions of the data for classiﬁcation.},
+	language = {en},
+	author = {Zemel, Richard},
+	year = {2013},
+	file = {Zemel - Learning Fair Representations.pdf:/Users/asabuncuoglu/Zotero/storage/SM4QVXC2/Zemel - Learning Fair Representations.pdf:application/pdf},
+}
+
+
+@inproceedings{hardt_equality_2016,
+	title = {Equality of {Opportunity} in {Supervised} {Learning}},
+	volume = {29},
+	url = {https://proceedings.neurips.cc/paper_files/paper/2016/file/9d2682367c3935defcb1f9e247a97c0d-Paper.pdf},
+	booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+	publisher = {Curran Associates, Inc.},
+	author = {Hardt, Moritz and Price, Eric and Price, Eric and Srebro, Nati},
+	editor = {Lee, D. and Sugiyama, M. and Luxburg, U. and Guyon, I. and Garnett, R.},
+	year = {2016},
+}
+
+
+@misc{kleinberg_inherent_2016,
+	title = {Inherent {Trade}-{Offs} in the {Fair} {Determination} of {Risk} {Scores}},
+	url = {http://arxiv.org/abs/1609.05807},
+	abstract = {Recent discussion in the public sphere about algorithmic classiﬁcation has involved tension between competing notions of what it means for a probabilistic classiﬁcation to be fair to different groups. We formalize three fairness conditions that lie at the heart of these debates, and we prove that except in highly constrained special cases, there is no method that can satisfy these three conditions simultaneously. Moreover, even satisfying all three conditions approximately requires that the data lie in an approximate version of one of the constrained special cases identiﬁed by our theorem. These results suggest some of the ways in which key notions of fairness are incompatible with each other, and hence provide a framework for thinking about the trade-offs between them.},
+	language = {en},
+	urldate = {2024-05-03},
+	publisher = {arXiv},
+	author = {Kleinberg, Jon and Mullainathan, Sendhil and Raghavan, Manish},
+	month = nov,
+	year = {2016},
+	note = {arXiv:1609.05807 [cs, stat]},
+	keywords = {Computer Science - Computers and Society, Computer Science - Machine Learning, Statistics - Machine Learning},
+	annote = {Comment: To appear in Proceedings of Innovations in Theoretical Computer Science (ITCS), 2017},
+	file = {Kleinberg et al. - 2016 - Inherent Trade-Offs in the Fair Determination of R.pdf:/Users/asabuncuoglu/Zotero/storage/KTUH6WP4/Kleinberg et al. - 2016 - Inherent Trade-Offs in the Fair Determination of R.pdf:application/pdf},
+}
+
+
+@inproceedings{galhotra_fairness_2017,
+	address = {Paderborn Germany},
+	title = {Fairness testing: testing software for discrimination},
+	isbn = {978-1-4503-5105-8},
+	shorttitle = {Fairness testing},
+	url = {https://dl.acm.org/doi/10.1145/3106237.3106277},
+	doi = {10.1145/3106237.3106277},
+	language = {en},
+	urldate = {2024-05-03},
+	booktitle = {Proceedings of the 2017 11th {Joint} {Meeting} on {Foundations} of {Software} {Engineering}},
+	publisher = {ACM},
+	author = {Galhotra, Sainyam and Brun, Yuriy and Meliou, Alexandra},
+	month = aug,
+	year = {2017},
+	pages = {498--510},
+	file = {Full Text PDF:/Users/asabuncuoglu/Zotero/storage/WWSA99AH/Galhotra et al. - 2017 - Fairness testing testing software for discriminat.pdf:application/pdf},
+}
+
+
+
+
+@inproceedings{dwork_fairness_2012,
+	address = {New York, NY, USA},
+	series = {{ITCS} '12},
+	title = {Fairness through awareness},
+	isbn = {978-1-4503-1115-1},
+	url = {https://dl.acm.org/doi/10.1145/2090236.2090255},
+	doi = {10.1145/2090236.2090255},
+	abstract = {We study fairness in classification, where individuals are classified, e.g., admitted to a university, and the goal is to prevent discrimination against individuals based on their membership in some group, while maintaining utility for the classifier (the university). The main conceptual contribution of this paper is a framework for fair classification comprising (1) a (hypothetical) task-specific metric for determining the degree to which individuals are similar with respect to the classification task at hand; (2) an algorithm for maximizing utility subject to the fairness constraint, that similar individuals are treated similarly. We also present an adaptation of our approach to achieve the complementary goal of "fair affirmative action," which guarantees statistical parity (i.e., the demographics of the set of individuals receiving any classification are the same as the demographics of the underlying population), while treating similar individuals as similarly as possible. Finally, we discuss the relationship of fairness to privacy: when fairness implies privacy, and how tools developed in the context of differential privacy may be applied to fairness.},
+	urldate = {2024-05-03},
+	booktitle = {Proceedings of the 3rd {Innovations} in {Theoretical} {Computer} {Science} {Conference}},
+	publisher = {Association for Computing Machinery},
+	author = {Dwork, Cynthia and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Zemel, Richard},
+	month = jan,
+	year = {2012},
+	pages = {214--226},
+	file = {Full Text PDF:/Users/asabuncuoglu/Zotero/storage/AGUNAIC7/Dwork et al. - 2012 - Fairness through awareness.pdf:application/pdf},
+}
+
+
+
+%% Evaluation %%
+
+%%== Data ==%%
+
+@inproceedings{spinde_neural_2021,
+	address = {Punta Cana, Dominican Republic},
+	title = {Neural {Media} {Bias} {Detection} {Using} {Distant} {Supervision} {With} {BABE} - {Bias} {Annotations} {By} {Experts}},
+	url = {https://aclanthology.org/2021.findings-emnlp.101},
+	doi = {10.18653/v1/2021.findings-emnlp.101},
+	abstract = {Media coverage has a substantial effect on the public perception of events. Nevertheless, media outlets are often biased. One way to bias news articles is by altering the word choice. The automatic identification of bias by word choice is challenging, primarily due to the lack of a gold standard data set and high context dependencies. This paper presents BABE, a robust and diverse data set created by trained experts, for media bias research. We also analyze why expert labeling is essential within this domain. Our data set offers better annotation quality and higher inter-annotator agreement than existing work. It consists of 3,700 sentences balanced among topics and outlets, containing media bias labels on the word and sentence level. Based on our data, we also introduce a way to detect bias-inducing sentences in news articles automatically. Our best performing BERT-based model is pre-trained on a larger corpus consisting of distant labels. Fine-tuning and evaluating the model on our proposed supervised data set, we achieve a macro F1-score of 0.804, outperforming existing methods.},
+	urldate = {2024-04-15},
+	booktitle = {Findings of the {Association} for {Computational} {Linguistics}: {EMNLP} 2021},
+	publisher = {Association for Computational Linguistics},
+	author = {Spinde, Timo and Plank, Manuel and Krieger, Jan-David and Ruas, Terry and Gipp, Bela and Aizawa, Akiko},
+	editor = {Moens, Marie-Francine and Huang, Xuanjing and Specia, Lucia and Yih, Scott Wen-tau},
+	month = nov,
+	year = {2021},
+	pages = {1166--1177},
+}
+
+@article{raza_dbias_2024,
+	title = {Dbias: detecting biases and ensuring fairness in news articles},
+	volume = {17},
+	issn = {2364-4168},
+	shorttitle = {Dbias},
+	url = {https://doi.org/10.1007/s41060-022-00359-4},
+	doi = {10.1007/s41060-022-00359-4},
+	abstract = {Because of the increasing use of data-centric systems and algorithms in machine learning, the topic of fairness is receiving a lot of attention in the academic and broader literature. This paper introduces Dbias (https://pypi.org/project/Dbias/), an open-source Python package for ensuring fairness in news articles. Dbias can take any text to determine if it is biased. Then, it detects biased words in the text, masks them, and suggests a set of sentences with new words that are bias-free or at least less biased. We conduct extensive experiments to assess the performance of Dbias. To see how well our approach works, we compare it to the existing fairness models. We also test the individual components of Dbias to see how effective they are. The experimental results show that Dbias outperforms all the baselines in terms of accuracy and fairness. We make this package (Dbias) as publicly available for the developers and practitioners to mitigate biases in textual data (such as news articles), as well as to encourage extension of this work.},
+	language = {en},
+	number = {1},
+	urldate = {2024-04-15},
+	journal = {International Journal of Data Science and Analytics},
+	author = {Raza, Shaina and Reji, Deepak John and Ding, Chen},
+	month = jan,
+	year = {2024},
+	keywords = {Bias, Classification, Deep learning, Entity recognition, Fairness, Masking, Transformer-based models},
+	pages = {39--59},
+}
+
+
+@misc{ramshaw_text_1995,
+	title = {Text {Chunking} using {Transformation}-{Based} {Learning}},
+	url = {http://arxiv.org/abs/cmp-lg/9505040},
+	doi = {10.48550/arXiv.cmp-lg/9505040},
+	abstract = {Eric Brill introduced transformation-based learning and showed that it can do part-of-speech tagging with fairly high accuracy. The same method can be applied at a higher level of textual interpretation for locating chunks in the tagged text, including non-recursive ``baseNP'' chunks. For this purpose, it is convenient to view chunking as a tagging problem by encoding the chunk structure in new tags attached to each word. In automatic tests using Treebank-derived data, this technique achieved recall and precision rates of roughly 92\% for baseNP chunks and 88\% for somewhat more complex chunks that partition the sentence. Some interesting adaptations to the transformation-based learning approach are also suggested by this application.},
+	urldate = {2024-04-15},
+	publisher = {arXiv},
+	author = {Ramshaw, Lance A. and Marcus, Mitchell P.},
+	month = may,
+	year = {1995},
+	note = {arXiv:cmp-lg/9505040},
+	keywords = {Computer Science - Computation and Language},
+	annote = {Comment: 13 pages, LaTeX2e, 1 included figure},
+}
+
+
+@article{pipino_data_2002,
+	title = {Data quality assessment},
+	volume = {45},
+	issn = {0001-0782},
+	url = {https://dl.acm.org/doi/10.1145/505248.506010},
+	doi = {10.1145/505248.506010},
+	abstract = {How good is a company's data quality? Answering this question requires usable data quality metrics. Currently, most data quality measures are developed on an ad hoc basis to solve specific problems [6, 8], and fundamental principles necessary for developing usable metrics in practice are lacking. In this article, we describe principles that can help organizations develop usable data quality metrics.},
+	number = {4},
+	urldate = {2024-04-16},
+	journal = {Communications of the ACM},
+	author = {Pipino, Leo L. and Lee, Yang W. and Wang, Richard Y.},
+	month = apr,
+	year = {2002},
+	pages = {211--218},
+}
+
+
+@article{wilkinson_fair_2016,
+	title = {The {FAIR} {Guiding} {Principles} for scientific data management and stewardship},
+	volume = {3},
+	copyright = {2016 The Author(s)},
+	issn = {2052-4463},
+	url = {https://www.nature.com/articles/sdata201618},
+	doi = {10.1038/sdata.2016.18},
+	abstract = {There is an urgent need to improve the infrastructure supporting the reuse of scholarly data. A diverse set of stakeholders—representing academia, industry, funding agencies, and scholarly publishers—have come together to design and jointly endorse a concise and measureable set of principles that we refer to as the FAIR Data Principles. The intent is that these may act as a guideline for those wishing to enhance the reusability of their data holdings. Distinct from peer initiatives that focus on the human scholar, the FAIR Principles put specific emphasis on enhancing the ability of machines to automatically find and use the data, in addition to supporting its reuse by individuals. This Comment is the first formal publication of the FAIR Principles, and includes the rationale behind them, and some exemplar implementations in the community.},
+	language = {en},
+	number = {1},
+	urldate = {2024-04-16},
+	journal = {Scientific Data},
+	author = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg, IJsbrand Jan and Appleton, Gabrielle and Axton, Myles and Baak, Arie and Blomberg, Niklas and Boiten, Jan-Willem and da Silva Santos, Luiz Bonino and Bourne, Philip E. and Bouwman, Jildau and Brookes, Anthony J. and Clark, Tim and Crosas, Mercè and Dillo, Ingrid and Dumon, Olivier and Edmunds, Scott and Evelo, Chris T. and Finkers, Richard and Gonzalez-Beltran, Alejandra and Gray, Alasdair J. G. and Groth, Paul and Goble, Carole and Grethe, Jeffrey S. and Heringa, Jaap and ’t Hoen, Peter A. C. and Hooft, Rob and Kuhn, Tobias and Kok, Ruben and Kok, Joost and Lusher, Scott J. and Martone, Maryann E. and Mons, Albert and Packer, Abel L. and Persson, Bengt and Rocca-Serra, Philippe and Roos, Marco and van Schaik, Rene and Sansone, Susanna-Assunta and Schultes, Erik and Sengstag, Thierry and Slater, Ted and Strawn, George and Swertz, Morris A. and Thompson, Mark and van der Lei, Johan and van Mulligen, Erik and Velterop, Jan and Waagmeester, Andra and Wittenburg, Peter and Wolstencroft, Katherine and Zhao, Jun and Mons, Barend},
+	month = mar,
+	year = {2016},
+	note = {Publisher: Nature Publishing Group},
+	keywords = {Publication characteristics, Research data},
+	pages = {160018},
+}
+
+
+%% Mitigation %%
+
+%%== Synthetic Data ==%%
+
+
+@misc{nayak_learning_2024,
+	title = {Learning to {Generate} {Instruction} {Tuning} {Datasets} for {Zero}-{Shot} {Task} {Adaptation}},
+	url = {http://arxiv.org/abs/2402.18334},
+	abstract = {We introduce Bonito, an open-source model for conditional task generation: the task of converting unannotated text into task-specific training datasets for instruction tuning. Our goal is to enable zero-shot task adaptation of large language models on users' specialized, private data. We train Bonito on a new large-scale dataset with 1.65M examples created by remixing existing instruction tuning datasets into meta-templates. The meta-templates for a dataset produce training examples where the input is the unannotated text and the task attribute and the output consists of the instruction and the response. We use Bonito to generate synthetic tasks for seven datasets from specialized domains across three task types -- yes-no question answering, extractive question answering, and natural language inference -- and adapt language models. We show that Bonito significantly improves the average performance of pretrained and instruction tuned models over the de facto self supervised baseline. For example, adapting Mistral-Instruct-v2 and instruction tuned variants of Mistral and Llama2 with Bonito improves the strong zero-shot performance by 22.1 F1 points whereas the next word prediction objective undoes some of the benefits of instruction tuning and reduces the average performance by 0.8 F1 points. We conduct additional experiments with Bonito to understand the effects of the domain, the size of the training set, and the choice of alternative synthetic task generators. Overall, we show that learning with synthetic instruction tuning datasets is an effective way to adapt language models to new domains. The model, dataset, and code are available at https://github.com/BatsResearch/bonito.},
+	urldate = {2024-04-16},
+	publisher = {arXiv},
+	author = {Nayak, Nihal V. and Nan, Yiyang and Trost, Avi and Bach, Stephen H.},
+	month = feb,
+	year = {2024},
+	note = {arXiv:2402.18334 [cs]},
+	keywords = {Computer Science - Computation and Language, Computer Science - Machine Learning},
+}
+
+
+
+
+%% Red Teaming %%
 
 
 @techreport{friedler_ai_2023,
 	title = {{AI} {Red}-{Teaming} {Is} {Not} a {One}-{Stop} {Solution} to {AI} {Harms}:},
 	language = {en},
+	institution = {Data & Society},
 	author = {Friedler, Sorelle and Singh, Ranjit and Blili-Hamelin, Borhane and Metcalf, Jacob and Chen, Brian J},
 	year = {2023},
 }
-
 
