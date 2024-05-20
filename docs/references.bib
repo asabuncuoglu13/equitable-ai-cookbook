@@ -4,16 +4,23 @@
 
 %% Fairness %%
 
-
-@article{zemel_13,
-	title = {Learning {Fair} {Representations}},
-	abstract = {We propose a learning algorithm for fair classiﬁcation that achieves both group fairness (the proportion of members in a protected group receiving positive classiﬁcation is identical to the proportion in the population as a whole), and individual fairness (similar individuals should be treated similarly). We formulate fairness as an optimization problem of ﬁnding a good representation of the data with two competing goals: to encode the data as well as possible, while simultaneously obfuscating any information about membership in the protected group. We show positive results of our algorithm relative to other known techniques, on three datasets. Moreover, we demonstrate several advantages to our approach. First, our intermediate representation can be used for other classiﬁcation tasks (i.e., transfer learning is possible); secondly, we take a step toward learning a distance metric which can ﬁnd important dimensions of the data for classiﬁcation.},
-	language = {en},
-	author = {Zemel, Richard},
-	year = {2013},
-	file = {Zemel - Learning Fair Representations.pdf:/Users/asabuncuoglu/Zotero/storage/SM4QVXC2/Zemel - Learning Fair Representations.pdf:application/pdf},
+@InProceedings{zemel_13,
+  title = 	 {Learning Fair Representations},
+  author = 	 {Zemel, Rich and Wu, Yu and Swersky, Kevin and Pitassi, Toni and Dwork, Cynthia},
+  booktitle = 	 {Proceedings of the 30th International Conference on Machine Learning},
+  pages = 	 {325--333},
+  year = 	 {2013},
+  editor = 	 {Dasgupta, Sanjoy and McAllester, David},
+  volume = 	 {28},
+  number =       {3},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Atlanta, Georgia, USA},
+  month = 	 {17--19 Jun},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v28/zemel13.pdf},
+  url = 	 {https://proceedings.mlr.press/v28/zemel13.html},
+  abstract = 	 {We propose a learning algorithm for fair classification that achieves both group fairness (the proportion of members in a protected group receiving positive classification is identical to the proportion in the population as a  whole), and individual fairness (similar individuals should be treated similarly).  We formulate fairness as an optimization problem of finding a  good representation of the data with two competing goals: to encode the data as well as possible, while simultaneously obfuscating any information about membership in the protected group.  We show positive results of our algorithm relative to other known techniques, on three datasets.  Moreover, we demonstrate several advantages to our approach.  First, our intermediate representation can be used for other classification tasks (i.e., transfer  learning is possible); secondly, we take a step toward learning a distance metric which can find important dimensions of the data for classification.}
 }
-
 
 @inproceedings{hardt_equality_2016,
 	title = {Equality of {Opportunity} in {Supervised} {Learning}},
@@ -62,9 +69,6 @@
 	file = {Full Text PDF:/Users/asabuncuoglu/Zotero/storage/WWSA99AH/Galhotra et al. - 2017 - Fairness testing testing software for discriminat.pdf:application/pdf},
 }
 
-
-
-
 @inproceedings{dwork_fairness_2012,
 	address = {New York, NY, USA},
 	series = {{ITCS} '12},
@@ -84,10 +88,37 @@
 }
 
 
+%%== Bias - Media and News Analysis ==%%
 
-%% Evaluation %%
+@inproceedings{alam_towards_2022,
+	address = {Virtual Event, Lyon France},
+	title = {Towards {Analyzing} the {Bias} of {News} {Recommender} {Systems} {Using} {Sentiment} and {Stance} {Detection}},
+	isbn = {978-1-4503-9130-6},
+	url = {https://dl.acm.org/doi/10.1145/3487553.3524674},
+	doi = {10.1145/3487553.3524674},
+	language = {en},
+	urldate = {2024-05-10},
+	booktitle = {Companion {Proceedings} of the {Web} {Conference} 2022},
+	publisher = {ACM},
+	author = {Alam, Mehwish and Iana, Andreea and Grote, Alexander and Ludwig, Katharina and Müller, Philipp and Paulheim, Heiko},
+	month = apr,
+	year = {2022},
+	pages = {448--457},
+	file = {Full Text PDF:/Users/asabuncuoglu/Zotero/storage/TWSJ4JCP/Alam et al. - 2022 - Towards Analyzing the Bias of News Recommender Sys.pdf:application/pdf},
+}
 
-%%== Data ==%%
+
+@techreport{cdei_2020,
+	title = {Review into bias in algorithmic decision-making},
+	url = {https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/957259/Review_into_bias_in_algorithmic_decision-making.pdf?_ga=2.220650200.15383270.1715354345-1123678490.1697577586},
+	language = {en},
+	author = {{Centre for Data Ethics and Innovation}},
+	institution = {{Centre for Data Ethics and Innovation}},
+	year = {2020},
+	file = {Review into bias in algorithmic decision-making.pdf:/Users/asabuncuoglu/Zotero/storage/E77S4INJ/Review into bias in algorithmic decision-making.pdf:application/pdf},
+}
+
+%% Data Evaluation %%
 
 @inproceedings{spinde_neural_2021,
 	address = {Punta Cana, Dominican Republic},
@@ -178,10 +209,7 @@
 	pages = {160018},
 }
 
-
-%% Mitigation %%
-
-%%== Synthetic Data ==%%
+%% Synthetic Data %%
 
 
 @misc{nayak_learning_2024,
@@ -197,11 +225,7 @@
 	keywords = {Computer Science - Computation and Language, Computer Science - Machine Learning},
 }
 
-
-
-
 %% Red Teaming %%
-
 
 @techreport{friedler_ai_2023,
 	title = {{AI} {Red}-{Teaming} {Is} {Not} a {One}-{Stop} {Solution} to {AI} {Harms}:},
@@ -209,5 +233,176 @@
 	institution = {Data & Society},
 	author = {Friedler, Sorelle and Singh, Ranjit and Blili-Hamelin, Borhane and Metcalf, Jacob and Chen, Brian J},
 	year = {2023},
+}
+
+%% Auditing %%
+
+@article{koshiyama_towards_2021,
+	title = {Towards {Algorithm} {Auditing}: {A} {Survey} on {Managing} {Legal}, {Ethical} and {Technological} {Risks} of {AI}, {ML} and {Associated} {Algorithms}},
+	issn = {1556-5068},
+	shorttitle = {Towards {Algorithm} {Auditing}},
+	url = {https://www.ssrn.com/abstract=3778998},
+	doi = {10.2139/ssrn.3778998},
+	abstract = {Business reliance on algorithms are becoming ubiquitous, and companies are increasingly concerned about their algorithms causing major financial or reputational damage. High-profile cases include VW’s Dieselgate scandal with fines worth of \$34.69B, Knight Capital’s bankruptcy ({\textasciitilde}\$450M) by a glitch in its algorithmic trading system, and Amazon’s AI recruiting tool being scrapped after showing bias against women. In response, governments are legislating and imposing bans, regulators fining companies, and the Judiciary discussing potentially making algorithms artificial “persons” in Law.},
+	language = {en},
+	urldate = {2024-05-14},
+	journal = {SSRN Electronic Journal},
+	author = {Koshiyama, Adriano and Kazim, Emre and Treleaven, Philip and Rai, Pete and Szpruch, Lukasz and Pavey, Giles and Ahamat, Ghazi and Leutner, Franziska and Goebel, Randy and Knight, Andrew and Adams, Janet and Hitrova, Christina and Barnett, Jeremy and Nachev, Parashkev and Barber, David and Chamorro-Premuzic, Tomas and Klemmer, Konstantin and Gregorovic, Miro and Khan, Shakeel and Lomas, Elizabeth},
+	year = {2021},
+	file = {Koshiyama et al. - 2021 - Towards Algorithm Auditing A Survey on Managing L.pdf:/Users/asabuncuoglu/Zotero/storage/KJKYAVTD/Koshiyama et al. - 2021 - Towards Algorithm Auditing A Survey on Managing L.pdf:application/pdf},
+}
+
+%% Financial Use Cases %%
+
+@article{wu_bloomberggpt_2023,
+	title = {Bloomberggpt: {A} large language model for finance},
+	journal = {arXiv preprint arXiv:2303.17564},
+	author = {Wu, Shijie and Irsoy, Ozan and Lu, Steven and Dabravolski, Vadim and Dredze, Mark and Gehrmann, Sebastian and Kambadur, Prabhanjan and Rosenberg, David and Mann, Gideon},
+	year = {2023},
+	note = {Type: Journal Article},
+}
+
+
+@article{das_fairness_2021,
+	title = {Fairness {Measures} for {Machine} {Learning} in {Finance}},
+	volume = {3},
+	issn = {2640-3943},
+	url = {http://pm-research.com/lookup/doi/10.3905/jfds.2021.1.075},
+	doi = {10.3905/jfds.2021.1.075},
+	abstract = {We present a machine learning pipeline for fairness-aware machine learning (FAML) in ﬁnance that encompasses metrics for fairness (and accuracy). Whereas accuracy metrics are well understood and the principal ones used frequently, there is no consensus as to which of several available measures for fairness should be used in a generic manner in the ﬁnancial services industry. We explore these measures and discuss which ones to focus on, at various stages in the ML pipeline, pre-training and post-training, and we also examine simple bias mitigation approaches. Using a standard dataset we show that the sequencing in our FAML pipeline offers a cogent approach to arriving at a fair and accurate ML model. We discuss the intersection of bias metrics with legal considerations in the US, and the entanglement of explainability and fairness is exempliﬁed in the case study. We discuss possible approaches for training ML models while satisfying constraints imposed from various fairness metrics, and the role of causality in assessing fairness.},
+	language = {en},
+	number = {4},
+	urldate = {2024-05-16},
+	journal = {The Journal of Financial Data Science},
+	author = {Das, Sanjiv and Donini, Michele and Gelman, Jason and Haas, Kevin and Hardt, Mila and Katzman, Jared and Kenthapadi, Krishnaram and Larroy, Pedro and Yilmaz, Pinar and Zafar, Muhammad Bilal},
+	month = oct,
+	year = {2021},
+	pages = {33--64},
+	file = {Das et al. - 2021 - Fairness Measures for Machine Learning in Finance.pdf:/Users/asabuncuoglu/Zotero/storage/L4QTBYH2/Das et al. - 2021 - Fairness Measures for Machine Learning in Finance.pdf:application/pdf},
+}
+
+
+@inproceedings{sawhney_deep_2020,
+	address = {Online},
+	title = {Deep {Attentive} {Learning} for {Stock} {Movement} {Prediction} {From} {Social} {Media} {Text} and {Company} {Correlations}},
+	url = {https://www.aclweb.org/anthology/2020.emnlp-main.676},
+	doi = {10.18653/v1/2020.emnlp-main.676},
+	abstract = {In the ﬁnancial domain, risk modeling and proﬁt generation heavily rely on the sophisticated and intricate stock movement prediction task. Stock forecasting is complex, given the stochastic dynamics and non-stationary behavior of the market. Stock movements are inﬂuenced by varied factors beyond the conventionally studied historical prices, such as social media and correlations among stocks. The rising ubiquity of online content and knowledge mandates an exploration of models that factor in such multimodal signals for accurate stock forecasting. We introduce an architecture that achieves a potent blend of chaotic temporal signals from ﬁnancial data, social media, and inter-stock relationships via a graph neural network in a hierarchical temporal fashion. Through experiments on real-world S\&P 500 index data and English tweets, we show the practical applicability of our model as a tool for investment decision making and trading.},
+	language = {en},
+	urldate = {2024-05-15},
+	booktitle = {Proceedings of the 2020 {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing} ({EMNLP})},
+	publisher = {Association for Computational Linguistics},
+	author = {Sawhney, Ramit and Agarwal, Shivam and Wadhwa, Arnav and Shah, Rajiv Ratn},
+	year = {2020},
+	pages = {8415--8426},
+	file = {Sawhney et al. - 2020 - Deep Attentive Learning for Stock Movement Predict.pdf:/Users/asabuncuoglu/Zotero/storage/MW3YMWZ3/Sawhney et al. - 2020 - Deep Attentive Learning for Stock Movement Predict.pdf:application/pdf},
+}
+
+%% UK Reports %%
+
+
+@techreport{cdei_24,
+	title = {Public attitudes to data and {AI}: {Tracker} survey ({Wave} 3) ({Section} 6: {Attitudes} towards {AI})},
+	shorttitle = {Public attitudes to data and {AI}},
+	url = {https://www.gov.uk/government/publications/public-attitudes-to-data-and-ai-tracker-survey-wave-3/public-attitudes-to-data-and-ai-tracker-survey-wave-3},
+	language = {en},
+	date = {2024},
+	year = {2024},
+	author = {{Centre for Data Ethics and Innovation} and {Department for Science, Innovation \& Technology}},
+	institution = {{Centre for Data Ethics and Innovation}},
+	file = {Snapshot:/Users/asabuncuoglu/Zotero/storage/T9Y2RFLE/public-attitudes-to-data-and-ai-tracker-survey-wave-3.html:text/html},
+}
+
+
+%% Global Reports %%
+
+
+@techreport{butler_microsoft_2023,
+	title = {Microsoft {New} {Future} of {Work} {Report} 2023},
+	url = {https://www.microsoft.com/en-us/research/publication/microsoft-new-future-of-work-report-2023/},
+	abstract = {In the past three years, there have been not one but two generational shifts in how work gets done, both of which were only possible because of decades of research and development. The first shift occurred when COVID made us realize how powerful remote and hybrid work technologies had become, as well as how much science was available to guide us in how to (and how not to) use these technologies. The second arrived this year, as it became clear that, at long last, generative AI had advanced to the point where it could be valuable to huge swaths of the work people do every day. We began the New Future of Work Report series in 2021, at the height of the shift to remote work. The goal of that report was to provide a synthesis of new – and newly relevant – research to anyone interested in reimagining work for the better as a decades-old approach to work was challenged. The second New Future of Work Report, published in 2022, focused on hybrid work and what research could teach us about intentionally re-introducing co-location into people’s work practices. This year’s edition, the third in the series, continues with the same goal, but centers on research related to integrating LLMs into work. Throughout 2023, AI and the future of work have frequently been on the metaphorical – and often literal – front page around the world. There have been many excellent articles about the ways in which work may change as LLMs are increasingly integrated into our lives. As such, in this year’s report we focus specifically on areas that we think deserve additional attention or where there is research that has been done at Microsoft that offers a unique perspective. This is a report that should be read as a complement to the existing literature, rather than as a synthesis of all of it. This is a rare time, one in which research will play a particularly important role in defining what the future of work looks like. At this special moment, scientists can’t just be passive observers of what is happening. Rather, we have the responsibility to shape work for the better. We hope this report can help our colleagues around world make progress towards this goal.},
+	number = {MSR-TR-2023-34},
+	institution = {Microsoft},
+	author = {Butler, Jenna and Jaffe, Sonia and Baym, Nancy and Czerwinski, Mary and Iqbal, Shamsi and Nowak, Kate and Rintel, Sean and Sellen, Abigail and Vorvoreanu, Mihaela and Abdulhamid, Najeeb G. and Amores, Judith and Andersen, Reid and Awori, Kagonya and Axmed, Maxamed and boyd, danah and Brand, James and Buscher, Georg and Carignan, Dean and Chan, Martin and Coleman, Adam and Counts, Scott and Daepp, Madeleine and Fourney, Adam and Goldstein, Daniel G. and Gordon, Andy and Halfaker, Aaron L and Hernandez, Javier and Hofman, Jake and Lay-Flurrie, Jenny and Liao, Vera and Lindley, Siân and Manivannan, Sathish and Mcilwain, Charlton and Nepal, Subigya and Neville, Jennifer and Nyairo, Stephanie and O'Neill, Jacki and Poznanski, Victor and Ramos, Gonzalo and Rangan, Nagu and Rosedale, Lacey and Rothschild, David and Safavi, Tara and Sarkar, Advait and Scott, Ava and Shah, Chirag and Shah, Neha Parikh and Shapiro, Teny and Shaw, Ryland and Simkute, Auste and Suh, Jina and Suri, Siddharth and Tanase, Ioana and Tankelevitch, Lev and Troy, Adam and Wan, Mengting and White, Ryen W. and Yang, Longqi and Hecht, Brent and Teevan, Jaime},
+	month = dec,
+	year = {2023},
+}
+
+
+@techreport{cabinet_24,
+	title = {Ethics, {Transparency} and {Accountability} {Framework} for {Automated} {Decision}-{Making}},
+	url = {https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making},
+	language = {en},
+	year = {2024},
+	urldate = {2024-03-18},
+	institution = {Centre for Data Ethics and Innovation},
+	author = {{Cabinet Office} and {Centre for Data Ethics and Innovation} and {Department for Science, Innovation \& Technology} and {Office for Artificial Intelligence}},
+	file = {Snapshot:/Users/asabuncuoglu/Zotero/storage/XBJDPH5Q/ethics-transparency-and-accountability-framework-for-automated-decision-making.html:text/html},
+}
+
+
+@article{wachter_counterfactual_2017,
+	title = {Counterfactual {Explanations} {Without} {Opening} the {Black} {Box}: {Automated} {Decisions} and the {GDPR}},
+	issn = {1556-5068},
+	shorttitle = {Counterfactual {Explanations} {Without} {Opening} the {Black} {Box}},
+	url = {https://www.ssrn.com/abstract=3063289},
+	doi = {10.2139/ssrn.3063289},
+	language = {en},
+	urldate = {2024-05-16},
+	journal = {SSRN Electronic Journal},
+	author = {Wachter, Sandra and Mittelstadt, Brent and Russell, Chris},
+	year = {2017},
+	file = {Wachter et al. - 2017 - Counterfactual Explanations Without Opening the Bl.pdf:/Users/asabuncuoglu/Zotero/storage/C8WFSWGV/Wachter et al. - 2017 - Counterfactual Explanations Without Opening the Bl.pdf:application/pdf},
+}
+
+
+@techreport{boe_machine_2022,
+	title = {Machine learning in {UK} financial services},
+	url = {https://www.bankofengland.co.uk/report/2022/machine-learning-in-uk-financial-services},
+	abstract = {The Bank of England and Financial Conduct Authority conducted a second survey into the state of machine learning in UK financial services.},
+	language = {en},
+	urldate = {2024-05-20},
+	author = {{The Bank of England}},
+	institution = {{The Bank of England}},
+	year = {2022},
+	file = {Snapshot:/Users/asabuncuoglu/Zotero/storage/YY83SJCF/machine-learning-in-uk-financial-services.html:text/html},
+}
+
+
+@techreport{boe_financial_2023,
+	title = {Financial {Policy} {Summary} and {Record} of the {Financial} {Policy} {Committee} meeting on 21 {November}},
+	url = {https://www.bankofengland.co.uk/-/media/boe/files/financial-policy-summary-and-record/2023/fpc-summary-and-record-december-2023.pdf},
+	urldate = {2024-05-20},
+	author = {{The Bank of England}},
+	institution = {{The Bank of England}},
+	year = {2023},
+	file = {fpc-summary-and-record-december-2023.pdf:/Users/asabuncuoglu/Zotero/storage/ZTY5ZLIJ/fpc-summary-and-record-december-2023.pdf:application/pdf},
+}
+
+%% News %%
+
+
+@misc{prnewswire_large_2023,
+	title = {Large {Language} {Model} ({LLM}) {Market} {Size} to {Grow} {USD} 40.8 {Billion} by 2029 at a {CAGR} of 21.4\% {\textbar} {Valuates} {Reports}},
+	url = {https://finance.yahoo.com/news/large-language-model-llm-market-151500260.html},
+	abstract = {The LLM Market is Segmented by Type (Hundreds of Billions of Parameters, Trillions of Parameters), by Application (Medical, Minancial, Industrial, Education): Global Opportunity Analysis and Industry Forecast, 2023-2029. It is Published in Valuates Reports Under the Category of Software.},
+	language = {en-US},
+	urldate = {2024-05-20},
+	journal = {Yahoo Finance},
+	author = {{PRNewswire}},
+	month = sep,
+	year = {2023},
+	file = {Snapshot:/Users/asabuncuoglu/Zotero/storage/WQD8VQSR/large-language-model-llm-market-151500260.html:text/html},
+}
+
+@misc{j_p_morgan_private_bank_how_2024,
+	title = {How to invest in {AI}’s next phase {\textbar} {J}.{P}. {Morgan} {Private} {Bank} {U}.{S}.},
+	url = {https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/ideas-and-insights/how-to-invest-in-ais-next-phase},
+	abstract = {We think it’s time for investors who want to buy into AI to expand their approach. Here’s how you could consider investing.},
+	language = {en},
+	urldate = {2024-05-20},
+	author = {{J. P. Morgan Private Bank}},
+	year = {2024},
+	file = {Snapshot:/Users/asabuncuoglu/Zotero/storage/5435AJZ8/how-to-invest-in-ais-next-phase.html:text/html},
 }
 

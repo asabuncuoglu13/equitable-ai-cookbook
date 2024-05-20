@@ -12,10 +12,11 @@ parts:
   - caption: "Fairness"
     chapters:
     - file: fairness
+    - file: fairness/notions
   - caption: "Monitoring Tools"
     chapters:
     - file: monitoring-tools
-  - caption: "Holistic Evaluation"
+  - caption: "Evaluation Strategies"
     chapters:
     - file: evaluation
     - file: evaluation/data

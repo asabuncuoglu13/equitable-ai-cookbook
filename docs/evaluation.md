@@ -1,8 +1,14 @@
 # A Structured Evaluation Approach
 
-Evaluating the fairness of AI models is a challenging process as defining what fairness means depends on the context of a specific application.
+Auditing an algorithm, regardless of its type, is a dynamic and non-linear process. Koshiyama et al. demonstrated the interrelation between development stages and auditing verticals in five main steps {cite}`koshiyama_towards_2021`:
 
-A fairness evaluation generally requires a step-by-step analysis that considers each step of the development process individually and holistically. For example, identifying any biases or imbalances that could lead to unfair outcomes in training data is an essential step at the very beginning of the development process. However, choosing the right metrics is critical, as it might amplify other tpes of bias in the output generation stage.
+**Stages:** | Data and Task Setup | Feature pre-processing | Model selection | Post-processing and Reporting| Productionizing and Deploying
+----|---- | ---- | ----| ---- | ---- |
+**Explainability**| Data collection and labelling | Dictionary of variables | Model complexity | Auxiliary tools | Interface and documentation
+**Fairness** | Population balance | Fair representations | Fairness constraints | Bias metrics assessments | Real-time monitoring of bias metrics
+
+
+Evaluating the fairness of AI models is a challenging process as defining what fairness means depends on the context of a specific application. A fairness evaluation generally requires a step-by-step analysis that considers each step of the development process individually and holistically. For example, identifying any biases or imbalances that could lead to unfair outcomes in training data is an essential step at the very beginning of the development process. However, choosing the right metrics is critical, as it might amplify other tpes of bias in the output generation stage.
 
 So, choosing appropriate metrics to evaluate the model's fairness performance requires a holistic understanding. A well-known recent effort is Stanford's HELM (Holistic Evaluation of Language Models) [^helm]. The project, with a specific focus on transparency, measures seven metrics including *accuracy*, *calibration*, *robustness*, *fairness*, *bias*, *toxicity*,
 and *efficiency*.
