@@ -6,36 +6,34 @@ root: index
 parts:
   - caption: "Trustworthy DPI"
     chapters:
-    - file: intro
-    - file: pi
-    - file: pi-to-dpi
-  - caption: "Fairness"
+    - file: best-practices
+    - file: dpi/pi
+    - file: dpi/pi-to-dpi
+  - caption: "AI Safety"
     chapters:
-    - file: fairness
-    - file: fairness/notions
-  - caption: "Monitoring Tools"
-    chapters:
-    - file: monitoring-tools
+    - file: safety/evaluation
+    - file: safety/monitoring-tools
+    - file: safety/participation-tools
+    - file: safety/red-teaming
   - caption: "Evaluation Strategies"
     chapters:
-    - file: evaluation
-    - file: evaluation/data
+    - file: dataset/introduction
       sections:
       - file: dataset/eda-fin-data
       - file: dataset/scraping-mosip
-  - caption: "Mitigation Strategies"
-    chapters:
-    - file: mitigation/overview
+    - file: dataset/synthetic-data/overview
       sections:
-      - file: mitigation/synthetic-data/overview
-      - file: mitigation/synthetic-data/mosip-bonito
-  - caption: "Red Teaming"
+      - file: dataset/synthetic-data/instruction-tuning
+      - file: dataset/synthetic-data/mosip-bonito
+      - file: dataset/synthetic-data/convert-to-prompt
+  - caption: "Fairness"
     chapters:
-    - file: red-teaming
-  - caption: "Governance and Democratisation"
+    - file: fairness/introduction
+    - file: fairness/notions
+    - file: fairness/patterns
+  - caption: Use Cases
     chapters:
-    - file: participation-tools
-    - file: governance
+    - file: usecases/face-skin-tone
   - caption: "References"
     chapters:
     - file: bibliography

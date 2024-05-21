@@ -20,7 +20,7 @@ and *efficiency*.
 
 We developed a structured hierarchical evaluation (and mitigation) framework aimed at accelerating the adoption of equitable AI practices. 
 
-![Hierarchical representation of the proposed framework](./media/hierarchical-framework.png)
+![Hierarchical representation of the proposed framework](../media/hierarchical-framework.png)
 
 This structured framework brings existing concepts together to help researchers explore and understand a particular problem domain. In our case, we developed this conceptual framework to guide our risk taxonomy development. The framework consists of four levels: ML Steps, Components, Assessment and Implications.
 
@@ -38,7 +38,7 @@ This structured framework brings existing concepts together to help researchers 
     - **Mitigation:** Define tangible steps to increase security, privacy and fairness overall.
 - **Implications:** The implications can be specific steps to be taken or generalized perspectives to consider in future iterations of the development process. Whether specific or generalized, they should lead to developing some tangible steps. We categorized implications under four headlines: “Security and privacy,” “environment and sustainability,” “usability and inclusivity,” and “infrastructure and maintenance.” 
 
-![Hierarchical representation of the proposed framework](./media/framework-all.png)
+![Hierarchical representation of the proposed framework](../media/framework-all.png)
 
 In data collection and processing:
 - (Security) The security risks include data breaches and malicious injections. When a data breach occurs, it can potentially compromise sensitive information. Attackers might also inject poisoned data, causing biases or disrupting the model's performance. Even if we ensure security, privacy risks might harm users. For example, aggregated data might still carry the risk of re-identification, violating privacy if proper anonymization techniques are not employed. 
