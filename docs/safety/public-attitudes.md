@@ -1,11 +1,4 @@
-# Introduction to Best Practices
-
-"Best practices" can widely refer to a set of techniques, methodologies, processes, or guidelines that are accepted as superior or most effective in a particular field or context. These practices are typically based on accumulated knowledge, experience, and empirical evidence of what works well and produces desirable outcomes. We can define "best practices" to optimize efficiency, productivity, quality, safety, or other desired outcomes.
-
-When the desired outcome is achieving equal access/outcomes/participation/benefits and trustworthiness, defining the "best practices" becomes challenging as these are complex sociotechnical terms. For example, NIST defines "trustworthiness" with seven sub-components, and each subcomponent requires a careful evaluation based on specific use cases.
-
-
-## Public Attitudes to AI
+# Public Attitudes to AI
 
 In early 2024, the U.S. equity markets reached multiple all-time highs, driven largely by investors' growing enthusiasm for artificial intelligence (AI) {cite}`j_p_morgan_private_bank_how_2024`. Microsoft’s New Future of Work Report 2023 demonstrated that the integration of LLMs is not only expected into internal applications, but many companies will also include them as client and worker-facing applications {cite}`butler_microsoft_2023`. It includes an array of tasks including LLMs for information work, critical thinking, human-AI collaboration, complex and creative tasks, domain-specific applications, team collaboration and communication, knowledge management and organisational change, future work and society.
 

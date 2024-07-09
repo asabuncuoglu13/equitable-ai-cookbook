@@ -4,34 +4,48 @@
 format: jb-book
 root: index
 parts:
-  - caption: "Trustworthy DPI"
+  - caption: "Trustworthy AI-Infused DPIs"
     chapters:
-    - file: best-practices
     - file: dpi/pi
     - file: dpi/pi-to-dpi
   - caption: "AI Safety"
     chapters:
+    - file: safety/overview-oss
+    - file: safety/public-attitudes
     - file: safety/evaluation
     - file: safety/monitoring-tools
     - file: safety/participation-tools
     - file: safety/red-teaming
-  - caption: "Evaluation Strategies"
+    - file: safety/guardrails
+  - caption: "Data Practices"
     chapters:
-    - file: dataset/introduction
+    - file: data-practices/introduction
       sections:
-      - file: dataset/eda-fin-data
-      - file: dataset/scraping-mosip
-    - file: dataset/synthetic-data/overview
+      - file: data-practices/eda-fin-data
+      - file: data-practices/scraping-mosip
+    - file: data-practices/data-governance.md
+    - file: data-practices/synthetic-data/overview
       sections:
-      - file: dataset/synthetic-data/instruction-tuning
-      - file: dataset/synthetic-data/mosip-bonito
-      - file: dataset/synthetic-data/convert-to-prompt
+      - file: data-practices/synthetic-data/instruction-tuning
+      - file: data-practices/synthetic-data/mosip-bonito
+      - file: data-practices/synthetic-data/convert-to-prompt
   - caption: "Fairness"
     chapters:
     - file: fairness/introduction
     - file: fairness/notions
+    - file: fairness/challenges
     - file: fairness/patterns
-  - caption: Use Cases
+    - file: fairness/mitigation
+    - file: fairness/examples
+    - file: fairness/responsibility
+  - caption: "A Proactive Monitoring Pipeline"
+    chapters:
+    - file: cicd/001-intro
+    - file: cicd/002-ml-workflow
+    - file: cicd/003-detect-bias
+    - file: cicd/004-our-solution
+    - file: cicd/005-usecase
+  - caption: "Use Cases"
     chapters:
     - file: usecases/face-skin-tone
   - caption: "References"

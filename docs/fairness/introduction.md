@@ -53,9 +53,11 @@ LLMs can also be utilised in more complex tasks such as improving credit scoring
 Use popular bias recognition datasets (Adult, German Credit, COMPAS) in a similar context. Compare fairness notions (and find some baseline fairness studies using these datasets.)
 `````
 
-## Stock Movement Prediction
+### Stock Movement Prediction
 
 With the increasing flux of financial news and other knowledge source, analysing a complex set of tabular and text data gained importance. Researchers and practitioners explored using deep attentive mechanisms to effectively utilise the blend of chaotic temporal signals {cite}`sawhney_deep_2020`. 
+
+Shi et al. demonstrated that LLMs have the potential to outperform traditional models in sequential event prediction {cite}`shi_language_2023` ([See their open-source repo for more details](https://github.com/iLampard/lamp/tree/main)). 
 
 `````{admonition} Experiment
 :class: tip
@@ -69,7 +71,7 @@ We can list a six-step flow for developing a fairness-aware ML {cite}`das_fairne
 
 - **Define a use case with measurable objectives:** Implementing a FAML pipeline is challenging due to variety in the fairness notions and lack of clarity on the prioritisation. While making an algorithm fair for one metric, the algorithm can become unfair on another metric. So, defining a use-case with clear, measurable and atomic objectives is critical.
 - **Understand possible sources of bias:** Historical bias in the datasets (in the labelling process), curation bias (selecting/dropping some features), objective functions (removing outliers, focusing specific features), homogenisation (synthetic data can amplify bias), active bias (fake news, satires, jokes), unanticipated machine decisions (a model with a purpose can also show unexpected behaviours). 
-- **Measure bias:** As model developers, we have the responsibility of developing models that gives equal opportunity for advantaged and disadvantaged groups. You can define “opportunity” in multiple ways for different use cases. In this article, we focused on binary classification cases to simplify the explanation of these different notions. We explained approaches to measuring and interpreting bias in another article: [Fairness Notions](./fairness.md).
+- **Measure bias:** As model developers, we have the responsibility of developing models that gives equal opportunity for advantaged and disadvantaged groups. You can define “opportunity” in multiple ways for different use cases. In this article, we focused on binary classification cases to simplify the explanation of these different notions. We explained approaches to measuring and interpreting bias in another article: [Fairness Notions](./notions.md).
 - **Analyse pre-training and post-training metrics:** Before training process, it is essential to analyse the class imbalance and differences in the proportions of the representations (e.g. labels in a supervised setting). 
 - **Counterfactual analysis:** Flip the protected characteristics in the dataset to test if the model results in same predictive outputs.
 - **Updating the model and dataset:** In the iterative and continuous evaluation/development environment, the last step is updating the dataset and model parameters based on the bias analysis findings.

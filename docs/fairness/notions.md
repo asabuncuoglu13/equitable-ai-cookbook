@@ -66,9 +66,9 @@ Individual fairness can be seen as fine-grained fairness by demanding comparable
     - $i$ and $j$ represent individuals.
     - $d$ represents the counterfactual scenario.
 
-The mathematical implementation of fairness notions varies and can target different stages of the decision-making process. This includes correcting input data, exploring feasible solution spaces, representing features graphically, or leveraging fair representation learning techniques. However, combining multiple fairness notions can present challenges, such as inadvertently treating individuals unfairly despite satisfying group fairness or facing mathematical limitations in simultaneously satisfying multiple fairness criteria.
+The technical implementation of fairness notions varies and can target different stages of the decision-making process. This includes correcting input data, exploring feasible solution spaces, representing features graphically, or leveraging fair representation learning techniques. However, combining multiple fairness notions can present challenges, such as inadvertently treating individuals unfairly despite satisfying group fairness or facing mathematical limitations in simultaneously satisfying multiple fairness criteria.
 
-Addressing fairness mathematically has raised concerns about the trade-offs between accuracy and fairness. While efforts have been made to optimize both, there remains a need to ensure fairness from a societal perspective. This entails aligning the metrics used to measure fairness with societal values and operationalizing fairness in a way that reflects real-world equity concerns.
+Addressing fairness technically has raised concerns about the trade-offs between accuracy and fairness. While efforts have been made to optimize both, there remains a need to ensure fairness from a societal perspective. This entails aligning the metrics used to measure fairness with societal values and operationalizing fairness in a way that reflects real-world equity concerns.
 
 ## Counterfactual Explanations for Fairness and Privacy
 

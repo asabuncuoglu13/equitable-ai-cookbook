@@ -25,6 +25,9 @@ latex:
 sphinx:
   config:
     bibtex_reference_style: author_year
+  extra_extensions:
+    - sphinxcontrib.mermaid
+
 
 bibtex_bibfiles: 
   - references.bib

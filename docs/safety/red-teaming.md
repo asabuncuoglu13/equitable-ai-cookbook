@@ -24,3 +24,12 @@ A policy briefing report {cite}`friedler_ai_2023` highlighted both the benefits 
 - Integration of transparency, disclosures, and external group access to the system.
 - Inclusion of red teaming within a broader assessment framework.
 - Commitment from stakeholders to allocate necessary plans and resources for addressing findings.
+
+
+## Open-Source Tools
+
+### [AI Verify](https://github.com/aiverify-foundation/aiverify)
+
+
+### [Inspect AI](https://ukgovernmentbeis.github.io/inspect_ai/)
+
