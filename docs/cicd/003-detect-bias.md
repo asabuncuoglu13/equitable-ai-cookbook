@@ -1,3 +1,5 @@
+# Bias Detection througjout the Pipeline
+
 Monitoring, detecting and evaluating bias throughout an ML development pipeline is crucial for ensuring fairness and equity in your models. Here’s a structured approach to incorporating bias evaluation and continuous monitoring in your pipeline, along with recommended tools and libraries.
 
 # Proactive Fairness Monitoring
@@ -8,7 +10,7 @@ We view bias as a systemic error with multiple components. To evaluate bias in a
 
 The following state diagram summarizes the main steps of possible bias evaluation points in a traditional ML flow.
 
-```mermaid
+```{mermaid}
 stateDiagram-v2
     [*] --> VersionControl
     VersionControl --> DataPipeline

@@ -1,6 +1,8 @@
+# Structuring the Codebase and Team Responsibilities
+
 Building a complete CI/CD (Continuous Integration/Continuous Deployment) flow for machine learning (ML) development involves several key components, including code organization, data management, model training and validation, deployment, and monitoring. Here's a structured approach to set up your CI/CD pipeline along with the team responsibilities.
 
-### Codebase Structure
+## Codebase Structure
 
 A well-organized codebase is crucial for maintaining and scaling your ML projects. Here’s a suggested structure:
 
@@ -35,7 +37,7 @@ A well-organized codebase is crucial for maintaining and scaling your ML project
 ```
 
 
-```mermaid
+```{mermaid}
 graph TD
   A[Project Root]
   A --> data[Data Directory]
@@ -94,7 +96,7 @@ graph TD
   end
 ```
 
-### Team Responsibilities
+## Team Responsibilities
 
 1. **Data Engineer**
    - Responsible for data extraction, transformation, and loading (ETL).
@@ -125,7 +127,7 @@ graph TD
    - Sets timelines and milestones.
    - Manages project documentation and communication with stakeholders.
 
-### CI/CD Pipeline Stages
+## CI/CD Pipeline Stages
 
 1. **Version Control (Git)**
    - All code, configurations, and documentation are stored in a version control system (e.g., Git).
@@ -156,7 +158,7 @@ graph TD
    - Gather feedback from model performance and retrain models as necessary.
    - Update pipelines and configurations based on new requirements and findings.
 
-### Example CI/CD Tools and Technologies
+## Example CI/CD Tools and Technologies
 
 - **Version Control**: Git, GitHub, GitLab
 - **CI/CD Tools**: Jenkins, GitLab CI, GitHub Actions, CircleCI

@@ -1,6 +1,8 @@
+# Observing Changes in the Codebase
+
 Designing and configuring observer agents to monitor each possible pipeline action requires a comprehensive approach to ensure that every aspect of your CI/CD pipeline is observed for changes. Observer agents can help in detecting code changes, data modifications, feature engineering updates, model training variations, and deployment adjustments. Here’s a detailed design and configuration plan:
 
-### Observer Agents Design
+## Observer Agents Design
 
 1. **Codebase Monitoring Agent**
 2. **Data Pipeline Monitoring Agent**
@@ -9,9 +11,9 @@ Designing and configuring observer agents to monitor each possible pipeline acti
 5. **Deployment Monitoring Agent**
 6. **Post-Deployment Monitoring Agent**
 
-### Configuration of Observer Agents
+## Configuration of Observer Agents
 
-#### 1. Codebase Monitoring Agent
+### 1. Codebase Monitoring Agent
 - **Purpose**: To monitor changes in the codebase, such as updates to scripts, configuration files, and dependency changes.
 - **Tools**: Git hooks, GitHub Actions, GitLab CI/CD.
 
@@ -45,7 +47,7 @@ jobs:
           echo "Codebase has been updated and checked."
 ```
 
-#### 2. Data Pipeline Monitoring Agent
+### 2. Data Pipeline Monitoring Agent
 - **Purpose**: To monitor changes in data sources, data processing scripts, and data quality.
 - **Tools**: Apache Airflow, Great Expectations, Data Version Control (DVC).
 
@@ -87,7 +89,7 @@ t2 = PythonOperator(
 t1 >> t2
 ```
 
-#### 3. Feature Engineering Monitoring Agent
+### 3. Feature Engineering Monitoring Agent
 - **Purpose**: To observe changes in feature engineering scripts and the generated features.
 - **Tools**: Git hooks, CI/CD tools, Data Version Control (DVC).
 
@@ -102,7 +104,7 @@ t1 >> t2
     python src/features/feature_checks.py
 ```
 
-#### 4. Model Training and Validation Monitoring Agent
+### 4. Model Training and Validation Monitoring Agent
 - **Purpose**: To monitor changes in model training scripts, hyperparameters, and validation results.
 - **Tools**: MLflow, GitHub Actions, Jenkins.
 
@@ -120,7 +122,7 @@ with mlflow.start_run():
     mlflow.log_artifact("model.pkl")
 ```
 
-#### 5. Deployment Monitoring Agent
+### 5. Deployment Monitoring Agent
 - **Purpose**: To monitor deployment scripts and infrastructure changes.
 - **Tools**: Kubernetes, Docker, Prometheus, Grafana.
 
@@ -141,7 +143,7 @@ data:
     kubectl get services
 ```
 
-#### 6. Post-Deployment Monitoring Agent
+### 6. Post-Deployment Monitoring Agent
 - **Purpose**: To observe the model's performance and fairness in production.
 - **Tools**: Evidently, WhyLabs, Prometheus, Grafana.
 
@@ -160,7 +162,7 @@ dashboard.calculate(reference_data, production_data)
 dashboard.save("dashboard.html")
 ```
 
-### Integrating Observer Agents in the CI/CD Pipeline
+## Integrating Observer Agents in the CI/CD Pipeline
 
 1. **GitHub/GitLab Configuration**: Set up workflows to trigger on code changes.
 2. **Airflow**: Define DAGs with sensors for data and feature changes.
@@ -168,11 +170,11 @@ dashboard.save("dashboard.html")
 4. **Kubernetes**: Monitor deployment and infrastructure.
 5. **Prometheus/Grafana**: Monitor post-deployment metrics and set up alerts.
 
-### Summary
+## Summary
 
 By setting up these observer agents and integrating them into your CI/CD pipeline, you can proactively monitor changes at every stage of your ML pipeline. This approach ensures that you maintain control over your pipeline’s integrity and can quickly identify and address any issues, including bias and performance deviations.
 
-```mermaid
+```{mermaid}
 graph TD
   VC[Codebase \n Monitoring Agent]
   DATA[Data Pipeline \n Monitoring Agent]
@@ -222,7 +224,7 @@ graph TD
 
 And the UML Sequence Diagram for this workflow is:
 
-```mermaid
+```{mermaid}
 sequenceDiagram
   participant Developer
   participant VersionControl as Version Control
