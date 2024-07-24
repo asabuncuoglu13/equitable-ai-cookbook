@@ -43,7 +43,7 @@ parts:
     - file: cicd/001-intro
     - file: cicd/002-ml-workflow
     - file: cicd/003-detect-bias
-    - file: cicd/004-our-solution
+    - file: cicd/004-observer
     - file: cicd/005-usecase
   - caption: "Use Cases"
     chapters:

@@ -1,4 +1,4 @@
-# Bias Detection througjout the Pipeline
+# Bias Detection throughout the Pipeline
 
 Monitoring, detecting and evaluating bias throughout an ML development pipeline is crucial for ensuring fairness and equity in your models. Here’s a structured approach to incorporating bias evaluation and continuous monitoring in your pipeline, along with recommended tools and libraries.
 
