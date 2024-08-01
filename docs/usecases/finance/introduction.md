@@ -18,7 +18,11 @@ A further 2023 survey from UK Finance, a trade association for the UK banking an
 
 `````{admonition} Read more at …
 :class: tip
-You can find more information about impact of LLMs in financial services, you can read our [March 2024 Report]( https://www.turing.ac.uk/news/publications/impact-large-language-models-finance-towards-trustworthy-adoption). I also listed some background reading materials [on Github]( https://github.com/alan-turing-institute/fairness-monitoring/blob/main/docs/READINGS.md).
+You can find more information about impact of LLMs in financial services, you can read our [March 2024 Report]( https://www.turing.ac.uk/news/publications/impact-large-language-models-finance-towards-trustworthy-adoption).
+
+I also listed some background reading materials [on Github]( https://github.com/alan-turing-institute/fairness-monitoring/blob/main/docs/READINGS.md).
+
+Also check the chapter [A Practical Review of Financial Large Language Models](./finllms.md)
 `````
 
 ## Example Applications
