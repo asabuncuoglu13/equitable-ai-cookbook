@@ -2,7 +2,7 @@
 
 Equitable AI involves creating and using artificial intelligence systems in a fair and just manner, ensuring they do not reinforce existing biases or discriminate against certain groups. It focuses on fairness, transparency, accountability, inclusivity, and ethical considerations to prevent unfair outcomes and promote equal opportunities for all individuals and communities.
 
-I think it is fair to say that equitable AI is a broder term that covers responsible, trustworthy and inclusive AI development. In this sense, we can say that it is an established research area, and the existing research can guide us to take some confident steps to achieve trustworthiness in the era of *large foundational models*. 
+In this cookbook, I use the term "equitable AI" as a broad term includes responsible, trustworthy and inclusive AI development. In this sense, it is a combination of various already-established research areas. This cookbook is an effort to bring available resources from existing research to guide us taking some confident steps to achieve trustworthiness in the era of *large foundational models*. 
 
 There have already been many good papers and books on the responsible and trustworthy use and development of AI. My plan is not to write another. In this cookbook, I gather some best practices from the literature and sectoral use cases, and present them in recipes to implement efficiently in real-life scenarios. This repository contains an extensive list of techniques and experiments as an initial effort to achieve this goal in the "digital economy" domain. In the digital economy domain, we selected three use cases:
 

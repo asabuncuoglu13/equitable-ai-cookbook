@@ -4,10 +4,6 @@
 format: jb-book
 root: index
 parts:
-  - caption: "Trustworthy AI-Infused DPIs"
-    chapters:
-    - file: dpi/pi
-    - file: dpi/pi-to-dpi
   - caption: "AI Safety"
     chapters:
     - file: safety/overview-oss
@@ -31,7 +27,6 @@ parts:
       - file: data-practices/synthetic-data/convert-to-prompt
   - caption: "Fairness"
     chapters:
-    - file: fairness/introduction
     - file: fairness/notions
     - file: fairness/challenges
     - file: fairness/patterns
@@ -45,9 +40,17 @@ parts:
     - file: cicd/003-detect-bias
     - file: cicd/004-observer
     - file: cicd/005-usecase
-  - caption: "Use Cases"
+  - caption: "Use Case: Public Infrastructure"
     chapters:
-    - file: usecases/face-skin-tone
+    - file: usecases/dpi/pi
+    - file: usecases/dpi/pi-to-dpi
+    - file: usecases/dpi/judicial
+  - caption: "Use Case: Finance"
+    chapters:
+    - file: usecases/finance/introduction
+  - caption: "Use Case: Biometrics"
+    chapters:
+    - file: usecases/biometrics/face-skin-tone
   - caption: "References"
     chapters:
     - file: bibliography
