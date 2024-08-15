@@ -1,5 +1,7 @@
 # Understanding Fairness Notions in Data-Driven Decision Making
 
+In data-driven decision making, algorithmic systems can encode and amplify bias. We see the reflection of societal biases in training datasets, and in development assumptions {cite}`jacobs21`. Indeed, researchers and practitioners actually encode bias while constructing "measurement models" to quantify abstract concepts as a combination of observed features. This process is referred as **measurement modeling** can introduce potential mismatches between the theoretical understanding and its operationalization {cite}`jacobs21`. Jacobs et al. argues that fairness-related harms are mainly a result of such mismatches.
+
 Fairness in data-driven decision-making has emerged as a critical concern to ensure equitable outcomes for different social groups. These notions can be broadly categorized into group fairness and individual fairness, each addressing different dimensions of fairness. **Group fairness**, also known as "statistical fairness", focuses on treating different social groups equally. **Individual fairness** advocates for similar treatment for similar individuals. 
 
 ## Group Fairness
@@ -70,18 +72,8 @@ The technical implementation of fairness notions varies and can target different
 
 Addressing fairness technically has raised concerns about the trade-offs between accuracy and fairness. While efforts have been made to optimize both, there remains a need to ensure fairness from a societal perspective. This entails aligning the metrics used to measure fairness with societal values and operationalizing fairness in a way that reflects real-world equity concerns.
 
-## Counterfactual Explanations for Fairness and Privacy
 
-Utilising counterfactual explanations can also improve privacy in the model development process, while providing a satisfying level of explainability to the users. Wachter et al. explores this concept to *"bridge the gap between the interests of data subjects and data controllers"* {cite}`wachter_counterfactual_2017`. 
-
-An example counterfactual explanation:
-
-"Your loan application is denied, because your annual income is lower than £40,000. If your annual income had been £65,000, your loan could be approved."
-
-Providing these explanations can help both fairness researchers and end users to understand the model without interfering the privacy constraints.
-
-
-In conclusion, understanding and implementing fairness notions in data-driven decision-making processes is essential for promoting equity and mitigating biases. By incorporating both group and individual fairness considerations, alongside addressing implementation challenges, we can strive towards more just and equitable outcomes in algorithmic decision making.
+**In conclusion,** understanding and implementing fairness notions in data-driven decision-making processes is essential for promoting equity and mitigating biases. By incorporating both group and individual fairness considerations, alongside addressing implementation challenges, we can strive towards more just and equitable outcomes in algorithmic decision making.
 
 # Useful Resources
 

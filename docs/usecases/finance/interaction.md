@@ -54,6 +54,112 @@ However, integration of a chat interface also brings lots of ambiguity as the us
 
 To reduce the risks coming with conversational agent integration, designers can define the system affordances clearly and improve clarity of system capabilities can reduce this risk. Clearly communicating how data (both user and market) is collected, processed and interpretd can help users to intuitively understand the decisions behind the system.
 
+## Standards and Guidelines
+
+Following the standards and guidelines, practitioners can structure their design processes to achieve a proactive *"by design"* fairness. In this document we refer ISO 9241 standards and some of the industry guidelines such as *Microsoft Human-AI Interaction Guidelines* and *Google People+AI Guide*.
+
+### ISO 9241
+
+ISO 9241-210:2019 is a key international standard that provides guidelines for human-centered design (HCD) processes in interactive systems. It outlines principles and activities to ensure that products, systems, and services are designed with a focus on the users, their needs, and the overall user experience. The standards focus on the overall design process evaluation rather than the system usability evaluation.
+
+We can summarise the key concepts of ISO 9241-210:2019 as following:
+
+1. **Understanding and specifying the context of use**: It's essential to understand who the users are, what they want to achieve, and the environment in which the product will be used.
+2. **Specifying user requirements**: Design requirements should be derived from a thorough understanding of users' needs, tasks, and goals.
+3. **Iterative design solutions**: Solutions should be developed iteratively, with users involved in each stage of the design process.
+4. **Evaluating designs**: Continuous testing and evaluation should be carried out to ensure that the product meets user needs.
+5. **Involving Users**: Users should be actively involved throughout the design process to ensure the end product is useful, usable, and acceptable.
+6. **Multidisciplinary Teams**: The standard encourages collaboration between professionals from various disciplines, such as designers, developers, marketers, and usability experts, to create a well-rounded product.
+
+```mermaid
+flowchart TD
+    A1["Plan the human-centred design process"]
+    subgraph A2["Human-Centred Design activities in the development process"]
+        B1["Understanding and specifying the context of use"]
+        B2["Specifying the user requirements"]
+        B3["Producing design solutions"]
+        B4["Evaluating the design"]
+        B4 -- Iterate, where appropriate --> B1
+        B4 -- Iterate, where appropriate --> B2
+        B4 -- Iterate, where appropriate --> B3
+        B1 -- eg. user group profiles, \n as-is scenarios, personas --> B2
+        B2 -- eg. identified user needs, \n derived user requirements, \n applicable design guidance --> B3
+        B3 -- eg. scenarios of use, \n low-fidelity prototypes, \n high-fidelity prototypes --> B4
+        B4 -- eg. usability-test report, \n field report, \n user survey report --> B1
+    end
+    A3["Designed solution meets user requirements"]
+    A1 --> A2 --> A3
+    
+```
+
+
+```{note}
+You can use [ISO 9241 Compliance Checklist](https://standards.iso.org/iso/9241/210/ed-2/en) to check whether your design and development process follow a human-centred approach.
+```
+
+The figure above illustrates the recommended development process as outlined by the standards document. A crucial step in this process is the evaluation phase, where designers determine the specific improvements needed for the product. The standard emphasizes three types of evaluation: (1) **User-Based Testing**, where users interact with prototypes of varying fidelity; (2) **Inspection-Based Evaluation**, where experts assess usability and other aspects using checklists; and (3) **Long-Term Monitoring**, which involves identifying issues during real-world use.
+
+In this article, we focus on inspection-based evaluation, exploring how to design this process so that practitioners can adopt an expert's perspective and continuously evaluate the system throughout its development. One guideline we can use as a checklist in this process is Microsoft's Guideline for Human-AI Interaction.
+
+### Microsoft Human-AI Interaction Guideline
+
+["Guidelines for Human-AI Interaction"](https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/) outlines a set of 18 design guidelines for developing AI-infused systems. These guidelines aim to help designers and developers create AI systems that users can understand, trust, and interact with effectively. The framework covers various stages of interaction, including initial interactions (e.g., making clear what the system can do), ongoing interactions (e.g., showing contextually relevant information), and dealing with errors or misunderstandings (e.g., supporting efficient correction). The document also includes a systematic validation of these guidelines through testing with design practitioners and AI products.
+
+Here are the 18 guideline items from this framework:
+
+**Initial Interaction (First-Time Use)**
+
+1. **Make Clear What the System Can Do**: Help users understand what the AI system is capable of.
+2. **Make Clear How Well the System Can Do**: Enable users to understand the system’s performance limits.
+3. **Time Services Based on Context**: Deliver information or services when the user needs them.
+4. **Show Contextually Relevant Information**: Present information that is relevant to the user’s current task or context.
+
+**During Interaction (Ongoing Use)**
+
+5. **Adapt to User’s Experience**: Tailor the system's behavior based on the user’s level of experience.
+6. **Show Contextually Relevant Information**: Continue to provide information that is relevant in the current context.
+7. **Support Efficient Invocation**: Allow users to efficiently invoke the system's functionality.
+8. **Support Efficient Correction**: Enable users to correct system errors easily.
+9. **Support Efficient Dismissal**: Allow users to dismiss or ignore information or suggestions that are not relevant.
+10.  **Support User Control**: Give users control over the system’s actions and behaviors.
+
+**When Things Go Wrong (Handling Errors)**
+11.  **Notify Users About Changes**: Inform users when the system updates or changes its state.
+12.  **Support Efficient Correction**: Allow users to correct errors efficiently (reiterated for emphasis in error situations).
+13.  **Offer Explanations**: Provide explanations to help users understand why the system acted a certain way.
+14.  **Support Forgiveness**: Allow users to undo actions or recover from mistakes.
+
+**Long-Term Use (Building Trust and Reliability)**
+15.  **Support Personalization**: Enable the system to be personalized to fit the user’s preferences and needs.
+16.  **Consider Impact of Automation Failures**: Prepare users for the possibility that the system might fail.
+17.  **Match Relevant Social Norms**: Ensure the system’s behavior aligns with social norms relevant to the context.
+18.  **Mitigate Social Bias**: Avoid reinforcing or amplifying social biases in the system’s outputs. 
+
+For example, sentiment signal analysis for financial market investment decisions can be improved considering this guideline as following:
+
+**Initial Interaction (First-Time Use)** 
+
+- The system needs to communicate the types of sentiment signals the interface can analyse (e.g., news sentiment, social media sentiment) and how these signals are processed to inform investment decisions clearly. They can use tooltips or an interactive onboarding tutorial to explain this.
+- Provide information on the accuracy, reliability, and confidence levels of sentiment analysis. They could use visual indicators like confidence scores or error margins to convey this.
+- Deliver real-time sentiment analysis and alerts during market hours or when significant market events occur. Allow users to customize alerts based on their specific interests or risk tolerance.
+- Display sentiment signals that are most relevant to the assets or markets the user is currently viewing or trading. For example, if the user is analyzing tech stocks, prioritize news and social media sentiment related to technology.
+
+**During Interaction (Ongoing Use)**
+
+- Allow users to flag or correct sentiment analysis that they believe is inaccurate or misleading. Provide feedback mechanisms so that the system can learn from these corrections.
+- Provide interactive visualizations where users can explore sentiment trends over time, compare sentiment across different markets or sectors, and drill down into specific events that influenced sentiment.
+- Make it easy for users to quickly access sentiment analysis for any asset or market they are interested in, perhaps through a search function or quick-access buttons.
+- Offer global settings that allow users to adjust how sentiment signals are weighted or factored into their decision-making. For instance, they might want to increase the influence of certain data sources or exclude others.
+
+**When Things Go Wrong (Handling Errors)**
+
+- Clearly communicate potential risks of relying on sentiment analysis, such as the possibility of misinterpretation of neutral news as positive or negative. Provide guidelines on how to cross-check sentiment with other data.
+
+**Long-Term Use (Building Trust and Reliability)**
+- Ensure the interface uses professional, clear, and neutral language in its communication, suitable for financial decision-making. Avoid over-sensationalizing sentiment data to prevent irrational investment decisions.
+- Regularly audit the sentiment analysis models for biases that might skew investment decisions, such as biases in the sentiment data sourced from different social media platforms.
+- Inform users when there are updates to the sentiment analysis models, new data sources added, or changes in the analysis methodology. 
+
 ## Improving Fairness through Human-AI Interaction
 
 For both use cases, user personas can be categorized into three groups: professional investors, experienced investors, and novice investors. 
@@ -74,9 +180,10 @@ Fairness in this context means creating systems that are accessible, equitable, 
 
 By addressing these layers, we can ensure that the system is fair and accessible to all users.
 
-### Evaluating Fairness: Key Considerations
+### From Human-Centred Design to Equitable Design
 
-Evaluating fairness in human-AI interaction, especially in the context of financial institutions integrating black-box models like LLMs, involves addressing a range of design decisions. Researchers should focus on both the technical and human-centric aspects to ensure that these models function fairly and equitably. Here are key questions that can guide this evaluation from an entity-based (data, model, system, user) perspective:
+When integrating black-box models like LLMs into end-user applications, researchers and practitioners should address both technical and human-centric aspects to ensure these models operate fairly and equitably. By incorporating human-centered design approaches into our workflow, we naturally and proactively align the development process with equitable AI principles. To leverage HCI standards and guidelines for enhancing equity in our applications, we can ask a series of questions focused on different entities (data, model, system, user). Below, we have curated some key questions to guide this evaluation:
+
 
 *Note that these questions aim to assess these entities in the interaction level. For example, for the model entity, we can mitigate "AI decision transparency" by selecting white-box interpretable model families. However, in this article, we focus on improving transparency of the model by interaction design choices.*
 
@@ -104,18 +211,13 @@ Evaluating fairness in human-AI interaction, especially in the context of financ
 - (Regulation) How does the AI system comply with relevant regulations and standards on fairness and non-discrimination?
 
 
-### Guiding the Design Process
-
-HCI is a well-established research domain and we already have access to good standards and guidelines. By adopting some of the well-known principles from HCI, we can improve more fair and equitable interfaces while integrating smart features into our products. 
-
-Implementing guidelines from ISO 9241 Ergonomics of Human-System Interaction and Microsoft Human-AI Interaction principles can help in designing fair and user-centric AI systems. These standards provide frameworks for usability, accessibility, and user satisfaction, ensuring that AI systems meet the needs of all users equitably.
-
-
 ### Conclusion
 
 Fairness is not a one-time assessment but an ongoing process. Financial institutions should establish continuous monitoring systems to evaluate the performance of LLMs and ensure they remain fair over time. This includes regular audits, user feedback mechanisms, and updating models as new data becomes available.
 
 Actively thinking about involving diverse stakeholders in the development and evaluation of AI systems can provide valuable perspectives on fairness. This includes collaborating with regulatory bodies, customer advocacy groups, and internal teams to ensure that the AI systems align with societal values and ethical standards.
+
+Following the standards and guidelines (e.g. ISO 9241-210:2019, Microsoft Human-AI Interaction), practitioners can inform the design process of fair finance application to ensure that the final product is equitable, accessible, and responsive to the needs of all users. Although we only focused on two checklist documents, HCI research produces many useful human-AI interaction guidelines such as [Google's People+AI Guidebook](https://pair.withgoogle.com/guidebook/). 
 
 Training AI practitioners and developers on ethical AI principles is vital. This involves educating them on the importance of fairness, the potential impact of biases, and the methods to mitigate them. An informed team is better equipped to develop fair AI systems.
 
