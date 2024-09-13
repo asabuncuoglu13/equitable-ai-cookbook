@@ -71,7 +71,7 @@ We can summarise the key concepts of ISO 9241-210:2019 as following:
 5. **Involving Users**: Users should be actively involved throughout the design process to ensure the end product is useful, usable, and acceptable.
 6. **Multidisciplinary Teams**: The standard encourages collaboration between professionals from various disciplines, such as designers, developers, marketers, and usability experts, to create a well-rounded product.
 
-```mermaid
+```{mermaid}
 flowchart TD
     A1["Plan the human-centred design process"]
     subgraph A2["Human-Centred Design activities in the development process"]
@@ -124,12 +124,14 @@ Here are the 18 guideline items from this framework:
 10.  **Support User Control**: Give users control over the system’s actions and behaviors.
 
 **When Things Go Wrong (Handling Errors)**
+
 11.  **Notify Users About Changes**: Inform users when the system updates or changes its state.
 12.  **Support Efficient Correction**: Allow users to correct errors efficiently (reiterated for emphasis in error situations).
 13.  **Offer Explanations**: Provide explanations to help users understand why the system acted a certain way.
 14.  **Support Forgiveness**: Allow users to undo actions or recover from mistakes.
 
 **Long-Term Use (Building Trust and Reliability)**
+
 15.  **Support Personalization**: Enable the system to be personalized to fit the user’s preferences and needs.
 16.  **Consider Impact of Automation Failures**: Prepare users for the possibility that the system might fail.
 17.  **Match Relevant Social Norms**: Ensure the system’s behavior aligns with social norms relevant to the context.
@@ -213,9 +215,9 @@ When integrating black-box models like LLMs into end-user applications, research
 
 ### Conclusion
 
-Fairness is not a one-time assessment but an ongoing process. Financial institutions should establish continuous monitoring systems to evaluate the performance of LLMs and ensure they remain fair over time. This includes regular audits, user feedback mechanisms, and updating models as new data becomes available.
+Fairness is not a one-time assessment but an ongoing process. Financial institutions should establish continuous monitoring systems to evaluate the performance of LLMs and ensure they remain fair over time. This includes regular audits, user feedback mechanisms, and updating models as new data becomes available. In this process, interpretability of the system capabilities appears as the key dynamic in the human-AI interaction. Adding interpretability elements such as highlighting word importance or saliency maps can *enable users to more easily identify consistencies and ambiguities across system outputs* {cite}`thieme_interpretability_2020`. So, we explored the potentials and limitations of interpretability in more detail: [Interpretability tools for improving fairness and equity](./interpretability.md).
 
-Actively thinking about involving diverse stakeholders in the development and evaluation of AI systems can provide valuable perspectives on fairness. This includes collaborating with regulatory bodies, customer advocacy groups, and internal teams to ensure that the AI systems align with societal values and ethical standards.
+Another important aspect of human-AI interaction in the financial services domain is actively thinking about involving diverse stakeholders in the development and evaluation of AI systems, especially if the system is developed for general public. This includes collaborating with regulatory bodies, customer advocacy groups, and internal teams to ensure that the AI systems align with societal values and ethical standards. We conducted an expert group meeting with different financial services stakeholders and presented the findings in 
 
 Following the standards and guidelines (e.g. ISO 9241-210:2019, Microsoft Human-AI Interaction), practitioners can inform the design process of fair finance application to ensure that the final product is equitable, accessible, and responsive to the needs of all users. Although we only focused on two checklist documents, HCI research produces many useful human-AI interaction guidelines such as [Google's People+AI Guidebook](https://pair.withgoogle.com/guidebook/). 
 

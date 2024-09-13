@@ -66,3 +66,7 @@ The SEC Filings Dataset is a collection of documents filed with the U.S. Securit
 ### FLEU
 
 FLEU contains five tasks. It is not maintained for the last two years. BloombergGPT is used this benchmark to evaluate the model. (They also used 12 different closed-source tasks from Bloomberg data.)
+
+### BizBench
+
+It is a a *quantitative reasoning benchmark for business and finance* LLMs. The benhmakr consists of eight quantitative reasoning tasks including Q&A over data via program synthesis, code-generation tasks from newly collected and augmented QA data, reading comprehension of text and tables, and understanding financial concepts and formulas {cite}`koncelkedziorski2024bizbenchquantitativereasoningbenchmark`. 
