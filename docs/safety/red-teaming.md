@@ -20,6 +20,7 @@ We can list some evaluation activities during the red teaming as following:
 ### 2023 DEFCON
 
 A policy briefing report {cite}`friedler_ai_2023` highlighted both the benefits and challenges associated with conducting red teaming activities. The report underscores the importance of thorough task definition for effective assessment and emphasizes that these activities serve as valuable initial steps in evaluating LLMs. However, it notes that attendees often lack the technical skills necessary to develop robust attack strategies. The report outlines four key elements for successful red teaming activities:
+
 - Clear definition of the targeted flaws.
 - Integration of transparency, disclosures, and external group access to the system.
 - Inclusion of red teaming within a broader assessment framework.
@@ -28,8 +29,11 @@ A policy briefing report {cite}`friedler_ai_2023` highlighted both the benefits 
 
 ## Open-Source Tools
 
-### [AI Verify](https://github.com/aiverify-foundation/aiverify)
+The list below can accelerate your LLM experiment design significantly:
+
+- [Prompto](https://github.com/alan-turing-institute/prompto)
+- [AI Verify](https://github.com/aiverify-foundation/aiverify)
+- [Inspect AI](https://ukgovernmentbeis.github.io/inspect_ai/)
 
 
-### [Inspect AI](https://ukgovernmentbeis.github.io/inspect_ai/)
 

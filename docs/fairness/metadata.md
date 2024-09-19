@@ -1,4 +1,4 @@
-# Using Metadata Effectively in AI Fairness Research
+# Effective Management of Fairness Information
 
 A critical component of AI Assurance is ensuring fairness of the overall system. ML pipeline metadata can provide a rich source of information that can be leveraged to enhance our understanding of model behavior, particularly in the context of fairness. This metadata includes details about data preprocessing steps, feature engineering, model training parameters, and evaluation metrics. By systematically analyzing this metadata, researchers can identify potential sources of bias introduced at various stages of the machine learning pipeline. So, utilising pipeline metadata can lead developing more transparent, accountable, and fair AI systems.
 

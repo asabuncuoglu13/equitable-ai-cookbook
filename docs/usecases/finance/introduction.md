@@ -8,7 +8,7 @@ By combining these bias mitigation strategies, financial institutions can cultiv
 
 In this exploratory review, we will present an overall view of fairness in financial services and their practical implications in the LLM space. The main goal of this article is to help practitioners grasp fundamental concepts of fairness and implement some of the best practices in their application domain.
 
-# LLMs in Financial Services
+## LLMs in Financial Services
 
 LLMs are the subject of significant interest from governments, regulators and many industry sectors, and are heavily featured in both the academic literature and the popular press. This shared interest underpins a thriving market valued at 10.5 billion USD in 2022 and is anticipated to reach 40.8 billion USD by 2029, demonstrating a compound annual growth rate of 21.4% between 2023 and 2029 {cite}`prnewswire_large_2023`.
 
@@ -16,14 +16,13 @@ The finance sector has always been one of the early adopters of cutting-edge tec
 
 A further 2023 survey from UK Finance, a trade association for the UK banking and financial services sector, revealed that more than 70% of participating financial institutions are in the proof of concept (PoC) stage for generative AI solutions, of which LLMs {cite}`boe_financial_2023`. One significant investment made by financial software and media company Bloomberg, BloombergGPT {cite}`wu_bloomberggpt_2023`,  has produced a 50 billion parameter model that can be utilised for an array of financial tasks such as news analysis and question answering. With such development, understanding the implications of large-language models in financial services advances the opportunity to set best practices for a critical economic sector, and provide examples that may be relevant to other industries.
 
-`````{admonition} Read more at …
-:class: tip
+:::{seealso}
 You can find more information about impact of LLMs in financial services, you can read our [March 2024 Report]( https://www.turing.ac.uk/news/publications/impact-large-language-models-finance-towards-trustworthy-adoption).
 
 I also listed some background reading materials [on Github]( https://github.com/alan-turing-institute/fairness-monitoring/blob/main/docs/READINGS.md).
 
 Also check the chapter [A Practical Review of Financial Large Language Models](./finllms.md)
-`````
+:::
 
 ## Example Applications
 
@@ -43,19 +42,17 @@ A robust recipe is necessary to overcome these challenges and enable a proactive
 - [Comparative analysis of demographic parities between topic clusters] How do fairness metrics change in different topic clusters?
 - [Interpret the results] And, we also need to answer what does it mean to reduce bias? Bias is an essential component of achieving pattern recognition. So, the model eventually has some bias based on the data. And when we develop a model, this model should also answer some business needs. Any financial services try to increase their profit. But it should also align with the greater good, considering environmental, social and governance (ESG) aspects. 
 
-`````{admonition} Experiment
-:class: tip
+:::{seealso}
 Analysing BABE dataset (https://huggingface.co/datasets/mediabiasgroup/BABE) with BERT News Sentiment Classification Model (https://huggingface.co/newsmediabias/Bert_Sentiment_Classification) and also a zere-shot classification: https://huggingface.co/sileod/deberta-v3-base-tasksource-nli
-`````
+:::
 
 ### Extended Tabular Analysis
 
 LLMs can also be utilised in more complex tasks such as improving credit scoring applications by bringing multiple knowledge sources together. Although LLMs are not specifically developed for classification based on tabular data, with some tweaks like chain of tables and hierarchical learning mechanisms, they demonstrated some advanced capabilities also for tabular data. 
 
-`````{admonition} Experiment
-:class: tip
+:::{seealso}
 Use popular bias recognition datasets (Adult, German Credit, COMPAS) in a similar context. Compare fairness notions (and find some baseline fairness studies using these datasets.)
-`````
+:::
 
 ### Stock Movement Prediction
 
@@ -63,10 +60,11 @@ With the increasing flux of financial news and other knowledge source, analysing
 
 Shi et al. demonstrated that LLMs have the potential to outperform traditional models in sequential event prediction {cite}`shi_language_2023` ([See their open-source repo for more details](https://github.com/iLampard/lamp/tree/main)). 
 
-`````{admonition} Experiment
-:class: tip
+:::{seealso} 
+Experiment
 
-`````
+:::
+
 # Developing a Fair ML Development Pipeline
 
 In the modern era of financial landscape, machine learning (ML) and other quantitative techniques stand as the driving force behind many applications. These technologies are revolutionizing various application areas, from risk assessment and fraud detection to portfolio management and customer service optimization. 
@@ -115,11 +113,11 @@ In 2019, the EU High-Level Expert Group on AI proposed the ethics guidelines for
 
 Improving fairness in automated decision-making systems has been a longstanding research focus. Recent advancements in deep learning (DL) mechanisms have brought this issue to the forefront of public attention. Current systems employ monitoring solutions to identify privacy and fairness concerns through explainability and bias detection techniques applied to datasets and algorithms. Depending on system requirements, a certain level of assurance is provided before deployment. However, with the rapid progress in DL mechanisms, comprehending, evaluating, and interpreting these systems has become challenging. In this new era of DL, models consist of billions of parameters and can process vast amounts of data, making it nearly impossible to ensure privacy and security assurance.
 
-# Recommendations: Proactive Fairness Monitoring
+## Recommendations: Proactive Fairness Monitoring
 
-In this article, we defined three use cases and explored mitigating bias following three different approaches (Experiment [#1](), [#2](), [#3]()). Below, we summarised some recommendations in non-technical language to summarise our recommendations to achieve proactive fairness in AI development environments.
+In this section, we summarise our recommendations to achieve proactive fairness in AI development environments.
 
-## Define Accountabilities Clearly
+### Define Accountabilities Clearly
 
 In the accountability ethics, transparency and accountability guidance {cite}`cabinet_24`, practical measures are offered along with the offered framework:
 
@@ -131,7 +129,7 @@ In the accountability ethics, transparency and accountability guidance {cite}`ca
 
 You can use our monitoring tool to support these practical steps in various ways:
 
-## Define a Risk Management Flow
+### Define a Risk Management Flow
 
 Risk assessment should be use-case specific. Typically, algorithmic system risks can be summarised as follows {cite}`cabinet_24`:
 
@@ -141,7 +139,7 @@ Risk assessment should be use-case specific. Typically, algorithmic system risks
 -	**Technical flaws:** Development and testing might not be adequate to reveal the issues,
 -	**Usage flaws:** In a complex business logic, interoperability issues might occur.
 
-## Define an Active Algorithm Auditing Flow
+### Define an Active Algorithm Auditing Flow
 
 Auditing an algorithm, regardless of its type, is a dynamic and non-linear process. Koshiyama et al. demonstrated the interrelation between development stages and auditing verticals in five main steps {cite}`koshiyama_towards_2021`:
 
@@ -150,7 +148,7 @@ Auditing an algorithm, regardless of its type, is a dynamic and non-linear proce
 **Explainability**| Data collection and labelling | Dictionary of variables | Model complexity | Auxiliary tools | Interface and documentation
 **Fairness** | Population balance | Fair representations | Fairness constraints | Bias metrics assessments | Real-time monitoring of bias metrics
 
-## Support Active Public Engagement 
+### Support Active Public Engagement 
 
 As we already mentioned in the very beginning of this cookbook, we can use the following six considerations to build an active public engagement {cite}`cdei_24`:
 

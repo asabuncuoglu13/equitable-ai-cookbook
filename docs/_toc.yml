@@ -29,9 +29,10 @@ parts:
     - file: fairness/notions
     - file: fairness/challenges
     - file: fairness/patterns
+    - file: fairness/evaluation
     - file: fairness/mitigation
-    - file: fairness/examples
     - file: fairness/responsibility
+    - file: fairness/metadata
   - caption: "A Proactive Monitoring Pipeline"
     chapters:
     - file: cicd/001-intro
@@ -41,7 +42,7 @@ parts:
     - file: cicd/005-usecase
   - caption: "Use Case: Public Infrastructure"
     chapters:
-    - file: usecases/dpi/pi
+    - file: usecases/dpi/introduction
     - file: usecases/dpi/pi-to-dpi
     - file: usecases/dpi/judicial
   - caption: "Use Case: Finance"
@@ -50,8 +51,10 @@ parts:
     - file: usecases/finance/finllms
     - file: usecases/finance/eda-fin-data
     - file: usecases/finance/interaction
+    - file: usecases/finance/interpretability
   - caption: "Use Case: Biometrics"
     chapters:
+    - file: usecases/biometrics/introduction
     - file: usecases/biometrics/face-skin-tone
   - caption: "References"
     chapters:

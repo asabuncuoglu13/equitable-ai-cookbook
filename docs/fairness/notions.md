@@ -2,7 +2,9 @@
 
 In data-driven decision making, algorithmic systems can encode and amplify bias. We see the reflection of societal biases in training datasets, and in development assumptions {cite}`jacobs21`. Indeed, researchers and practitioners actually encode bias while constructing "measurement models" to quantify abstract concepts as a combination of observed features. This process is referred as **measurement modeling** can introduce potential mismatches between the theoretical understanding and its operationalization {cite}`jacobs21`. Jacobs et al. argues that fairness-related harms are mainly a result of such mismatches.
 
-Fairness in data-driven decision-making has emerged as a critical concern to ensure equitable outcomes for different social groups. These notions can be broadly categorized into group fairness and individual fairness, each addressing different dimensions of fairness. **Group fairness**, also known as "statistical fairness", focuses on treating different social groups equally. **Individual fairness** advocates for similar treatment for similar individuals. 
+In this notebook, we explain common fairness notions and possible metrics to fulfil this notion. A fairness notion refers to the conceptual idea or principle behind what it means for a system to be fair, such as "equal treatment" or "equal outcomes." A fairness metric, on the other hand, is a specific, measurable way to evaluate whether a system adheres to a particular fairness notion, often using statistical methods.
+
+The fairness notions can be broadly categorized into group fairness and individual fairness, each addressing different dimensions of fairness. **Group fairness**, also known as "statistical fairness", focuses on treating different social groups equally. **Individual fairness** advocates for similar treatment for similar individuals.
 
 ## Group Fairness
 
@@ -72,12 +74,17 @@ The technical implementation of fairness notions varies and can target different
 
 Addressing fairness technically has raised concerns about the trade-offs between accuracy and fairness. While efforts have been made to optimize both, there remains a need to ensure fairness from a societal perspective. This entails aligning the metrics used to measure fairness with societal values and operationalizing fairness in a way that reflects real-world equity concerns.
 
+**In conclusion,** understanding and implementing fairness notions in data-driven decision-making processes is essential for promoting equity and mitigating biases. By incorporating both group and individual fairness considerations, alongside addressing implementation challenges, we can strive towards more just and equitable outcomes in algorithmic decision making. The figure below summarises the overall relationship between fairness notions and metrics as an ontology diagram:
 
-**In conclusion,** understanding and implementing fairness notions in data-driven decision-making processes is essential for promoting equity and mitigating biases. By incorporating both group and individual fairness considerations, alongside addressing implementation challenges, we can strive towards more just and equitable outcomes in algorithmic decision making.
+![Fairness Ontology Diagram](../media/fairness-ontology.png)
+The figure is obtained from {cite}`franklin_ontology_2022` and is available on [Github](https://github.com/frankj-rpi/fairness-metrics-ontology).
+
+
+
 
 # Useful Resources
 
 - Tensorflow's Fairness Guidance (https://www.tensorflow.org/responsible_ai/fairness_indicators/guide/guidance) has some practical information on using different notions for different applications.
-- Fair ML Book to deep dive into the concepts discussed in this article https://fairmlbook.org/classification.html 
+- Fair ML Book to deep dive into the concepts discussed in this article https://fairmlbook.org/classification.html and https://fairlearn.org/v0.7.0/user_guide/fairness_in_machine_learning.html
 - Also Varshney's book: http://www.trustworthymachinelearning.com/
 - Visit this course materials: https://github.com/alan-turing-institute/bias-in-AI-course
