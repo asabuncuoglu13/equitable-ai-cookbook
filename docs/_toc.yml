@@ -27,7 +27,7 @@ parts:
   - caption: "Fairness"
     chapters:
     - file: fairness/notions
-    - file: fairness/challenges
+    - file: fairness/bias
     - file: fairness/patterns
     - file: fairness/evaluation
     - file: fairness/mitigation
