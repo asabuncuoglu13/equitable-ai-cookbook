@@ -1,8 +1,6 @@
-# From PI to Trustworthy DPI: Key Components
+# Trustworthiness: Key Components
 
-Considering the three examples presented as milestones in the public infrastructure, the progress in these last-longing domains can guide us to develop effective solutions in the area of DPI. Linking the topic with the equitable AI research and development, our main interest in the DPI development is building "trustworthy" solutions. So, understanding trustworthiness and defining "metrics" to measure the success is essential to develop "successful" applications.
-
-The National Institute of Standards and Technology (NIST) has defined trustworthy AI systems through seven key characteristics: validity and reliability, safety, security and resilience, accountability and transparency, explainability and interpretability, privacy enhancement, and fair management of harmful bias. Each of these characteristics involves numerous subcomponents, contributing to the complexity of achieving a shared understanding and realisation of truly trustworthy AI. In this cookbook, we will also use the taxonomy and flavor it with UK's and EU's AI Safety guidelines and frameworks.
+The National Institute of Standards and Technology (NIST) has defined trustworthy AI systems through seven key characteristics: validity and reliability, safety, security and resilience, accountability and transparency, explainability and interpretability, privacy enhancement, and fair management of harmful bias. Each of these characteristics involves numerous subcomponents, contributing to the complexity of achieving a shared understanding and realisation of truly trustworthy AI.
 
 
 ## Valid and Reliable

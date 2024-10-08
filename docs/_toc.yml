@@ -7,29 +7,21 @@ parts:
   - caption: "AI Safety"
     chapters:
     - file: safety/public-attitudes
+    - file: safety/trustworthiness
     - file: safety/evaluation
     - file: safety/monitoring-tools
     - file: safety/participation-tools
     - file: safety/red-teaming
-    - file: safety/guardrails
     - file: safety/overview-oss
   - caption: "Data Practices"
     chapters:
     - file: data-practices/introduction
-      sections:
-      - file: data-practices/scraping-mosip
     - file: data-practices/data-governance.md
-    - file: data-practices/synthetic-data/overview
-      sections:
-      - file: data-practices/synthetic-data/instruction-tuning
-      - file: data-practices/synthetic-data/mosip-bonito
-      - file: data-practices/synthetic-data/convert-to-prompt
   - caption: "Fairness"
     chapters:
     - file: fairness/notions
     - file: fairness/bias
     - file: fairness/patterns
-    - file: fairness/evaluation
     - file: fairness/mitigation
     - file: fairness/responsibility
     - file: fairness/metadata
@@ -40,16 +32,12 @@ parts:
     - file: cicd/003-detect-bias
     - file: cicd/004-observer
     - file: cicd/005-usecase
-  - caption: "Use Case: Public Infrastructure"
-    chapters:
-    - file: usecases/dpi/introduction
-    - file: usecases/dpi/pi-to-dpi
-    - file: usecases/dpi/judicial
   - caption: "Use Case: Finance"
     chapters:
     - file: usecases/finance/introduction
     - file: usecases/finance/finllms
     - file: usecases/finance/eda-fin-data
+    - file: usecases/finance/evaluation
     - file: usecases/finance/interaction
     - file: usecases/finance/interpretability
   - caption: "Use Case: Biometrics"
