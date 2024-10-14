@@ -1,17 +1,21 @@
 # Observing Changes in the Codebase
 
+**#TODO:** 
+
+- [ ] Add an example for a continuos monitoring of a Huggingface artefact
+- [ ] Create an external demo repo and include all these steps
+
 Designing and configuring observer agents to monitor each possible pipeline action requires a comprehensive approach to ensure that every aspect of your CI/CD pipeline is observed for changes. Observer agents can help in detecting code changes, data modifications, feature engineering updates, model training variations, and deployment adjustments. Here’s a detailed design and configuration plan:
 
-## Observer Agents Design
+## Observer Agents of Different Stages
 
-1. **Codebase Monitoring Agent**
-2. **Data Pipeline Monitoring Agent**
-3. **Feature Engineering Monitoring Agent**
-4. **Model Training and Validation Monitoring Agent**
-5. **Deployment Monitoring Agent**
-6. **Post-Deployment Monitoring Agent**
+### 0. Tools
 
-## Configuration of Observer Agents
+1. **GitHub/GitLab Configuration**: Set up workflows to trigger on code changes.
+2. **Airflow**: Define DAGs with sensors for data and feature changes.
+3. **MLflow**: Log model training and validation metrics.
+4. **Kubernetes**: Monitor deployment and infrastructure.
+5. **Prometheus/Grafana**: Monitor post-deployment metrics and set up alerts.
 
 ### 1. Codebase Monitoring Agent
 - **Purpose**: To monitor changes in the codebase, such as updates to scripts, configuration files, and dependency changes.
@@ -161,14 +165,6 @@ dashboard = Dashboard(tabs=[DataDriftTab(), CatTargetDriftTab()])
 dashboard.calculate(reference_data, production_data)
 dashboard.save("dashboard.html")
 ```
-
-## Integrating Observer Agents in the CI/CD Pipeline
-
-1. **GitHub/GitLab Configuration**: Set up workflows to trigger on code changes.
-2. **Airflow**: Define DAGs with sensors for data and feature changes.
-3. **MLflow**: Log model training and validation metrics.
-4. **Kubernetes**: Monitor deployment and infrastructure.
-5. **Prometheus/Grafana**: Monitor post-deployment metrics and set up alerts.
 
 ## Summary
 

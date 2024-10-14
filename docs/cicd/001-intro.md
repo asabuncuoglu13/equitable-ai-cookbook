@@ -35,43 +35,36 @@ You can use tools like [wandb](https://wandb.ai/site) and [mlflow](https://mlflo
 If you are using these libraries, you are already familiar with FAID's logging behaviour.
 
 ```python
-
 import random
 import wandb
 import mlflow
 from faid import faidlog
-
-project = "test-project"
-config = {
-    "learning_rate": 0.02,
-    "architecture": "BERT",
-    "dataset": "data/processed/financial-phrasebank.csv",
-    "epochs": 10,
-}
-
 ```
+
+### Initialise
 
 You first initialise the project with the name and config details. These functions basically creates the metadata for the experiment. 
 
 ```python
+# Init weight&biases
 run = wandb.init(project= project, config= config)
 ```
 
 ```python
+# Init mlflow
 mlflow.set_experiment(project)
 ```
 
 ```python
-faidlog.init(project_name= project, config= config)
+# init the log files
+faidlog.init()
+# create (or get) fairness experiment context
+ctx = faidlog.ExperimentContext(name=experiment_name)
 ```
 
-You need to create an MLFlow session if you want to log the parameters automatically. Alternatively, you can log the parameters manually.
+# Run Experiments and Record Logs
 
-```python
-with mlflow.start_run():
-```
-
-Then, you can log whatever metric you want to store and monitor using these libraries.
+After initialising and create a managable workflow, you can log whatever metric, outcome, or any other variable you want to store and monitor using these libraries.
 
 ```python
 # Log the hyperparameters
@@ -95,8 +88,10 @@ mlflow.log_params(metrics)
 ```
 
 ```python
-faidlog.log(metrics)
+ctx.add_model_entry(key="metrics", entry=metrics)
 ```
+
+faid fairness recording format has three main entries: Context, Model and Data. It is to remind developers that, after each experiment, they will transfer this experiment knowledge to a standard report format: Project Overview, Model Card, Data Card.
 
 ## Why Do You Need a Separate Logging Library for Fairness?
 
@@ -124,8 +119,8 @@ Creating an open-source ML repository demands additional requirements to respons
 
 Delivering all these artifacts continuously in a transparent way requires a good carefully designed comprehensive orchestration flow.
 
-
 ## Useful Readings
 
 1. [How To Organize Continuous Delivery of ML/AI Systems: a 10-Stage Maturity Model](https://outerbounds.com/blog/continuous-delivery-of-ml-ai/)
 2. [Examples from Neptune AI](https://neptune.ai/blog/build-mlops-pipelines-with-github-actions-guide)
+3. [DVC - ML Pipeline Automation Tutorial](https://dvc.ai/blog/automate-your-ml-pipeline-combining-airflow-dvc-and-cml-for-a-seamless-batch-scoring-experience)

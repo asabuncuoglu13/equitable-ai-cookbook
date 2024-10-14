@@ -1,6 +1,6 @@
 # Equitable AI Cookbook
 
-A series of essays and experiments to accelerate the equitable AI development
+A series of essays and experiments to accelerate the equitable AI development. This repository contains code, data, and materials that are part of an ongoing research project. Please note that the work is in a research preview stage and may produce incomplete or inconsistent results. It also contains some content in "under-development" or "in-review" stages. Use at your own discretion, and feel free to contribute or report any issues.
 
 ## Usage
 
@@ -33,14 +33,12 @@ This project is created using the excellent open source [Jupyter Book project](h
 
 ## Planned Next Steps
 
-- [ ] A scraping example from a threat intelligence service (Maybe include [this](https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_retroscan_with_MISP_warninglist-with_output.ipynb))
-- [ ] An instruction tuning example
-- [ ] A RAG example
-- [ ] A fairness analysis of the instructioned tuned custom model
-- [ ] Red teaming chapter
+- [ ] A complete peer-review
+- [ ] A detailed data quality review process in "equitable AI" context
+- [ ] Red teaming chapter (which will be added when we conduct the event)
 
 ## Wish List
 
-- [ ] Governance examples and a comparative analysis across countries
-- [ ] Assurance techniques for security, privacy and fairness
-- [ ] 
+- [ ] Offering learning paths with a level of personalisation (regulators, researchers, developers, etc.):
+  - [ ] A complete technical AI governance pathway with code, examples and a comparative analysis across countries
+  - [ ] A complete equitable/trustworthy AI assurance pathway

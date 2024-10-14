@@ -4,9 +4,28 @@
 See our paper on this subject: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11280155.svg)](https://doi.org/10.5281/zenodo.11280155)
 ```
 
-Achieving fairness in product development is a shared responsibility among all stakeholders, including developers, business analysts, product owners, designers, and user researchers. Expecting developers alone to analyse and apply all fairness notions throughout the entire development pipeline is unrealistic. They are also human and may have other work-related tasks, or personal distractions, or just be affected by current events.
+Achieving fairness in product development is a shared responsibility among all stakeholders, including developers, business analysts, product owners, designers, and user researchers. Each team member brings a unique skill set with different capabilities in a product development lifecycle. Although it is valuable, this skill and capability difference makes it challenging to establish a common language across the development process. To address this, we created fairness team templates, or "*team*plates," to facilitate collaboration and integrate diverse expertise into a cohesive codebase.
 
-In a product development process, each team member brings a unique skill set with different capabilities. This skill and capability difference makes it challenging to establish a common language across the development process. To address this, we created fairness team templates, or "*team*plates," to facilitate collaboration and integrate diverse expertise into a cohesive codebase.
+## Design Decisions
+
+We structured this management flow from a HCI point of view and conducted a "knowledge analysis" considering the following knowledge facets {cite}`young1990knowledge`:
+
+1. **Affordances**: This refers to the ways in which the system allows users to interact with it. In the context of fairness monitoring, affordances would involve clear, user-friendly tools that enable developers, data scientists, and stakeholders to easily apply fairness checks, monitor biases, and understand how they can affect the system at different stages of the development pipeline.
+
+2. **Conceptual Model**: The conceptual model involves the user’s mental representation of how the system works. In this case, a fairness management flow must be designed in such a way that users (e.g., developers, business analysts) can easily understand the structure of fairness checks in the CI/CD pipeline, how responsibilities are distributed across teams, and the flow of data and metadata through the system (Figure 2 in the paper illustrates this flow).
+
+3. **Specialized Meanings**: This includes technical or domain-specific meanings that users need to understand within the system. In fairness monitoring, this involves understanding fairness concepts like "demographic parity," "equalized odds," or "bias evaluation metrics," as well as the tools used for bias detection, such as Fairlearn and AI Fairness 360.
+
+4. **Everyday Semantics**: This facet refers to meanings that come from everyday language, making sure that technical terms are simplified for broader audiences. In the fairness management flow, it is important that non-technical stakeholders (such as business owners or legal experts) can understand fairness outcomes without needing deep technical knowledge. Clear language and intuitive visualizations, such as those discussed for bias reports and fairness dashboards, are key here.
+
+5. **Specific Item Knowledge**: This relates to the user's knowledge about specific components within the system. For example, developers must have a clear understanding of how individual fairness checks (e.g., the fairness metrics embedded in the CI/CD pipeline) work and how changes in the code could affect model fairness. They should also know which specific stages in the pipeline are prone to bias, such as data collection or model training.
+
+6. **Locational Knowledge**: Locational knowledge refers to understanding where items are located within a system. In this case, users need to know where fairness tools, scripts, or configurations are located within the CI/CD pipeline, and where bias reports are stored and accessed by different team members, such as developers, data scientists, or business leaders (as illustrated by the YAML configuration file in Figure 3 of the paper).
+
+7. **Decomposition**: This entails breaking down complex tasks into manageable parts. The fairness management flow achieves this by splitting the monitoring process into stages such as data preprocessing, bias evaluation, and model deployment. Each stage is assigned to specific stakeholders with specialized tasks, ensuring a modular approach to addressing fairness.
+
+8. **Translation**: Translation involves converting between different formats or levels of abstraction. In the context of fairness, this may refer to converting complex fairness metrics or technical results into reports or dashboards that can be easily understood by non-technical stakeholders. It can also mean translating legal or ethical fairness requirements into actionable development tasks within the pipeline.
+
 
 ## Responsible, Fair, Equitable...
 
@@ -21,7 +40,7 @@ Incorporating interpretability and fairness into the ML development process requ
 These limitations can be mitigated by fostering collaboration among different stakeholders. Given that our focus is on developing a sentiment signal analysis system, we’ve outlined how various stakeholders can use interpretability and fairness information throughout the development process:
 
 1. **Data Scientists and ML Practitioners**: Analyze, test, and improve model fairness by identifying and addressing biases in data and model predictions.
-2. **Financial Analysts and Domain Experts**: Ensure that model outputs align with real-world financial contexts and do not unintentionally favor certain market conditions or entities.
+2. **Business Analysts and Domain Experts**: Ensure that model outputs align with real-world financial contexts and do not unintentionally favor certain market conditions or entities.
 3. **Ethicists and Fairness Experts**: Define what fairness means in the context of financial sentiment analysis and ensure that the system adheres to broader ethical principles.
 4. **Regulatory and Compliance Teams**: Ensure that the financial sentiment system complies with relevant regulations and guidelines, especially those related to fairness and non-discrimination in financial markets.
 

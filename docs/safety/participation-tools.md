@@ -4,7 +4,7 @@ Increasing participation is one of the fundamental task to achieve truly equitab
 
 In this document, we do not give a step-by-step guidelines for participation, but share two real-life initiatives that accelerated "democratic" AI rapidly:
 
-### Case Study: Cohere Aya
+## Case Study: Cohere Aya
 
 Project Page: <https://aya.for.ai/>
 <https://arxiv.org/pdf/2402.06619.pdf>
@@ -12,7 +12,7 @@ Project Page: <https://aya.for.ai/>
 3,000 independent researchers across 119 countries collaborated to build a state-of-art model and dataset that performs multilingual capabilities for 101 languages.
 
 
-### Case Study: pol.is
+## Case Study: pol.is
 
 Project Page: <https://pol.is/home>
 
