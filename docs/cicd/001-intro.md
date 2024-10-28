@@ -4,13 +4,20 @@
 
 The above diagram illustrates a simplified ML development pipeline. A typical pipeline consists of multiple branches with iterative processes, involving multiple contributors. Different forms of bias types can occur in each step. 
 
-Defining fairness-aware CI/CD type flows that can automate building multiple artefacts for different teams can support building a common understanding in bias mitigation for organisations. In this notebook, we demonstrate potential approaches to monitor ML pipelines throughout the development lifecycle.
+Defining fairness-aware CI/CD type flows that can automate building multiple artefacts for different teams can support building a common understanding in bias mitigation for organisations. In this article, we demonstrate potential approaches to monitor ML pipelines throughout the development lifecycle.
 
-## Maintaining a Healthy Codebase
+## Prerequisites
 
-The key requirement to monitor the potential fairness (or security, privacy, etc.) issues is maintaining a clean and maintainable code. There are many great books about maintaining a healthy codebase, so I will not go into details here. You can also quickly check [NCSC's guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/produce-clean-maintainable-code) to self-assess your knowledge before adding the recommended books into your basket!
+Structuring an ML project requires similar skills to any data-centric research. We recommend reviewing the following tips to support your design and management process. The key requirement to monitor the potential fairness (or security, privacy, etc.) issues is maintaining a clean and maintainable code. There are many great books about maintaining a healthy codebase, so I will not go into details here. 
 
-```{admonition} Recommended books:
+1. You can check [NCSC's guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/produce-clean-maintainable-code) on secure development and deployment of software systems.
+2. The Turing Way project provides a set of useful reading materials to organise your codebase for reproducibility: <https://book.the-turing-way.org/reproducible-research/reproducible-research>
+
+These resources are free. If you would like to read some books, see the list below.
+
+```{seealso} 
+
+**Recommended books:**
 
 - Structure and Interpretation of Computer Programs (SICP) by Ableton, Sussman, Sussman
 - The Pragmatic Programmer by David Thomas, Andrew Hunt
@@ -19,7 +26,9 @@ The key requirement to monitor the potential fairness (or security, privacy, etc
 
 ## CI/CD: Continuous Integration and Delivery
 
-Once you have a clean codebase, you can also automate the parts where you test your code against adversarial scenarios and build releases. It is commonly known as continuous integration and continuous delivery (CI/CD). Based on your needs, integration and delivery parts can be automated via different libraries, and you can maintain the overall pipeline through tools provided by Github.
+Before starting automating the parts of your codebase (e.g. testing your code against adversarial scenarios, building releases), I suggest checking the prerequisities of this article and structure your clean and reproducible codebase.
+
+CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment). It is a software development practice where code changes are automatically tested and integrated (CI), and then automatically delivered or deployed to production (CD), ensuring faster and more reliable updates. Based on your needs, integration and delivery parts can be automated via different libraries, and you can maintain the overall pipeline through tools provided by Github.
 
 ```{admonition} Check these examples:
 
@@ -30,9 +39,13 @@ Once you have a clean codebase, you can also automate the parts where you test y
 
 ## Using Tools for Experiment Tracking
 
-You can use tools like [wandb](https://wandb.ai/site) and [mlflow](https://mlflow.org/) to keep records of your ML experiments. Both platforms are open-source and allow you to register your models and experiments for easy maintainability.
+You can use tools like [wandb](https://wandb.ai/site), [Neptune](https://neptune.ai/), and [mlflow](https://mlflow.org/) to track and maintain records of your ML experiments. These open-source platforms allow you to register models and experiments for easy maintainability.
 
-If you are using these libraries, you are already familiar with FAID's logging behaviour.
+While these libraries are useful for tracking progress and sharing insights with your team, they aren't optimized for fairness-focused processes. In such cases, it's important to foster interdisciplinary conversations and track fairness metrics, discrimination cases, and related outputs.
+
+We designed FAID to integrate easily with these tools, making it simple to log fairness-related data. Developers can also add FAID scripts directly to their codebase for customized tracking formats (see [FAID's Guide on this issue](https://github.com/asabuncuoglu13/faid/tree/main/docs/direct-integration.md)). 
+
+If you're already using these libraries, FAID's logging behavior will feel familiar.
 
 ```python
 import random
@@ -107,6 +120,8 @@ A dedicated logging library for fairness can streamline this process. By proacti
 ## Using FAID with [CMF](https://hewlettpackard.github.io/cmf/) and [DVC](https://dvc.org/)
 
 The design principles of our metadata management shares the similar design decisions with CMF. While developing our tool, we also checked the compatability of using the tool together with CMF and DVC to allow version control throughout the fairness research lifecycle.
+
+#TODO: Add VCS workflows
 
 
 ## Opening Data and Models

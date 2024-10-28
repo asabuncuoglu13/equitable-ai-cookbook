@@ -35,6 +35,7 @@ parts:
   - caption: "Use Case: Finance"
     chapters:
     - file: usecases/finance/introduction
+    - file: usecases/finance/readinglist
     - file: usecases/finance/finllms
     - file: usecases/finance/eda-fin-data
     - file: usecases/finance/evaluation
