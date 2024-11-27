@@ -2,6 +2,20 @@
 
 A series of essays and experiments to accelerate the equitable AI development. This repository contains code, data, and materials that are part of an ongoing research project. Please note that the work is in a research preview stage and may produce incomplete or inconsistent results. It also contains some content in "under-development" or "in-review" stages. Use at your own discretion, and feel free to contribute or report any issues.
 
+**Cite as:**
+
+A. Sabuncuoglu, ‘Equitable AI Cookbook’, 2024. doi: 10.5281/zenodo.14231596.
+
+```
+@misc{sabuncuoglu_equitable_2024,
+	title = {Equitable {AI} {Cookbook}},
+	url = {https://github.com/asabuncuoglu13/equitable-ai-cookbook/},
+	doi = {10.5281/zenodo.14231596},
+	author = {Sabuncuoglu, Alpay},
+	year = {2024},
+}
+```
+
 ## Usage
 
 ### Building the book

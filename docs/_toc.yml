@@ -7,10 +7,13 @@ parts:
   - caption: "AI Safety"
     chapters:
     - file: safety/public-attitudes
+    - file: safety/responsible-innovation
     - file: safety/trustworthiness
+    - file: safety/recipes
     - file: safety/evaluation
     - file: safety/monitoring-tools
     - file: safety/participation-tools
+    - file: safety/equitable-benchmark
     - file: safety/red-teaming
     - file: safety/overview-oss
   - caption: "Data Practices"
@@ -26,6 +29,7 @@ parts:
     - file: fairness/management
     - file: fairness/metadata
     - file: fairness/recording_standard.md
+    - file: fairness/assurance
   - caption: "A Proactive Monitoring Pipeline"
     chapters:
     - file: cicd/001-intro

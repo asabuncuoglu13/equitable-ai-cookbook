@@ -18,7 +18,6 @@ ISO/IEC TS 5723:2022 defines AI security and resilience as their ability of with
 -	Map of adversarial attacks
 -	Interdisciplinary and holistic security approach
 
-
 Robust security protocols and privacy measures protect sensitive data and ensure confidentiality, integrity, and availability. Connectivity is essential for implementing and maintaining these measures, facilitating secure data transmission and storage across digital networks.
 
 ## Accountable and Transparent
@@ -59,5 +58,3 @@ ISO/IEC TS 5723:2022 defines AI safety as its capability to prevent potential ha
 - Human-value alignment is key to achieving AI safety.
 
 Achieving safety in the AI and DPI systems only possible if we have "good-enough" metric results in other components. 
-
-
