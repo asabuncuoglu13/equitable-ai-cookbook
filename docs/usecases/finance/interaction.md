@@ -103,7 +103,7 @@ In this article, we focus on inspection-based evaluation, exploring how to desig
 
 ### Microsoft Human-AI Interaction Guideline
 
-["Guidelines for Human-AI Interaction"](https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/) outlines a set of 18 design guidelines for developing AI-infused systems. These guidelines aim to help designers and developers create AI systems that users can understand, trust, and interact with effectively. The framework covers various stages of interaction, including initial interactions (e.g., making clear what the system can do), ongoing interactions (e.g., showing contextually relevant information), and dealing with errors or misunderstandings (e.g., supporting efficient correction). The document also includes a systematic validation of these guidelines through testing with design practitioners and AI products.
+["Guidelines for Human-AI Interaction"](https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/) outlines a set of 18 design guidelines for developing AI-enabled systems. These guidelines aim to help designers and developers create AI systems that users can understand, trust, and interact with effectively. The framework covers various stages of interaction, including initial interactions (e.g., making clear what the system can do), ongoing interactions (e.g., showing contextually relevant information), and dealing with errors or misunderstandings (e.g., supporting efficient correction). The document also includes a systematic validation of these guidelines through testing with design practitioners and AI products.
 
 Here are the 18 guideline items from this framework:
 

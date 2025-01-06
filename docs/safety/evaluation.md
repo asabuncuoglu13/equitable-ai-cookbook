@@ -1,23 +1,6 @@
 # A Structured Evaluation Approach
 
-A safety evaluation generally requires a step-by-step analysis that considers each step of the development process individually and holistically. For example, identifying any biases or imbalances that could lead to unfair outcomes in training data is an essential step at the very beginning of the development process. However, choosing the right metrics is critical, as it might amplify other tpes of bias in the output generation stage.
-
-So, choosing appropriate metrics to evaluate the model's fairness performance requires a holistic understanding. A well-known recent effort is Stanford's HELM (Holistic Evaluation of Language Models) [^helm]. The project, with a specific focus on transparency, measures seven metrics including *accuracy*, *calibration*, *robustness*, *fairness*, *bias*, *toxicity*,
-and *efficiency*.
-
-[^helm]: <https://crfm.stanford.edu/2022/11/17/helm.html>
-
-## Identifying Risks throughout the Evaluation Processes
-
-Based on NIST's Artificial Intelligence Risk Management Framework (RMF)[^nist]: _"Risk refers to the composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event. The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of (1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and (2) the likelihood of occurrence (Adapted from: OMB Circular A-130:2016)."_
-
-[^nist]: <https://www.nist.gov/itl/ai-risk-management-framework>
-
-Practitioners should use these risk management frameworks to identify, classify, monitor and manage risks in their pipeline. Then, they can define an evaluation and mitigation pipeline to mitigate potential risks.
-
-## A Structured Evaluation Approach
-
-Creating a structured hierarchical evaluation (and mitigation) framework can help practitioners to accelerate the adoption of safe AI practices and consequently, define better risk management models. Here, we presented a sample structure, that we use in our current development processes: 
+A safety evaluation generally requires a step-by-step analysis that considers each step of the development process individually and holistically. Creating a structured hierarchical evaluation (and mitigation) framework can help practitioners to accelerate the adoption of safe AI practices and consequently, define better risk management models. Here, we presented a sample structure, that we use in our current development processes: 
 
 ![Hierarchical representation of the proposed framework](../media/hierarchical-framework.png)
 
@@ -37,6 +20,7 @@ This structured framework brings existing concepts together to help researchers 
     - **Mitigation:** Define tangible steps to increase security, privacy and fairness overall.
 - **Implications:** The implications can be specific steps to be taken or generalized perspectives to consider in future iterations of the development process. Whether specific or generalized, they should lead to developing some tangible steps. We categorized implications under four headlines: “Security and privacy,” “environment and sustainability,” “usability and inclusivity,” and “infrastructure and maintenance.” 
 
+## Example Illustration of LLM Evaluation and Mitigation Methods
 
 The figure below illustrates curating possible evaluation and mitigation approaches for LLMs:
 
@@ -70,4 +54,5 @@ In this sense, we promote our approach as a proactive framework to detect issues
 
 ## Useful Resources
 
+- A well-known recent effort is Stanford's HELM (Holistic Evaluation of Language Models): <https://crfm.stanford.edu/2022/11/17/helm.html>. The project, with a specific focus on transparency, measures seven metrics including *accuracy*, *calibration*, *robustness*, *fairness*, *bias*, *toxicity*, and *efficiency*.
 - Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims. <https://arxiv.org/pdf/2004.07213#page=15.07>

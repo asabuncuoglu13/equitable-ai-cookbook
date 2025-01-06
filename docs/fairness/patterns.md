@@ -1,4 +1,8 @@
-# Design Patterns for Fairness/Equitable AI
+# Design Patterns for Monitoring Fairness/Safety
+
+```{note}
+We shared more generalisable, system-level patterns in [Safety Recipes Chapter](../safety/recipes.md). This chapter focuses on structuring the development codebase for monitoring fairness and broader safety characteristics.
+```
 
 "Design patterns" are reusable solutions to common problems that arise during software design and development.These patterns support designers and developers to mitigate many software development concerns "by design." Using patterns in development naturally supports developers in building their solutions with the previously established best practices. For example, design patterns in object-oriented programming define creational, behavioural, and structural relations between objects and their main classes in a codebase. Writing code following the patterns prevents common security and privacy issues. Although it is a common practice in traditional application development, we have not seen a corresponding set of rules within the fairness domain. 
 
@@ -113,10 +117,31 @@ observer = FairnessObserver()
 subject.attach(observer)
 ```
 
-
 2. **Strategy Pattern:** The Strategy pattern corresponds to the ability to adapt to different situations by selecting and executing appropriate strategies. In fairness design, this pattern allows developers to adapt to diverse fairness requirements or contexts by choosing and implementing suitable fairness algorithms or approaches as interchangeable strategies.
 
 3. **Chain of Responsibility Pattern** The Chain of Responsibility delegates the responsibility for handling tasks or decisions passed along a chain of entities. In fairness design, this pattern delegates fairness-related decisions or interventions to different components in the system, promoting modular and distributed fairness management.
+
+
+### Architectural Patterns
+
+MVC (Model-View-Controller) remains a viable architecture for many systems. And, it is particularly useful for building a modular and reusable components. However, AI-enabled systems might demand some enhancements in MVC, due to their dynamic and data-intensive nature. AI systems often rely heavily on data pipelines, which MVC does not explicitly address. These system introduces probabilistic outputs that may affect all layers.
+Further, continuous learning requires integration of data flow and feedback mechanisms. So, we suggest the following updates to MVC for AI-Enabled Systems:
+
+1. **Model Layer Evolution**:
+   - Extend the model to include a **data pipeline** for preprocessing, feature extraction, and model updates.
+   - Incorporate modules for managing trained models, inference, and retraining workflows.
+   - Add feedback mechanisms to loop user actions and outcomes back into the data pipeline for model improvement.
+
+2. **Controller as Orchestrator**:
+   - Expand the controller's role to manage **data flows** and **AI model interactions**.
+   - Use middleware or microservices to integrate AI model calls, reducing tight coupling.
+
+3. **Enhanced View Layer**:
+   - Adapt the view to handle **dynamic outputs** like uncertainty or confidence scores.
+   - Support interactive and adaptive user interfaces for real-time adjustments.
+
+
+Augment MVC with a pipeline-first mindset, where data preprocessing, model serving, and user interactions seamlessly interconnect.
 
 
 ## Conclusion

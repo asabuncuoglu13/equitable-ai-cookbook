@@ -2,7 +2,13 @@
 
 Equitable AI involves creating and using artificial intelligence systems in a fair and just manner, ensuring they do not reinforce existing biases or discriminate against certain groups. It focuses on fairness, transparency, accountability, inclusivity, and ethical considerations to prevent unfair outcomes and promote equal opportunities for all individuals and communities.
 
-In this cookbook, I use "equitable AI" as a broad term to cover responsible, trustworthy and inclusive AI development. In this sense, it is a combination of various already-established research areas. This cookbook is an effort to bring *best practices* from the literature and share some hands-on practical experiments to take some confident steps for achieving trustworthiness in the era of *large foundational models*. "Best practices" can widely refer to a set of techniques, methodologies, processes, or guidelines that are accepted as superior or most effective in a particular field or context. When the desired outcome is achieving equal access/outcomes/participation/benefits and trustworthiness, defining best practices becomes challenging, as these are complex sociotechnical terms. For example, NIST defines "trustworthiness" with seven sub-components (e.g. robustness, security, privacy fairness, etc.), and each subcomponent requires a careful evaluation based on specific use cases. 
+```{note}
+This cookbook is a work-in-progress. You can contribute to the development by opening new issues and pull requests on Github.
+```
+
+In this cookbook, *equitable AI* refers to a broad term to cover responsible, trustworthy and inclusive AI development. These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components (e.g. robustness, security, privacy fairness, etc.), and each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
+
+This cookbook is an effort to bring *best practices* from the literature and share some hands-on practical experiments to take some confident steps for achieving trustworthiness in the era of *large foundational models*. "Best practices" can widely refer to a set of techniques, methodologies, processes, or guidelines that are accepted as superior or most effective in a particular field or context. When the desired outcome is achieving equal access/outcomes/participation/benefits and *trustworthiness*, defining best practices becomes challenging, as these are complex sociotechnical terms.
 
 This repository contains an extensive list of techniques and experiments as an initial effort to achieve this goal in the "digital economy" domain. In the digital economy domain, we selected three use cases:
 
@@ -33,6 +39,7 @@ Throughout the book, we also explore and demonstrate using some of the AI safety
 - [fairlearn](https://github.com/fairlearn/fairlearn): A toolkit to assess and improve the fairness of machine learning models, supported by Microsoft.
 - [aqueitas](https://github.com/dssg/aequitas): An open-source bias and fairness audit toolkit for machine learning, developed by Center for Data Science and Public Policy.
 - [inspect_ai](https://github.com/UKGovernmentBEIS/inspect_ai): AI Safety Institute's library for inspecting and understanding frontier AI models.
+- [opik](https://github.com/comet-ml/opik): Create benchmarking experiments for model evaluation.
 - [LIT](https://github.com/PAIR-code/lit): Learning Interpretability Tool (LIT) provides a set of interactive interpretability visualisations in one interface.
 - [llm_comprator](https://github.com/PAIR-code/llm-comparator): Google PAIR's tool for comparing large language models.
 
@@ -40,7 +47,7 @@ Jupyter notebooks of this cookbook demonstrate existing bias evaluation and miti
 
 ## Related Materials
 
-This cookbook assumes, you already have some understanding on AI and maybe developed an AI-infused product, but limited experience in assessing, managing and monitoring safety, equity and fairness of these products. Below, we listed some other wonderful open-source books that can help you adopt best-practices of ML development in a broader context:
+This cookbook assumes, you already have some understanding on AI and maybe developed an AI-enabled product, but limited experience in assessing, managing and monitoring safety, equity and fairness of these products. Below, we listed some other wonderful open-source books that can help you adopt best-practices of ML development in a broader context:
 
 - [The Turing Way:](https://book.the-turing-way.org/index.html) A guide for reproducible project design, development and management.
 - [Techwork's Best Practice Guide:](https://techworkshub.github.io/best-practice-guide/index.html) Five essential questions: (1) Should I use AI/ML? (2) How do I define my AI/ML project (3) How do I collect data? (4) How do I train my AI/ML application? (5) How do I deploy my AI/ML application?
@@ -51,3 +58,5 @@ Although implementing "best practices" in equitable AI domain requires a cross d
 
 ```{tableofcontents}
 ```
+
+[^airmf]: https://www.nist.gov/itl/ai-risk-management-framework

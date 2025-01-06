@@ -4,6 +4,11 @@ Efficient benchmarking is critical to reduce the cost and power consumption. Con
 
 - A comprehensive tutorial on LLM benchmarking: https://github.com/borgr/tutEval (LREC-COLING 2024 Tutorial)
 
+**Some good benchmarks start playing with:**
+- https://github.com/felipemaiapolo/tinyBenchmarks
+- https://mixeval.github.io/
+- 
+
 ## Pathways
 
 1. **Running Benchmarks on Pre-trained Propriety LLMs with APIs**  
@@ -22,10 +27,11 @@ Efficient benchmarking is critical to reduce the cost and power consumption. Con
 
 3. **Fine-tuning Open-source Models**
    You can find most of the open source models available on Huggingface. You have several options to fine-tune your model:
-   - Keep in mind that, although it is cheaper than training from scratch, it is significantly more expensive compared to inferencing.
+   - Keep in mind that, although it is cheaper than training from scratch, it is significantly more expensive compared to inferencing. A typical fine-tuning job requires around 8x80GB GPUs.
    - You can use Azure ML Studio or any other cloud GPU providers. Based on the model architecture you might need multiple GPUs. Make sure that the GPU provider supports mutliple node computing.
    - Assuming it is an R&D project, you might have access to a national tier HPC system. For example, UKRI supports both universities and businesses to conduct their research on specific HPC systems, such as Baskerville (https://www.baskerville.ac.uk/)
 
+   - You can also find lots of open-source fine tuning examples on Huggingface and Github. An example: https://github.com/cohere-ai/cohere-finetune
     After fine-tuning, follow Pathway#2 to run your benchmark.
 
 4. **Training from Scratch**
@@ -72,3 +78,13 @@ Efficient benchmarking is critical to reduce the cost and power consumption. Con
     - API failures   
     - Input and output formatting issues
     And, share them with the IT and other researchers to make the upcoming experiments more cost-effective.
+
+
+```{note}
+**Do you want to contribute to this document?**
+
+You can use the following HackMD Collaborative Document to suggest edits:
+https://hackmd.io/@j5E9lRB-RFmXy2lzUosX4Q/r1KMW1L7yx/edit
+
+Or, fork these repo, make your edits, and create a new pull request on Github.
+```

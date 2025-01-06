@@ -1,10 +1,8 @@
 # Scanning and Monitoring Tools
 
-A comprehensive risk assessment requires a use-case specific vulnerability, threat and asset analysis. Risk is the potential for loss or harm to an asset due to threats exploiting vulnerabilities. Although there are several risk assessment frameworks available, we can summarise these different strategies in a systematic way following a component-based strategy, as it is summarised in [^1]:
+Based on NIST's Artificial Intelligence Risk Management Framework (RMF)[^nist]: _"Risk refers to the composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event. The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of (1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and (2) the likelihood of occurrence (Adapted from: OMB Circular A-130:2016)."_
 
-[^1]: 'Ethics, Transparency and Accountability Framework for Automated
-Decision-Making', GOV.UK. Accessed: Oct. 12, 2023.
-<https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making>
+A comprehensive risk assessment requires a use-case specific vulnerability, threat and asset analysis. Although there are several risk assessment frameworks available, we can summarise these different strategies in a systematic way following a component-based strategy, as it is summarised in [^cdei]:
 
 -   **Input data:** Adversarial data (e.g. bias, malicious content) can exist in input,
 -   **Algorithm design:** The algorithm design might assume the data and evaluation methods cover all the cases and business logic comprehensively,
@@ -27,11 +25,7 @@ like CPU, GPU, memory, and storage during model training or inference. (e.g. [Te
 
 - **Safety Benchmark Testing:** A recent solution [Giskard](https://github.com/Giskard-AI/giskard) can be used to scan a set of ML models (including LLMs) against common vulnerabilities such as hallucinations and privacy breaches following a brute-force example-based strategy. [AISI's Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) provides a set of tools to evaluate LLM safety.
 
-With the rapid progress in DL mechanisms, comprehending, evaluating, and
-interpreting these systems has become challenging. In this new era of
-DL, models consist of billions of parameters and can process vast
-amounts of data, making it nearly impossible to ensure privacy and
-security assurance.
+With the rapid progress in deep learning, comprehending, evaluating, and interpreting these systems has become challenging. In this new era of advanced data-driven algorithms, AI models consist of billions of parameters and can process vast amounts of data, making it nearly impossible to ensure privacy and security assurance.
 
 Practitioners can achieve continuous evaluation and monitoring of secure, private, and fair deep learning models through utilising monitoring tools effectively. The transparency of the results can also increase the collaboration between data scientists, developers, and domain experts by providing visibility into model monitoring results. Below, we summarised the main benefits of these tools from the security, privacy and fairness perspectives:
 
@@ -56,11 +50,14 @@ Practitioners can achieve continuous evaluation and monitoring of secure, privat
 
 # Practical Steps and Integrating Monitoring Solutions
 
-In the accountability ethics, transparency and accountability guidance
-[^1], practical measures are offered along with the offered framework:
+In the accountability ethics, transparency and accountability guidance [^cdei], practical measures are offered along with the offered framework:
 
 -   **Problem specification:** Prioritize policy specification during testing phases, focusing on the problem at hand and the desired outcomes.
 -   **Evaluation metrics:** Clearly define the parameters being tested, whether it pertains to accuracy, security, reliability, fairness, or explainability of the system. See the [A Structured Evaluation Approach Section](./evaluation.md) for more details.
 -   **Diverse testing criteria/team:** Conduct tests using high-quality, relevant, accurate, diverse, ethical, and appropriately sized datasets to ensure sustainable and intended outcomes. This includes ensuring that training datasets for fully automated decision-making, devoid of human judgment, uphold the characteristics of those affected. Ensure that testing is conducted by qualified individuals, preferably independent experts where feasible.
 -   **Risk assessment:** Perform regular impact and risk assessments, such as Data Protection Impact Assessment and Equality Impact Assessment when applicable.
 -   **Red teaming:** Implement *red team testing*, operating under the assumption that all algorithmic systems have the potential to cause harm to some extent. See the [Red Teaming Section](./red-teaming.md) to see more details.
+
+
+[^nist]: <https://www.nist.gov/itl/ai-risk-management-framework>
+[^cdei]: 'Ethics, Transparency and Accountability Framework for Automated Decision-Making', GOV.UK. Accessed: Oct. 12, 2023. <https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making>

@@ -13,7 +13,11 @@ We should aim for developing a tracable supply chain management for our ML codeb
 5. **Monitor and Audit Changes:** Implement change logs for updates to data, model parameters, or deployment environments. Regularly audit changes to identify potential vulnerability sources.
 6. **Enable Root Cause Analysis:** Build diagnostic tools to reproduce model predictions, including intermediate outputs, feature importance, and model decision pathways. Include input-output mappings in the logging system for debugging.
 
-## Recipe 2: Responsility
+```{note}
+Check out the [CI/CD chapter](../cicd/001-intro.md) to see this recipe in action.
+```
+
+## Recipe 2: Responsibility
 
 Responsibility is considering sociotechnical issues throughout the development and monitoring societal impact of the developed tool after deployment. A responsibility plan ensures the ML tool aligns with ethical principles, considers sociotechnical challenges, and continuously monitors its societal impact.
 
@@ -29,9 +33,9 @@ Responsibility is considering sociotechnical issues throughout the development a
 
 We should be able to explain the output of our AI system. Here, we don't mean completely interpretable models like decision trees, or local explanations methods like SHAP. The explaination can also be an intuitive explanation combining multiple techniques. But, every stakeholder behind the model should understand the model capabilities and either completely or intuitively explain the model decisions by listing clear reasons. An explainability plan ensures that the ML system's behavior can be understood and communicated effectively to stakeholders, regulators, and users. Here's a structured plan:
 
-1. **Define Explainability Goals** Identify stakeholders (e.g., developers, end-users, regulators) and their needs. Set objectives to explain individual predictions (local explainability) and nderstand the model's overall behavior (global explainability).
+1. **Define Explainability Goals** Identify stakeholders (e.g., developers, end-users, regulators) and their needs. Set objectives to explain individual predictions (local explainability) and understand the model's overall behavior (global explainability).
 2. **Select Explainability Techniques**
-   - **Model-Agnostic Methods:** Use SHAP, LIME, or Partial Dependence Plots (PDP) to interpret model predictions across models.
+   - **Model-Agnostic Methods:** SHAP, LIME, or Partial Dependence Plots (PDP) can interpret model predictions across models. Note that, these methods focus on local explanations, and can potentially misguide developers by priorising certain features for the selected local area.
    - **Model-Specific Techniques:** Leverage built-in features (e.g., feature importance in decision trees, saliency maps for neural networks).
    - **Simplified Surrogate Models:** Train interpretable models (e.g., linear regression, decision trees) to approximate complex models.
 3. **Embed Explainability in Development** Maintain clear documentation of data features, sources, and preprocessing steps. During model development, evaluate which features contribute most to predictions. If no clear evidence (such as performance trade-offs) is provided to favour a black-box model, prefer inherently interpretable models (e.g., linear/logistic regression).

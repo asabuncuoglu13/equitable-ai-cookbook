@@ -2,6 +2,10 @@
 
 The National Institute of Standards and Technology (NIST) has defined trustworthy AI systems through seven key characteristics: validity and reliability, safety, security and resilience, accountability and transparency, explainability and interpretability, privacy enhancement, and fair management of harmful bias. Each of these characteristics involves numerous subcomponents, contributing to the complexity of achieving a shared understanding and realisation of truly trustworthy AI.
 
+```{note}
+#TODO:
+Add best practices and good examples for each characteristics.
+```
 
 ## Valid and Reliable
 
