@@ -7,30 +7,45 @@ Auditing the fairness of AI models is a challenging process as defining what fai
 **Explainability**| Data collection and labelling | Dictionary of variables | Model complexity | Auxiliary tools | Interface and documentation
 **Fairness** | Population balance | Fair representations | Fairness constraints | Bias metrics assessments | Real-time monitoring of bias metrics
 
-In this process, keeping a recording of experiment findings and reporting them is a challenge for many development teams.
+In this process, keeping a recording of experiment findings and reporting them is a challenge for many development teams. FAID reports can support developers visualise and share the fairness-related data with other stakeholders in the development process.
 
-## Standardised Recording
+![](../media/reporting.png)
 
-We utilise Franklin et al.'s Fairness Ontology {cite}`franklin_ontology_2022` as the standard relational map of fairness notions and metrics. So, any fairness experiment report follows the organisational hierarchy of this ontology:
+## Standardised Recording of Metrics
+
+FAID utilises Franklin et al.'s Fairness Metrics Ontology {cite}`franklin_ontology_2022` as the standard relational map of fairness notions and metrics. So, any fairness experiment report follows the organisational hierarchy of this ontology:
 
 ![Fairness Ontology](../media/fairness-ontology.png)
+
+> See the ontology schema here: <https://github.com/frankj-rpi/fairness-metrics-ontology/tree/main>
 
 And for each fairness metric, each bias evaluation and mitigation result follows this schema in the reporting:
 
 ```yaml
 bias_metrics:
-  facets:
-    - name: ""
-      metrics:
-        - description: ""
-          name: ""
-          value: 0
-      value_or_threshold: ""
+  groups:
+    group_name:
+      description: ""
       label: ""
-      label_value_or_threshold: ""
+      metrics:
+        - name: ""
+          description: ""
+          value: 0
+          threshold: 0
+          bigger_is_better: ""
+          label: ""
+          notes: ""
+          sg_params: {}
 ```
 
-This way, FAID can record the results in a fairness library agnostic way.
+This way, FAID can record the results in a fairness library agnostic way. Using this ontology can support developers by,
+
+1. Clarifying purposes and distinctions of notions and metrics, and
+2. Demonstrating whether a given fairness notion can be derived from a certain underlying metric, or which combinations of metrics are equivalent to other metrics.
+3. Providing a structured, clear dependency between notions (if a model satisfies one notion, it will also satisfy all superclasses of that notion).
+
+Developers can further create knowledge graphs for risk management strategies, and later create automated inferences to aid in selecting and interpreting fairness metrics and fairness-based ML evaluations.
+
 
 ## ML Pipeline Fairness Monitoring Principles
 
@@ -39,7 +54,6 @@ The data metada goes to ```data.yml```. The fairness experiment data is in the c
 The log entities are structured to help teams record and monitor the following steps in a machine learning pipeline:
 
 ### **1. Dataset Bias Identification and Evaluation**
-
    - **Data Source Examination**: [fairness.yml:data:sensitive_characteristics]. Evaluate the origin of your data. Ensure diverse representation across different demographics or categories relevant to your use case.
    - **Class Imbalance Check**: [fairness.yml:data:variable_profile]. Use statistical methods to check for class imbalances (e.g., compare counts across different groups). Ensure that minority groups are adequately represented.
    - **Correlation with Sensitive Attributes**: [fairness.yml:data:variable_profile] Test for correlations between features and sensitive attributes (e.g., gender, race). Identify if any input features are disproportionately correlated, which could lead to biased outcomes.
