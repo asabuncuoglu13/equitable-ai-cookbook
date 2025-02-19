@@ -6,7 +6,7 @@ A safety evaluation generally requires a step-by-step analysis that considers ea
 
 This structured framework brings existing concepts together to help researchers explore and understand a particular problem domain. In our case, we developed this conceptual framework to guide our risk taxonomy development. The framework consists of four levels: ML Steps, Components, Assessment and Implications.
 
--	**ML Steps:** A traditional ML pipeline includes data collection, data pre-processing, training, evaluation, inference and monitoring steps.
+-	**ML Steps:** A traditional ML pipeline includes data collection, data pre-processing, training, validation, deployment and monitoring steps.
 -	**Components:** For each development stage, we should consider data, algorithm and interaction components. For each component, we also use a standardised recording format. You can see an example for fairness reporting in Chapter [Fairness Reporting](../fairness/recording_standard.md).
 -	**Assessment:** For each component of each step, we use the selected evaluation techniques, define potential harms, rank them based on their impacts, and consider mitigation techniques. It is a similar approach to risk analysis process of the cybersecurity domain:
     - **Evaluation:** Define security, privacy and fairness metrics and apply evaluation techniques based on the selected metrics. 

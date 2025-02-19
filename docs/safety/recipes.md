@@ -66,7 +66,7 @@ We should increase the visibility of the decisions and potential vulnerabilities
 4. **Knowledge Base for Recurrent Issues** Maintain a repository of known issues and solutions. Include FAQs, remediation workflows, and troubleshooting guides. Align them with the existing Incidents Databases such as https://incidentdatabase.ai/.
 
 
-# The Ultimate Plan
+## The Ultimate Plan
 
 Now, considering all these single recipes for each main course, here is the ultimate recipe for ensuring **traceability**, **auditability**, **explainability**, **digestibility**, and **responsibility** in developing and deploying ML tools.
 
