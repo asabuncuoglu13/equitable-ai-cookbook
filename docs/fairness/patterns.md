@@ -1,7 +1,9 @@
 # Design Patterns for Monitoring Fairness/Safety
 
 ```{note}
-We shared more generalisable, system-level patterns in [Safety Recipes Chapter](../safety/recipes.md). This chapter focuses on structuring the development codebase for monitoring fairness and broader safety characteristics.
+1. We shared more generalisable, system-level patterns in [Safety Recipes Chapter](../safety/recipes.md). 
+2. Then, we shared some desing principles for organising the metadata flow in an organisational structure.
+3. This chapter focuses on structuring the development codebase for monitoring fairness and other safety characteristics.
 ```
 
 "Design patterns" are reusable solutions to common problems that arise during software design and development.These patterns support designers and developers to mitigate many software development concerns "by design." Using patterns in development naturally supports developers in building their solutions with the previously established best practices. For example, design patterns in object-oriented programming define creational, behavioural, and structural relations between objects and their main classes in a codebase. Writing code following the patterns prevents common security and privacy issues. Although it is a common practice in traditional application development, we have not seen a corresponding set of rules within the fairness domain. 
@@ -20,20 +22,20 @@ Fairness lacks a precise definition and an ideal quantification metric. However,
 
 ## Possible Design Pattern Suggestions
 
-1. Test Patterns
-2. Structural Patterns
-3. Behavioral Patterns
+In the software architecture level, our design pattern suggestions can be categorised into three main pillars:
+
+1. Test Patterns -- Similar to unit tests, but for atomic metadata-level tests
+2. Structural Patterns -- To reduce technical debt
+3. Behavioral Patterns -- Similar to OOP patterns, but for metadata monitoring
 
 ### Test Patterns
 
-#### Defining Context
-
-1. **Fixtures:** A fixture in unit testing refers to the fixed state of a set of objects used as a baseline for running tests. It ensures that there is a well-known and consistent environment in which tests are run, so that results are reliable and repeatable. Fixtures typically involve setting up the necessary objects, data, or conditions before tests are executed and cleaning up afterward.
+1. **Use fixtures to setup context:** A fixture in unit testing refers to the fixed state of a set of objects used as a baseline for running tests. It ensures that there is a well-known and consistent environment in which tests are run, so that results are reliable and repeatable. Fixtures typically involve setting up the necessary objects, data, or conditions before tests are executed and cleaning up afterward.
 
 ```python
 # tests/code/fairtest.py
 import pytest
-from faid.data import BiasMitigationPreprocessor
+from .bias_mitigation import BiasMitigationPreprocessor # dummy call for this snippet
 
 # Arrange
 @pytest.fixture
@@ -51,27 +53,25 @@ def test_bias_mitigation():
     fair_data = apply_fairness_algorithm(preprocessed_data)
     
     # Assert
-    assert check_fairness(fair_data)
+    assert check_specific_bias(fair_data)
 
 ```
+
+2. **Follow a component-based strategy:** In ML development, we can categorise our development efforts for three main components: Data, model and interaction. For the data and model components, we can define multiple checkpoints throughout the lifecycle. The component-based testing strategy allows comparing the results between these checkpoints and reuse the tests consistently throughout the pipeline.
+
+> See some example tests: <https://github.com/asabuncuoglu13/faid/tree/main/faid/scan/unit_tests>
 
 ### Structural Patterns
 
 In their seminal work {cite}`NIPS15_hiddendebt`, Sculley and other Google researchers discuss several ML system anti-patterns that can arise in machine learning systems, particularly concerning system design. These anti-patterns can contribute to technical debt, making the system difficult to maintain, update, and improve over time. We can interpret these debt patterns as the main patterns that can lead uninterpretable, hence unfair ML models.
 
-**Glue Code Problem:** This pattern emerges when using general-purpose ML packages, leading to a large amount of supporting code (glue code) being written to adapt data for the packages.  Glue code makes it expensive to explore alternative approaches and can lock the system into the specific package, hindering improvements. A key mitigation strategy is wrapping black-box packages into common APIs. This promotes reusability and simplifies the process of switching between packages.
-
-**Pipeline Jungles Problem:** This anti-pattern often arises in data preparation.  As new data sources and signals are incorporated, the system for preparing data can become a complex and tangled web of processes, making it challenging to manage, test, and debug. A holistic approach to data collection and feature extraction is crucial for avoiding this pattern.  While it demands significant upfront effort, refactoring a pipeline jungle can lead to substantial long-term cost savings and faster innovation.
-
-**Dead Experimental Codepaths Problem:** This anti-pattern refers to the accumulation of conditional branches or experimental codepaths within the main production code. While seemingly harmless individually, these codepaths can exponentially increase system complexity, making maintenance and testing difficult. Regularly reviewing experimental branches to identify and remove unused ones is essential. Often, only a small fraction of these branches remain relevant, and removing the rest can significantly simplify the system.
-
-**Abstraction Debt Problem:** The lack of strong, standardized abstractions in ML system design contributes to this debt. This absence of clear interfaces for handling data streams, models, and predictions can lead to blurred boundaries between system components, making it difficult to maintain and update. The development of widely accepted abstractions for core ML concepts is crucial for mitigating this debt. These abstractions would provide a more structured and modular approach to building and maintaining ML systems. The sources note that the parameter-server abstraction for distributed learning, while not without competition, is a potentially more robust approach compared to MapReduce.
-
-**Plain-Old-Data Type Smell:** Using simple data types like floats and integers to encode complex ML information can lead to ambiguity and complicate system understanding.
-
-**Multiple-Language Smell:** Using multiple programming languages within a single ML system can hinder effective testing, increase maintenance complexity, and make knowledge transfer more difficult. 
-
-**Prototype Smell:** Over-reliance on prototyping environments for testing new ideas can indicate a brittle and inflexible production system.  It can also tempt developers to deploy prototype code in production due to time pressures. 
+- **Glue Code Problem:** This pattern emerges when using general-purpose ML packages, leading to a large amount of supporting code (glue code) being written to adapt data for the packages.  Glue code makes it expensive to explore alternative approaches and can lock the system into the specific package, hindering improvements. A key mitigation strategy is wrapping black-box packages into common APIs. This promotes reusability and simplifies the process of switching between packages.
+- **Pipeline Jungles Problem:** This anti-pattern often arises in data preparation.  As new data sources and signals are incorporated, the system for preparing data can become a complex and tangled web of processes, making it challenging to manage, test, and debug. A holistic approach to data collection and feature extraction is crucial for avoiding this pattern.  While it demands significant upfront effort, refactoring a pipeline jungle can lead to substantial long-term cost savings and faster innovation.
+- **Dead Experimental Codepaths Problem:** This anti-pattern refers to the accumulation of conditional branches or experimental codepaths within the main production code. While seemingly harmless individually, these codepaths can exponentially increase system complexity, making maintenance and testing difficult. Regularly reviewing experimental branches to identify and remove unused ones is essential. Often, only a small fraction of these branches remain relevant, and removing the rest can significantly simplify the system.
+- **Abstraction Debt Problem:** The lack of strong, standardized abstractions in ML system design contributes to this debt. This absence of clear interfaces for handling data streams, models, and predictions can lead to blurred boundaries between system components, making it difficult to maintain and update. The development of widely accepted abstractions for core ML concepts is crucial for mitigating this debt. These abstractions would provide a more structured and modular approach to building and maintaining ML systems. The sources note that the parameter-server abstraction for distributed learning, while not without competition, is a potentially more robust approach compared to MapReduce.
+- **Plain-Old-Data Type Smell:** Using simple data types like floats and integers to encode complex ML information can lead to ambiguity and complicate system understanding.
+- **Multiple-Language Smell:** Using multiple programming languages within a single ML system can hinder effective testing, increase maintenance complexity, and make knowledge transfer more difficult. 
+- **Prototype Smell:** Over-reliance on prototyping environments for testing new ideas can indicate a brittle and inflexible production system.  It can also tempt developers to deploy prototype code in production due to time pressures. 
 
 #### Technical Debt and Bias in ML Systems
 
