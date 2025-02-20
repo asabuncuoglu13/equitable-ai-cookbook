@@ -6,7 +6,7 @@ Equitable AI involves creating and using artificial intelligence systems in a fa
 This cookbook is a work-in-progress. You can contribute to the development by opening new issues and pull requests on Github.
 ```
 
-In this cookbook, *equitable AI* refers to a broad term to cover responsible, trustworthy and inclusive AI development. These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components (e.g. robustness, security, privacy fairness, etc.), and each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
+In this cookbook, *equitable AI* refers to a broad term to cover responsible, trustworthy and inclusive AI development. These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components: Safe, secure and resilient, explainable and interpretable, privacy-enhanced, fair with harmful bias managed, valid and reliable, and accountable and transparent. Each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
 
 ![NIST Trustworthy AI Characteristics](./media/nist-trustworthy.png)
 

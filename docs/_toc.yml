@@ -12,6 +12,13 @@ parts:
     - file: safety/assurance
     - file: safety/monitoring
     - file: safety/red-teaming
+  - caption: "A Proactive Monitoring Pipeline"
+    chapters:
+    - file: cicd/001-intro
+    - file: cicd/002-ml-workflow
+    - file: cicd/003-detect-bias
+    - file: cicd/004-save-evidence
+    - file: cicd/005-observer
   - caption: "Data Practices"
     chapters:
     - file: data-practices/introduction
@@ -25,13 +32,6 @@ parts:
     - file: fairness/mitigation
     - file: fairness/management
     - file: fairness/recording_standard
-  - caption: "A Proactive Monitoring Pipeline"
-    chapters:
-    - file: cicd/001-intro
-    - file: cicd/002-ml-workflow
-    - file: cicd/003-detect-bias
-    - file: cicd/004-save-evidence
-    - file: cicd/005-observer
   - caption: "Use Case: Finance"
     chapters:
     - file: usecases/finance/introduction
