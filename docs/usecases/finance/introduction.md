@@ -17,16 +17,29 @@ The finance sector has always been one of the early adopters of cutting-edge tec
 A further 2023 survey from UK Finance, a trade association for the UK banking and financial services sector, revealed that more than 70% of participating financial institutions are in the proof of concept (PoC) stage for generative AI solutions, of which LLMs {cite}`boe_financial_2023`. One significant investment made by financial software and media company Bloomberg, BloombergGPT {cite}`wu_bloomberggpt_2023`,  has produced a 50 billion parameter model that can be utilised for an array of financial tasks such as news analysis and question answering. With such development, understanding the implications of large-language models in financial services advances the opportunity to set best practices for a critical economic sector, and provide examples that may be relevant to other industries.
 
 :::{seealso}
-You can find more information about impact of LLMs in financial services, you can read our [March 2024 Report]( https://www.turing.ac.uk/news/publications/impact-large-language-models-finance-towards-trustworthy-adoption).
-
-I also listed some background reading materials [on Github]( https://github.com/alan-turing-institute/fairness-monitoring/blob/main/docs/READINGS.md).
-
-Also check the chapter [A Practical Review of Financial Large Language Models](./finllms.md)
+- You can find more information about impact of LLMs in financial services in [the Alan Turing Institute's Impact of LLMs - March 2024 Report](https://www.turing.ac.uk/news/publications/impact-large-language-models-finance-towards-trustworthy-adoption).
+- We also listed some background reading materials in [Background Reading List](./readinglist.md).
+- Also check the chapter [A Practical Review of Financial Large Language Models](./finllms.md)
 :::
 
-## Example Applications
+## Bias in Finance LLMs
 
-### Financial news sentiment analysis
+Bias encompasses a broad and complex spectrum of factors. The first challenge is generalisable to a wide variety of machine learning models. Within an algorithmic system, bias plays a necessary role in pattern recognition. However, throughout learning these patterns, the system can amplify bias while trying to increase the overall accuracy. Ideally, in LLM-powered systems, we aim for non-discrimination against specific groups while avoiding positive discrimination that could compromise model accuracy. Achieving this balance requires a delicate balance.
+
+The second challenge is specific to financial models (but it is also shared with other domains). While various datasets exist for testing general-purpose LLMs against discrimination, the domain lacks datasets to assess LLMs tailored for financial services. Since there is no shared widely-used dataset to evaluate against discrimination, this assessment is constrained by the sociotechnical skills of financial organizations.
+
+Further, bias in finance can also refer to various meanings. We listed some well-known bias types in financial-decision making. Despite all efforts shown to reduce bias in financial data and algorithm, an LLM still can suffer the following biases like a typical financial decision-maker. In the fair development process, we would like to prevent LLMs to demonstrating these behaviour or unconciously promoting this kind of behavior for a human decision-maker.
+
+1. Confirmation bias: Favoring information that confirms existing beliefs.
+2. Overconfidence bias: Overestimating one's own abilities or the accuracy of information.
+3. Anchoring bias: Relying too heavily on the first piece of information encountered.
+4. Loss aversion bias: Preferring to avoid losses over acquiring equivalent gains.
+5. Availability bias: Judging the likelihood of an event based on how easily instances come to mind.
+6. Herding bias: Following the actions of a crowd without considering personal judgment.
+7. Endowment bias: Overvaluing what one already possesses compared to equivalent alternatives.
+8. Framing bias: Making decisions based on how information is presented rather than its substance.
+
+## Example Applications: Financial News Sentiment Analysis
 
 Understanding public sentiment regarding company-specific developments as well as broader economic and political events is a common yet challenging task. In the finance sector, analysts combine a wide range of information sources to build comprehensive company profiles. NLP solutions, such as classification and clustering algorithms, are frequently used to assist with this analysis. Recently, LLMs have been increasingly utilized in this domain. Their advanced memory and context-understanding capabilities significantly enhance the ability to analyse and interpret vast amounts of text-based data, leading to more accurate and insightful assessments.
 
@@ -42,120 +55,6 @@ A robust recipe is necessary to overcome these challenges and enable a proactive
 - [Comparative analysis of demographic parities between topic clusters] How do fairness metrics change in different topic clusters?
 - [Interpret the results] And, we also need to answer what does it mean to reduce bias? Bias is an essential component of achieving pattern recognition. So, the model eventually has some bias based on the data. And when we develop a model, this model should also answer some business needs. Any financial services try to increase their profit. But it should also align with the greater good, considering environmental, social and governance (ESG) aspects. 
 
-:::{seealso}
-Analysing BABE dataset (https://huggingface.co/datasets/mediabiasgroup/BABE) with BERT News Sentiment Classification Model (https://huggingface.co/newsmediabias/Bert_Sentiment_Classification) and also a zere-shot classification: https://huggingface.co/sileod/deberta-v3-base-tasksource-nli
+:::{note}
+We conducted a three-step representation bias evaluation for FinBERT's use in financial news analysis. [See the experiment notebooks.](https://github.com/asabuncuoglu13/faid-test-financial-sentiment-analysis/tree/main/notebooks/bias-eval) The first step of evaluation is to check the behaviour of the model against prompts related to countries from \textit{Global South} (GS) and \textit{Global North} (GN). We created a synthetic dataset to test the FinBERT's classification accuracy when the prompt explicitly reveals country information. Next, we monitored the performance on Indian financial news to check if the model performance is consistent when the data source includes different technical jargon, currency and other implicit bias sources.  Finally, we run interpretability methods such as LIME and saliency maps to see the word-level impact in individual level.
 :::
-
-### Extended Tabular Analysis
-
-LLMs can also be utilised in more complex tasks such as improving credit scoring applications by bringing multiple knowledge sources together. Although LLMs are not specifically developed for classification based on tabular data, with some tweaks like chain of tables and hierarchical learning mechanisms, they demonstrated some advanced capabilities also for tabular data. 
-
-:::{seealso}
-Use popular bias recognition datasets (Adult, German Credit, COMPAS) in a similar context. Compare fairness notions (and find some baseline fairness studies using these datasets.)
-:::
-
-### Stock Movement Prediction
-
-With the increasing flux of financial news and other knowledge source, analysing a complex set of tabular and text data gained importance. Researchers and practitioners explored using deep attentive mechanisms to effectively utilise the blend of chaotic temporal signals {cite}`sawhney_deep_2020`. 
-
-Shi et al. demonstrated that LLMs have the potential to outperform traditional models in sequential event prediction {cite}`shi_language_2023` ([See their open-source repo for more details](https://github.com/iLampard/lamp/tree/main)). 
-
-:::{seealso} 
-Experiment
-
-:::
-
-# Developing a Fair ML Development Pipeline
-
-In the modern era of financial landscape, machine learning (ML) and other quantitative techniques stand as the driving force behind many applications. These technologies are revolutionizing various application areas, from risk assessment and fraud detection to portfolio management and customer service optimization. 
-
-We can list a six-step flow for developing a fairness-aware ML {cite}`das_fairness_2021`:
-
-- **Define a use case with measurable objectives:** Implementing a FAML pipeline is challenging due to variety in the fairness notions and lack of clarity on the prioritisation. While making an algorithm fair for one metric, the algorithm can become unfair on another metric. So, defining a use-case with clear, measurable and atomic objectives is critical.
-- **Understand possible sources of bias:** Historical bias in the datasets (in the labelling process), curation bias (selecting/dropping some features), objective functions (removing outliers, focusing specific features), homogenisation (synthetic data can amplify bias), active bias (fake news, satires, jokes), unanticipated machine decisions (a model with a purpose can also show unexpected behaviours). 
-- **Measure bias:** As model developers, we have the responsibility of developing models that gives equal opportunity for advantaged and disadvantaged groups. You can define “opportunity” in multiple ways for different use cases. In this article, we focused on binary classification cases to simplify the explanation of these different notions. We explained approaches to measuring and interpreting bias in another article: [Fairness Notions](../../fairness/notions.md).
-- **Analyse pre-training and post-training metrics:** Before training process, it is essential to analyse the class imbalance and differences in the proportions of the representations (e.g. labels in a supervised setting). 
-- **Counterfactual analysis:** Flip the protected characteristics in the dataset to test if the model results in same predictive outputs.
-- **Updating the model and dataset:** In the iterative and continuous evaluation/development environment, the last step is updating the dataset and model parameters based on the bias analysis findings.
-
-
-## Understanding the UK Social and Legislative Context
-
-Fairness is an ideal, has been emphasized in various manifestos over time, with its significance expanding to reach more people with an emphasis to “equity”. The UN Universal Declaration of Human Rights (1948) is the most recent and comprehensive expression of this principle. Before and after this document, many of the legal foundations for fairness were established following public demonstrations, civil rights movements, and other events. So, when researchers and practitioners discuss “fairness” in different context, they mostly use definitions and notions established as a result of long history of events.
-
-In finance industry, regulations protect costumers against discriminative actions.
-
-``` **TODO:** Add related regulations from finance sector. ```
-
-The Equality Act 2010 in the UK makes it illegal to discriminate against individuals because of protected characteristics like age, race, and sex. Organisations must adhere to these rules when carrying out their public duties, which also extend to algorithmic decision-making processes. However, a report by the CDEI (now DSIT’s RTAU) after a decade of the Act's implementation showed a significant disparity between policies and their actual implementation. This is mainly due to the fact that the regulations are often open to interpretation, especially in the context of algorithmic processes {cite}`cdei_2020`.
-
-In 2019, the EU High-Level Expert Group on AI proposed the ethics guidelines for “trustworthy” AI. The below excerpt is directly taken from this document to provide a practical checklist for avoiding unfair bias:
-
-```
-- Did you establish a strategy or a set of procedures to avoid creating or reinforcing unfair bias in the AI system, both regarding the use of input data as well as for the algorithm design?
-    - Did you assess and acknowledge the possible limitations stemming from the composition of the used data sets?
-    - Did you consider diversity and representativeness of users in the data? Did you test for specific populations or problematic use cases?
-    - Did you research and use available technical tools to improve your understanding of the data, model and performance?
-    - Did you put in place processes to test and monitor for potential biases during the development, deployment and use phase of the system?
-
-- Depending on the use case, did you ensure a mechanism that allows others to flag issues related to bias, discrimination or poor performance of the AI system?
-    - Did you establish clear steps and ways of communicating on how and to whom such issues can be raised?
-    - Did you consider others, potentially indirectly affected by the AI system, in addition to the (end)-users?
-    - Did you assess whether there is any possible decision variability that can occur under the same conditions?
-    - If so, did you consider what the possible causes of this could be?
-    - In case of variability, did you establish a measurement or assessment mechanism of the potential impact of such variability on fundamental rights?
-
-- Did you ensure an adequate working definition of “fairness” that you apply in designing AI systems?
-    - Is your definition commonly used? Did you consider other definitions before choosing this one?
-    - Did you ensure a quantitative analysis or metrics to measure and test the applied definition of fairness?
-    - Did you establish mechanisms to ensure fairness in your AI systems? Did you consider other potential mechanisms?
-```
-
-Improving fairness in automated decision-making systems has been a longstanding research focus. Recent advancements in deep learning (DL) mechanisms have brought this issue to the forefront of public attention. Current systems employ monitoring solutions to identify privacy and fairness concerns through explainability and bias detection techniques applied to datasets and algorithms. Depending on system requirements, a certain level of assurance is provided before deployment. However, with the rapid progress in DL mechanisms, comprehending, evaluating, and interpreting these systems has become challenging. In this new era of DL, models consist of billions of parameters and can process vast amounts of data, making it nearly impossible to ensure privacy and security assurance.
-
-## Recommendations: Proactive Fairness Monitoring
-
-In this section, we summarise our recommendations to achieve proactive fairness in AI development environments.
-
-### Define Accountabilities Clearly
-
-In the accountability ethics, transparency and accountability guidance {cite}`cabinet_24`, practical measures are offered along with the offered framework:
-
-* **Problem specification:** Prioritize policy specification during testing phases, focusing on the problem at hand and the desired outcomes.
-* **Evaluation metrics:** Clearly define the parameters being tested, whether it pertains to accuracy, security, reliability, fairness, or explainability of the system.
-* **Diverse testing criteria/team:** Conduct tests using high-quality, relevant, accurate, diverse, ethical, and appropriately sized datasets to ensure sustainable and intended outcomes. This includes ensuring that training datasets for fully automated decision-making, devoid of human judgment, uphold the characteristics of those affected. Ensure that testing is conducted by qualified individuals, preferably independent experts where feasible.
-* **Risk assessment:** Perform regular impact and risk assessments, such as Data Protection Impact Assessment and Equality Impact Assessment when applicable.
-* **Red teaming:** Implement 'red team testing', operating under the assumption that all algorithmic systems have the potential to cause harm to some extent.
-
-You can use our monitoring tool to support these practical steps in various ways:
-
-### Define a Risk Management Flow
-
-Risk assessment should be use-case specific. Typically, algorithmic system risks can be summarised as follows {cite}`cabinet_24`:
-
--	**Input data:** Bias can exist in input data (mostly historical bias),
--	**Algorithm design:** The algorithm design might assume the data and evaluation methods cover all the cases and business logic comprehensively,
--	**Output decisions:** It can be open to interpretation, or falsely interpreted,
--	**Technical flaws:** Development and testing might not be adequate to reveal the issues,
--	**Usage flaws:** In a complex business logic, interoperability issues might occur.
-
-### Define an Active Algorithm Auditing Flow
-
-Auditing an algorithm, regardless of its type, is a dynamic and non-linear process. Koshiyama et al. demonstrated the interrelation between development stages and auditing verticals in five main steps {cite}`koshiyama_towards_2021`:
-
-**Stages:** | Data and Task Setup | Feature pre-processing | Model selection | Post-processing and Reporting| Productionizing and Deploying
-----|---- | ---- | ----| ---- | ---- |
-**Explainability**| Data collection and labelling | Dictionary of variables | Model complexity | Auxiliary tools | Interface and documentation
-**Fairness** | Population balance | Fair representations | Fairness constraints | Bias metrics assessments | Real-time monitoring of bias metrics
-
-### Support Active Public Engagement 
-
-As we already mentioned in the very beginning of this cookbook, we can use the following six considerations to build an active public engagement {cite}`cdei_24`:
-
-1. **Focus on equitable AI/Data:** How society can benefit from the use of data or AI equally.
-2. **Secure data flow:** Building confidence that organisations will be responsible for their actions.
-3. **Image of AI:** With the increasing AI experience, the public becomes more pessimistic about the outcomes.
-4. **Apprehensions about change:** Although increasing productivity in the day-to-day jobs are expected, there is also a concern mostly about job displacement.
-5. **The preference is situation-dependent:** Utilising AI in social good projects such as cancer detection and financial support is highly favourable. However, clear risk management strategies can help public to support the rest of the use cases. 
-6. **Low digital familiarity:** If the end users have lower digital literacy, they tend to be more pessimistic about the use of AI/data.
-

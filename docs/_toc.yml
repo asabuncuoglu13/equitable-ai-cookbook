@@ -35,12 +35,11 @@ parts:
   - caption: "Use Case: Finance"
     chapters:
     - file: usecases/finance/introduction
-    - file: usecases/finance/readinglist
     - file: usecases/finance/finllms
     - file: usecases/finance/eda-fin-data
-    - file: usecases/finance/evaluation
     - file: usecases/finance/interaction
     - file: usecases/finance/interpretability
+    - file: usecases/finance/readinglist
   - caption: "Use Case: Biometrics"
     chapters:
     - file: usecases/biometrics/introduction
