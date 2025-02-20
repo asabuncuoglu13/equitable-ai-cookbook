@@ -1,6 +1,43 @@
-# A Structured Evaluation Approach
+# Continuous Safety Monitoring
 
-A safety evaluation generally requires a step-by-step analysis that considers each step of the development process individually and holistically. Creating a structured hierarchical evaluation (and mitigation) framework can help practitioners to accelerate the adoption of safe AI practices and consequently, define better risk management models. Here, we presented a sample structure, that we use in our current development processes: 
+Based on NIST's Artificial Intelligence Risk Management Framework (RMF)[^nist]: _"Risk refers to the composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event. The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of (1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and (2) the likelihood of occurrence (Adapted from: OMB Circular A-130:2016)."_
+
+A comprehensive risk assessment requires a use-case specific vulnerability, threat and asset analysis. Although there are several risk assessment frameworks available, we can summarise these different strategies in a systematic way following a component-based strategy, as it is summarised in [^cdei]:
+
+-   **Input data:** Adversarial data (e.g. bias, malicious content) can exist in input,
+-   **Algorithm design:** The algorithm design might assume the data and evaluation methods cover all the cases and business logic comprehensively,
+-   **Output decisions:** It can be open to interpretation, or falsely interpreted,
+-   **Technical flaws:** Development and testing might not be adequate to reveal the issues,
+-   **Usage flaws:** In a complex business logic, interoperability issues might occur.
+
+In this five-level taxonomy, several sub-components should be scanned against multiple factors. A scanning/monitoring solution can help researchers and practitioners to track and evaluate these critical metrics and support keeping the system safe and trustworthy.
+
+With the rapid progress in deep learning, comprehending, evaluating, and interpreting these systems has become challenging. In this new era of advanced data-driven algorithms, AI models consist of billions of parameters and can process vast amounts of data, making it nearly impossible to ensure privacy and security assurance.
+
+Practitioners can achieve continuous evaluation and monitoring of secure, private, and fair deep learning models through utilising monitoring tools effectively. The transparency of the results can also increase the collaboration between data scientists, developers, and domain experts by providing visibility into model monitoring results. Below, we summarised the main benefits of these tools from the security, privacy and fairness perspectives:
+
+*From a security perspective:*
+
+- Tracking access to models and data, detecting any unauthorized access attempts or security breaches.
+- Monitoring model inputs and outputs for potential adversarial attacks or poisoning attempts.
+- Employing anomaly detection techniques to identify unusual behaviour in model predictions, which may indicate security threats.
+
+*From a privacy perspective:*
+
+- Measuring the impact of privacy-enhancing techniques (e.g. differential privacy) to actively check individual data points cannot be extracted from the model's outputs.
+- Tracking data access and ensuring compliance with privacy regulations such as GDPR or HIPAA.
+- Detecting any unintentional internal/external data leakage.
+
+*From the fairness perspective:*
+
+- Utilizing different fairness metrics to assess the fairness of model predictions across different demographic groups or sensitive attributes.
+- Real-world testing (A/B like model testing) to identify and mitigate any disparities or unfairness.
+- Implementing state-of-the-art techniques such as adversarial debiasing or fairness-aware training quickly and evaluating their effectiveness over time.
+
+
+## A Structured Approach
+
+Creating a structured, step-by-step analysis that considers each step of the development process individually and holistically is essential for establishing an effective monitoring and risk management flow. Here, we presented a sample structure, that we use in our current development processes: 
 
 ![Hierarchical representation of the proposed framework](../media/hierarchical-framework.png)
 
@@ -20,7 +57,7 @@ This structured framework brings existing concepts together to help researchers 
     - **Mitigation:** Define tangible steps to increase security, privacy and fairness overall.
 - **Implications:** The implications can be specific steps to be taken or generalized perspectives to consider in future iterations of the development process. Whether specific or generalized, they should lead to developing some tangible steps. We categorized implications under four headlines: “Security and privacy,” “environment and sustainability,” “usability and inclusivity,” and “infrastructure and maintenance.” 
 
-## Example Illustration of LLM Evaluation and Mitigation Methods
+### Example Illustration of LLM Evaluation and Mitigation Methods
 
 The figure below illustrates curating possible evaluation and mitigation approaches for LLMs:
 
@@ -56,3 +93,7 @@ In this sense, we promote our approach as a proactive framework to detect issues
 
 - A well-known recent effort is Stanford's HELM (Holistic Evaluation of Language Models): <https://crfm.stanford.edu/2022/11/17/helm.html>. The project, with a specific focus on transparency, measures seven metrics including *accuracy*, *calibration*, *robustness*, *fairness*, *bias*, *toxicity*, and *efficiency*.
 - Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims. <https://arxiv.org/pdf/2004.07213#page=15.07>
+
+
+[^nist]: <https://www.nist.gov/itl/ai-risk-management-framework>
+[^cdei]: 'Ethics, Transparency and Accountability Framework for Automated Decision-Making', GOV.UK. Accessed: Oct. 12, 2023. <https://www.gov.uk/government/publications/ethics-transparency-and-accountability-framework-for-automated-decision-making/ethics-transparency-and-accountability-framework-for-automated-decision-making>

@@ -6,17 +6,12 @@ root: index
 parts:
   - caption: "AI Safety"
     chapters:
-    - file: safety/public-attitudes
     - file: safety/responsible-innovation
     - file: safety/trustworthiness
     - file: safety/recipes
     - file: safety/assurance
-    - file: safety/evaluation
-    - file: safety/monitoring-tools
-    - file: safety/equitable-benchmark
+    - file: safety/monitoring
     - file: safety/red-teaming
-    - file: safety/participation-tools
-    - file: safety/overview-oss
   - caption: "Data Practices"
     chapters:
     - file: data-practices/introduction
