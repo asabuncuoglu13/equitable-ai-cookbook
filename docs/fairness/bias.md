@@ -23,6 +23,27 @@ The below table demonstrates bias sources listed in the recent [International AI
 | **Feedback Mechanisms**  | Feedback Loop Bias   | Models learn from biased user feedback, reinforcing initial biases. | A credit scoring system that lowers scores for rejected applicants (assuming they are high-risk) may prevent them from improving their credit over time. |
 
 
+```{mermaid}
+timeline
+    title ML Lifecycle Bias Sources
+    Data Collection : Sampling Bias occurs
+                    : Selection Bias occurs
+    Data Annotation : Labeller Bias occurs
+
+    Data Curation : Historical Bias occurs
+
+    Data Pre-processing : Feature Selection Bias occurs
+
+    Model Training : Label Imbalance occurs
+
+    Deployment Context : Contextual Bias occurs
+
+    Evaluation & Validation : Benchmark Bias occurs
+
+    Feedback Mechanisms : Feedback Loop Bias occurs
+```
+
+
 ## Bias in the Data
 
 This section mappes these biases (and more) to NIST's Bias Taxonomy ([Towards a Standard for Identifying and Managing Bias in Artificial Intelligence](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf)).
