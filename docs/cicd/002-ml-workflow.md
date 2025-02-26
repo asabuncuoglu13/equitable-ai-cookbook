@@ -4,42 +4,12 @@ Building a complete CI/CD (Continuous Integration/Continuous Deployment) flow fo
 
 ## Codebase Structure
 
-A well-organized codebase is crucial for maintaining and scaling your ML projects. Here’s a suggested structure:
-
-```
-/ml-project
-|-- /data                # Data storage and versioning
-|   |-- raw              # Raw data
-|   |-- processed        # Processed data
-|
-|-- /notebooks           # Jupyter notebooks for experiments and EDA
-|
-|-- /src                 # Source code for the project
-|   |-- /data            # Data handling scripts
-|   |-- /features        # Feature engineering scripts
-|   |-- /models          # Model definitions and training scripts
-|   |-- /evaluation      # Model evaluation scripts
-|   |-- /deployment      # Scripts for deployment
-|
-|-- /tests               # Unit and integration tests
-|
-|-- /configs             # Configuration files (e.g., for hyperparameters)
-|
-|-- /scripts             # Utility scripts (e.g., for setting up environments)
-|
-|-- /docker              # Dockerfiles for different environments
-|
-|-- /ci-cd               # CI/CD pipeline definitions (e.g., Jenkins, GitLab CI)
-|
-|-- requirements.txt     # Python package dependencies
-|-- setup.py             # Package setup file
-|-- README.md            # Project documentation
-```
-
-You can also use our Github project template to start your ML development process with the demonstrated folder structure: <https://github.com/asabuncuoglu13/faid-template>
+A well-organized codebase is crucial for maintaining and scaling your ML projects. Here’s a suggested structure. You can use our Github project template to start your ML development process with the demonstrated folder structure: <https://github.com/asabuncuoglu13/faid-template>
 
 
 ## CI/CD Pipeline Stages
+
+![](../media/cicd-detailed.png)
 
 1. **Version Control (Git)**
    - All code, configurations, and documentation are stored in a version control system (e.g., Git).
@@ -80,6 +50,10 @@ You can also use our Github project template to start your ML development proces
 - **Monitoring and Logging**: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana)
 
 ## Potential Integration of DVC (Data Version Control)
+
+```{note}
+#TODO: Include a real-life example with a repository.
+```
 
 Integrating DVC (Data Version Control) into your project to enable proactive monitoring of bias in data sources involves several steps. DVC helps in versioning datasets and tracking changes, which is crucial for maintaining data integrity and monitoring for bias.
 

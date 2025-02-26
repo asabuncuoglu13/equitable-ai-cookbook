@@ -43,7 +43,7 @@ You can use tools like [wandb](https://wandb.ai/site), [Neptune](https://neptune
 
 While these libraries are useful for tracking progress and sharing insights with your team, they aren't optimized for fairness-focused processes. In such cases, it's important to foster interdisciplinary conversations and track fairness metrics, discrimination cases, and related outputs.
 
-We designed FAID to integrate easily with these tools, making it simple to log fairness-related data. Developers can also add FAID scripts directly to their codebase for customized tracking formats (see [FAID's Guide on this issue](https://github.com/asabuncuoglu13/faid/tree/main/docs/direct-integration.md)). 
+We developed a set of useful functions to integrate metadata management for fairness and safety monitoring easily with these tools in [FAID repository on GitHub](https://github.com/asabuncuoglu13/faid). Developers can also add the scripts directly to their codebase for customized tracking formats (see [FAID's Guide on this issue](https://github.com/asabuncuoglu13/faid/tree/main/docs)). 
 
 If you're already using these libraries, FAID's logging behavior will feel familiar.
 
@@ -51,7 +51,7 @@ If you're already using these libraries, FAID's logging behavior will feel famil
 import random
 import wandb
 import mlflow
-from faid import faidlog
+from faid import logging as faidlog
 ```
 
 ### Initialise
@@ -69,7 +69,7 @@ mlflow.set_experiment(project)
 ```
 
 ```python
-# init the log files
+# init the log files --> this will create model, data, fairness-experiment, risk and transparency logs
 faidlog.init()
 # create (or get) fairness experiment context
 ctx = faidlog.ExperimentContext(name=experiment_name)
@@ -104,7 +104,7 @@ mlflow.log_params(metrics)
 ctx.add_model_entry(key="metrics", entry=metrics)
 ```
 
-faid fairness recording format has three main entries: Context, Model and Data. It is to remind developers that, after each experiment, they will transfer this experiment knowledge to a standard report format: Project Overview, Model Card, Data Card.
+FAID fairness recording format has four main entries: Context, Model, Data, and Metrics. This categorisation is designed to ease the transfer these experiment-level metadata to the final transparency artefact: Use Case Cards, Model Cards, and Data Cards.
 
 ## Why Do You Need a Separate Logging Library for Fairness?
 
@@ -119,10 +119,11 @@ A dedicated logging library for fairness can streamline this process. By proacti
 
 ## Using FAID with [CMF](https://hewlettpackard.github.io/cmf/) and [DVC](https://dvc.org/)
 
-The design principles of our metadata management shares the similar design decisions with CMF. While developing our tool, we also checked the compatability of using the tool together with CMF and DVC to allow version control throughout the fairness research lifecycle.
+The design principles of our metadata management shares the similar design decisions with CMF and DVC to allow quick and easy integration with these data and model driven version control systems. While developing our tool, we also checked the compatability of using the tool together with CMF and DVC to allow version control throughout the fairness research lifecycle.
 
+```{note}
 #TODO: Add VCS workflows
-
+```
 
 ## Opening Data and Models
 

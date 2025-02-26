@@ -10,6 +10,23 @@ Checkout our [financial sentiment analysis fairness evaluation repository](https
 
 We view bias as a systemic error with multiple components. To evaluate bias in a machine learning model, practitioners typically use "protected attributes" to divide a population into groups. According to the EHRC guide, these attributes include age, disability, gender reassignment, pregnancy and maternity (including breastfeeding), race, religion or belief, sex, and sexual orientation {cite}`ehrc_24`. For each protected attribute, we can identify privileged and underprivileged groups based on whether the group has a systematic advantage. Our goal throughout the pipeline is to assess whether any bias occurs that could lead to discrimination at the individual or group level (see [Fairness Notions](../fairness/notions.md) for a detailed explanation).
 
+## Bias Sources throughout the Pipeline
+
+The below table demonstrates bias sources listed in the recent [International AI Safety Report](https://www.gov.uk/government/publications/international-ai-safety-report-2025). The bias sources and descriptions are directly obtained from the report:
+
+| Lifecycle Stage          | Bias Source              | Description  | Example (Credit Scoring Risk) |
+|-------------------------|-------------------------|-------------|--------------------------------|
+| **Data Collection**      | Sampling Bias          | Certain perspectives, demographics, or groups are overrepresented or underrepresented in the data. | Credit scoring data primarily collected from urban customers may not generalize well to rural populations. |
+|                         | Selection Bias         | Only certain data types or contexts are included, limiting representativeness. | Excluding alternative credit data, such as rent or utility payments, may disadvantage individuals without traditional credit history. |
+| **Data Annotation**      | Labeller Bias         | Annotators' backgrounds, perspectives, and cultural biases affect their classification of data, influencing the labeling process. | Loan officers manually classifying high-risk applicants may unconsciously rate applicants from certain backgrounds as riskier. |
+| **Data Curation**        | Historical Bias        | Reflecting or perpetuating past societal biases within curated data. | Using past loan approval data that historically favored certain demographics may lead to models reinforcing systemic discrimination. |
+| **Data Pre-processing**  | Feature Selection Bias | Excluding relevant features from a dataset. | Removing non-traditional financial indicators, like employment stability, can reduce the accuracy of risk assessments for self-employed individuals. |
+| **Model Training**       | Label Imbalance       | Unequal representation in labeled data, leading to biased model outputs. | Training a credit scoring model primarily on high-income applicants may cause it to inaccurately assess low-income borrowers. |
+| **Deployment Context**   | Contextual Bias       | A model is trained on data from a context that differs from its application, leading to worse outcomes for certain groups. | A credit scoring model trained in a high-income country may not perform well in a developing economy with different financial behaviors. |
+| **Evaluation & Validation** | Benchmark Bias      | Evaluation benchmarks favor certain groups or knowledge bases over others. | Testing a credit model primarily on data from prime borrowers may result in poor predictions for subprime borrowers. |
+| **Feedback Mechanisms**  | Feedback Loop Bias   | Models learn from biased user feedback, reinforcing initial biases. | A credit scoring system that lowers scores for rejected applicants (assuming they are high-risk) may prevent them from improving their credit over time. |
+
+
 ## Through Data Collection, Preprocessing and Feature Engineering
 
 The following state diagram summarizes the main steps of possible bias evaluation points in a traditional ML flow.
@@ -81,5 +98,3 @@ In this ML pipeline, we created a workflow that you can monitor the development 
 For each use case, using lifecycle management tools to integrate continuous monitoring into your CI/CD pipeline, setting up automated alerts for when bias metrics exceed predefined thresholds, building mechanisms to support running regular external audits of the entire pipeline, and engaging with diverse stakeholders to gather feedback is essential to align the fairness evaluation scores with real-world impacts.
 
 By integrating these tools and following this structured approach, you can proactively evaluate and mitigate bias throughout the entire ML lifecycle, ensuring fairness and equity in your models.
-
-After integrating DVC with FAID, you can also integrate many other open-source tools (i.e. MLFlow, TFX, TorchServe.) to ease the ML lifecycle management.

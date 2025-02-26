@@ -43,10 +43,10 @@ Creating a structured, step-by-step analysis that considers each step of the dev
 
 This structured framework brings existing concepts together to help researchers explore and understand a particular problem domain. In our case, we developed this conceptual framework to guide our risk taxonomy development. The framework consists of four levels: ML Steps, Components, Assessment and Implications.
 
--	**ML Steps:** A traditional ML pipeline includes data collection, data pre-processing, training, validation, deployment and monitoring steps.
+-	**ML Steps:** A traditional ML pipeline includes data collection, data pre-processing, training, validation, deployment and monitoring steps. We consider three main stages in our monitoring process for simplicity.
 -	**Components:** For each development stage, we should consider data, algorithm and interaction components. For each component, we also use a standardised recording format. You can see an example for fairness reporting in Chapter [Fairness Reporting](../fairness/recording_standard.md).
 -	**Assessment:** For each component of each step, we use the selected evaluation techniques, define potential harms, rank them based on their impacts, and consider mitigation techniques. It is a similar approach to risk analysis process of the cybersecurity domain:
-    - **Evaluation:** Define security, privacy and fairness metrics and apply evaluation techniques based on the selected metrics. 
+    - **Evaluation:** Define security, privacy and fairness, and other safety-related metrics and apply evaluation techniques based on the selected metrics. 
     - **Potential harm analysis:** We followed a categorical harm analysis approach, based on AHA! and CSET-AIID harm taxonomies:
         -	Quality of service harms
         -	Representational harms
@@ -54,10 +54,10 @@ This structured framework brings existing concepts together to help researchers 
         -	Social, societal, and well-being harms
         -	Loss of rights or agency
         -	Allocational harms
-    - **Mitigation:** Define tangible steps to increase security, privacy and fairness overall.
+    - **Mitigation:** Define tangible steps to improve the model, data and interaction components based on the selected metrics.
 - **Implications:** The implications can be specific steps to be taken or generalized perspectives to consider in future iterations of the development process. Whether specific or generalized, they should lead to developing some tangible steps. We categorized implications under four headlines: “Security and privacy,” “environment and sustainability,” “usability and inclusivity,” and “infrastructure and maintenance.” 
 
-### Example Illustration of LLM Evaluation and Mitigation Methods
+### Example illustration of this structure for LLMs
 
 The figure below illustrates curating possible evaluation and mitigation approaches for LLMs:
 
