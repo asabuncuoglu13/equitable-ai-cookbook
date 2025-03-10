@@ -1,13 +1,15 @@
-# AI Fairness Assurance
+# AI Safety Assurance
 
-The quest for fair data and model development is crucial for ensuring overall AI safety. In 2023, the UK government organized an international summit to address AI risks and discuss coordinated mitigation strategies. One significant outcome of this summit is the [Bletchley Declaration](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023), which emphasizes understanding AI risks within _"the context of a wider global approach to understanding the impact of AI in our societies."_
+The quest for fair and responsible data and model development is crucial for ensuring overall AI safety. In 2023, the UK government organized an international summit to address AI risks and discuss coordinated mitigation strategies. One significant outcome of this summit is the [Bletchley Declaration](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023), which emphasizes understanding AI risks within _"the context of a wider global approach to understanding the impact of AI in our societies."_
 
 AI assurance is the process of evaluating and assuring expected properties of AI systems throughout their lifecycle. It involves techniques like verification, validation, and safety analysis to ensure AI systems operate ethically, accurately, and consistently. Throughout the AI-enabled system development process, assuring safety requires two main stages:
 
 1. In the first stage, during the requirements planning phase, an interdisciplinary team establishes trustworthiness goals by conducting a comprehensive risk management process and formulating specific arguments. 
-2. In the second stage, a continuous monitoring interface gathers evidence from existing transparency artifacts, such as model, data, and use case documentation, to support these arguments dynamically. 
+2. In the second stage, the team use the evaluation and mitigation techniques as evidences of the safety claims and gathers information from existing transparency artefacts, such as model, data, and use case documentation. 
 
 ## Building Arguments
+
+> See [Trustworthy and Ethical Assurance Platform](https://alan-turing-institute.github.io/AssurancePlatform/) for a detailed view of building arguments for assurance. You can use the platform to create your AI safety arguments.
 
 An argument-based approach to assurance aims to demonstrate the rationale behind decisions or actions taken regarding a system through a structured argumentation process that demonstrates how arguments about a system's goals are justified by evidence. This process results in the creation of an assurance case, a document that sets out the argument for the system's trustworthiness. 
 
@@ -18,9 +20,6 @@ The main components of an assurance case are:
 - **Property Arguments:** These are lower-level arguments that specify the properties of the system or project that contribute to achieving the goal claim. For example, property arguments for an "explainable" AI system could include the techniques used to interpret the model's outcomes or whether users can contest decisions based on the explanations provided. 
 - **Strategy:** This element outlines the reasoning and approach used to develop the argument supporting the goal claim. Strategies help break down the argument into sub-arguments, making it easier to understand and evaluate. 
 - **Evidence:** This is the foundation of the assurance case and provides the basis for trusting the validity of the arguments. Evidence can include empirical data, expert opinions, or adherence to technical standards. The type of evidence required will depend on the specific arguments being made.
-
-Use the [Trustworthy Ethical Assurance Platform](https://alan-turing-institute.github.io/AssurancePlatform/) to create your AI safety arguments.
-
 
 ### Practical Suggestions for Building Arguments
 
@@ -49,17 +48,30 @@ Take a meeting scheduled at 15:00. If you arrive at 15:01, you are technically l
 
 The key takeaway: a robust measurement system provides the basis, but practical application depends on context and thresholds.
 
-We now face a similar challenge in defining assurance metrics for trustworthy AI systems. Just as time measurement requires global consensus and refinement, developing clear, context-specific metrics for AI is essential. These metrics must account for performance, fairness, safety, and transparency across various scenarios.
-While defining these metrics may seem simple, like defining lateness, the task is complex. It requires consensus, precision, and adaptability to different contexts. Once established, these metrics will form the backbone of assurance cases, just as timekeeping does for scheduling.
+We now face a similar challenge in defining assurance metrics for trustworthy AI systems. Just as time measurement requires global consensus and refinement, developing clear, context-specific metrics for AI is essential. These metrics must account for performance, fairness, safety, and transparency across various scenarios. 
+
+For example, the existing benchmarks for fairness evaluation do not take context into account. The benchmarks can be descriptive, normative, and correlation-based. However, they might not be directly transferable to the real-life use case to evaluate the fairness of the AI system. Wang et al. (2025) {cite}`wang2025fairnessdifferenceawarenessmeasuring` present a new benchmark suite (DiffAware) to evaluate a model's ability to appropriately treat groups differently (difference awareness) and to differentiate only when necessary (contextual awareness). 
 
 Effective assurance relies on clear, context-aware metrics. History shows us that standardizing measurements takes time and effort, but it’s essential for consistency and trust. As we work toward standardizing assurance metrics for AI, the lessons from measuring time remind us of the importance of clarity, flexibility, and precision.
 
+### Choosing the Benchmark
+
+Although all data-driven algorithms require a robust and reliable benchmark, current discussion centred around benchmarks for LLMs and other general-purpose AI models.
+
+![](../media/llm-benchmarks.png)
+
+The diagram above illustrates one way of categorising current evals for LLMs. Practitioners focus on model capability, domain-specific task performance and model safety. Model capability evaluation focuses on general language understanding such as question answering quality, reasoning, factual recall, and commonsense. Task performance can include multiple domain-specific evals such as math, coding, law, medical, and financial capabilities. Safety evaluations aims to minimise the potential harms such as toxicity and bias and adhere to ethical principles.
+
+> See AISI's Inspect AI Evals: <https://inspect.ai-safety-institute.org.uk/evals/>. It provides a curated list of ready-to-use evals for LLM safety, capability, and performance assessment.
+
+> See IBM's Tiny Benchmarks: <https://huggingface.co/tinyBenchmarks>. The collection includes tiny versions of selected evals to reduce the cost of benchmarking while preserving reliability.
+
 ## Use Cases
 
-In line with both national and international initiatives, the UK's RTAU regularly releases AI assurance use cases. Two examples from the financial services sector are as follows:
+The UK's DSIT regularly releases enterprise-level AI assurance use cases. Two examples from the financial services sector are as follows:
 
 - **[Case 1 - Clear Bank](https://www.gov.uk/ai-assurance-techniques/clearbank-safeguarding-generative-ai-use-cases-in-a-regulated-fintech-banking-api):** Clear Bank focuses on integrating LLM (Limited License Model). They ensure fairness by consistently involving human oversight, including domain experts for continuous review and implementing feedback mechanisms to detect biases at every pipeline stage. ([Link to platform page](https://clear.bank/))
 
-- **[Case 2 - Credo Reinsurance](https://www.gov.uk/ai-assurance-techniques/credo-ai-governance-platform-reinsurance-provider-algorithmic-bias-assessment-and-reporting):** Credo Reinsurance's case centers on their machine learning operations (MLOps) system. Their Credo AI system automatically identifies biases in models pre-deployment. The platform evaluates fairness outcomes against established standards. However, due to compliance with anti-discrimination regulations (e.g., NYC’s LL-144), they can only compile necessary data quarterly, not in real-time. ([Link to platform page](https://www.credo.ai/product))
+- **[Case 2 - Credo AI Governance](https://www.gov.uk/ai-assurance-techniques/credo-ai-governance-platform-reinsurance-provider-algorithmic-bias-assessment-and-reporting):** Credo Reinsurance's case centers on their machine learning operations (MLOps) system. Their Credo AI system automatically identifies biases in models pre-deployment. The platform evaluates fairness outcomes against established standards. However, due to compliance with anti-discrimination regulations (e.g., NYC’s LL-144), they can only compile necessary data quarterly, not in real-time. ([Link to platform page](https://www.credo.ai/product))
 
 See more use cases in [DSIT - AI Assurance Use Cases](https://www.gov.uk/ai-assurance-techniques).
