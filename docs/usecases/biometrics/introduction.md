@@ -1,53 +1,77 @@
-# Face Fairness Benchmark
+# Fairness in Face Biometrics
 
-Bias in facial imaging has been a persistent challenge, spanning from the early days of analogue photography to the modern digital era. Historically, cameras were often designed with a bias towards accurately capturing lighter skin tones, which led to an inherent disadvantage for individuals with darker skin tones. This issue, rooted in the sensor technology and the way cameras were calibrated, has evolved over time but continues to affect the accuracy of facial recognition systems {cite}`leslie_understanding_2020`. In addition to these sensor-level biases, unbalanced representation of different demographic groups in training datasets amplifies the bias in the existing sysmtes.
+The concept of fairness in the context of face biometrics centres on the principle that algorithms should operate equitably, providing consistent and unbiased results regardless of an individual's readily observable characteristics such as age, gender, skin color, or nationality. This implies that the technology should not systematically disadvantage or treat certain groups of people differently based on these attributes. The goal is to ensure that face biometric systems do not penalise individuals due to their membership in a particular demographic group. Understanding fairness in this domain requires considering various perspectives, including individual fairness, which posits that similar inputs should yield similar predictions, and group fairness, which focuses on whether protected and unprotected groups are treated in a comparable manner.
 
-In the digital public infrastructure systems, especially in ID-based services, facial biometrics is gaining traction. To ensure the reliability and security of these applications, governments and regulatory bodies have instituted standards such as ISO/IEC 19794-5, which set the benchmarks for facial recognition algorithms. Despite these standards, achieving accurate and fair biometrics remains a challenge, primarily due to demographic dependencies.
+The increasing integration of face biometrics into numerous critical societal applications -- ranging from authentication to everyday apps to national ID biometrics, underscores the importance of ensuring fairness. If these algorithms exhibit bias and do not perform equitably across different demographic groups, they can lead to adverse effects on certain populations. Unfair algorithms have the potential to cause discrimination, restrict access to essential services, and lead to wrongful accusations. Furthermore, biases embedded within these systems can exacerbate existing societal inequalities, particularly in sensitive areas like law enforcement, where the consequences of misidentification can be severe. The growing reliance on face biometrics in high-stakes scenarios amplifies the potential for harm arising from unfair systems, thereby necessitating proactive and comprehensive measures to guarantee equity for all individuals.
 
-Variations in skin color, facial features, and proportions across different demographics can significantly affect the performance of facial recognition models. These variations often lead to disparities in accuracy, which can result in biases against certain demographic groups. Therefore, it is crucial to benchmark these algorithms across a diverse spectrum of users to ensure fairness and accuracy. This presents a significant challenge, as it requires comprehensive testing and validation against a wide array of demographic factors to create truly equitable biometric systems.
+## Core Principles of Fairness in Face Biometrics
 
-The current biometric benchmarks, such as [Face Recognition Vendor Test (FRVT)]( https://www.nist.gov/programs-projects/face-recognition-vendor-test-frvt), aim to address these issues by providing a framework for evaluating the performance of facial recognition systems. These benchmarks run performance analysis metrics such as processing and memory failures, average, maximum and minimum times, memory allocations, and localisation accuracies. They also report overall and subgroup accuracies based on different metrics such as EER, FMR, FMR/FRNMR and DET(t) Curve. They incorporate a diverse set of facial images that encompass a wide range of demographic characteristics, including variations in age, gender, ethnicity, and facial expressions.
+Several core principles underpin the concept of fairness in face biometrics, guiding the development and deployment of these technologies.
 
-However, despite these efforts, these existing benchmarks still fall short in representation of certain demographic groups or fail to account for subtle but significant variations within these groups. Further, this lacks the open-source implementation and test use cases. Consequently, there is a pressing need for more open, robust and inclusive benchmarks that can better capture the diversity of the global population and accelerate the open-innovation.
+- **Non-discrimination**: The technology should not unlawfully discriminate against individuals based on legally protected attributes. This principle should be explicitly embedded in the terms of service governing the use of such technologies.
+- **Equity and equal performance**: Ideally, the technology should behave consistently and without performance disparities, regardless of an individual's visible characteristics. (accuracy and reliability for all individuals, including those who have been historically underrepresented in training datasets)
+- **Transparency**: Transparency is another crucial principle, and has different definitions/meanings in terms of development requirements. This article defines it as thorough documentation of the capabilities and limitations of the system.
+- **Accountability**: With transparent documentation, accountability can be established with appropriate levels of human oversight and control over the uses of the technology.
 
-By establishing open face fairness benchmark, developers can identify and mitigate biases, promoting more equitable and trustworthy AI applications that serve everyone fairly and reliably. An open benchmark can also help establishing clear and standardized metrics for evaluating fairness ensures that all facial recognition systems are held to the same criteria, making comparisons across different systems more meaningful. We have observed that in the AI space (Huggingface leaderboards, NeurIPS and CVPR challenges, etc.) that public benchmarks and results can increase transparency in AI development and accelerate the pace of innovation. Further, demonstrating that facial recognition systems have been rigorously tested for fairness can help build trust among users, particularly those from historically marginalized groups.
+## Understanding Bias in Face Biometric Systems
 
-We planned a set of five experiments as the first iteration of this benchmark:
+Bias in face biometric systems can manifest in various forms, leading to unfair outcomes for certain groups. Two prominent types of bias are demographic bias and bias related to image quality.
 
-- Skin Tone Representation
-- Facial Proportions Representation
-- Comparing Fairness Notions and Metrics
-- Performance with Synthetic Data
+### Bias related to representation
 
-Following these experiments, fairness auditors can build their analysis step-by-step and achieve a level of granularity to present the results in a more interpretable way. In this report, we present the first experiment (Skin Tone Representation) in detail, then we introduce the rest of the experiments with a brief explanation.
+The source of this bias can be over or under representation of different demographic groups, resulting in performance disparities across the groups. For instance, a research project from the MIT Media lab has documented error rate differences exceeding 20-30% between light-skinned men and darker-skinned women (See: <https://www.media.mit.edu/projects/gender-shades/overview/>).
 
-## Example: Face Skin Tone Representation
+The lack of diversity in training data means the algorithms may not learn to effectively extract and compare facial features across the full spectrum of human appearances. This can lead to a higher likelihood of misidentification or non-identification for individuals belonging to underrepresented demographics.
 
-There is a growing availability of face image datasets that could researchers and practitioners use. For example, the Celeb-A dataset is a popular dataset that contains over 200,000 images of celebrities.However, the representativeness of the skin colour and other demographic physical features is limited. 
+### Bias related to image quality
 
-:::{note}
-For example,the Celeb-A dataset is also available in the [Know-Your-Data tool](https://knowyourdata-tfds.withgoogle.com). A sample exploration: (1) Select Blond Hair attribute, Check Male and Female Disparity, (2) Sect Bald attribute, Apply the same gender disparity. As you will also see, blonde-haired females are overrepresented in the dataset by a factor of 1.61. And blonde-hair males are underrepresented by a factor of 0.14. In the same experiment, you can see female-baldness is significantly underrepresented by a factor of 0.01!
-:::
+Bias in face recognition can also stem from issues related to image quality, such as blur, low resolution, poor lighting, and variations in pose or facial expression. Historically, camera technology has often been calibrated to perform optimally with lighter skin tones (See [Turing's Technical Report](https://www.turing.ac.uk/sites/default/files/2020-10/understanding_bias_in_facial_recognition_technology.pdf)). This has resulted in poorer image quality, such as underexposure, for individuals with darker skin, which in turn negatively impacted the accuracy of face recognition algorithms for this demographic.
 
-Defining skin color and quantifying it is an active research area. One commonly utilised metric is *individual typology angle* (ITA), which is originated from dermatology research.
+Variations in pose and facial expression can also introduce bias. If the training data predominantly features individuals with neutral expressions and frontal poses, the system may struggle to accurately recognise individuals from demographic groups that are more likely to be captured in non-ideal conditions or with a wider range of expressions.
 
-This experiment is based on Monk Skin Tone dataset (Google Research), which contains images of individuals with different skin tones. The goal of this experiment is: 
+Furthermore, environmental factors such as extreme temperatures and background noise can affect the performance of facial biometric systems, and these factors might disproportionately impact certain communities or settings. The quality of the capture equipment, including the camera or sensor, also plays a crucial role. Low-quality images captured with inferior equipment may lack the necessary detail for accurate identification, leading to both false negatives and false positives.
 
-- To evaluate the representation of different skin tones in the dataset compared to the representation obtained from Monk dataset.
-- To identify any biases that may exist in the facial biometrics model.
+## Metrics for Evaluation
 
-Their dataset consists of images of individuals with six different skin tones, ranging from very light to very dark. The results of this experiment will provide insights into how well facial recognition models can generalize across different skin tones and help identify any biases that may exist.
+Evaluating the fairness of face biometric algorithms requires the use of specific metrics that can quantify performance disparities across different demographic groups.
 
-:::{seealso}
-The next page is a sample experiment of our benchmark: [Face Skin Tone Experiment](./face-skin-tone.ipynb). See all the experiments and benchmark on our Github repository: <https://github.com/asabuncuoglu13/fair-face>
-:::
+> See a sample report from NIST FRVT to observe metrics in action: <https://pages.nist.gov/frvt/html/frvt11.html>
 
-## Next Steps
+- **The Equal Error Rate (EER)** is a common metric used in biometrics, representing the point at which the False Match Rate (FMR) and the False Non-Match Rate (FNMR) are equal. The FMR is the proportion of impostor attempts that are falsely accepted as a match, while the FNMR is the proportion of genuine attempts that are incorrectly rejected as non-matches. To assess fairness, the EER is calculated separately for different demographic groups, and these rates are then compared.
+- **Fairness Discrepancy Rate (FDR):** This metric, proposed by researchers at the Idiap Research Institute, quantifies the maximum difference in false match rate (FMR) and false non-match rate (FNMR) performance between any two demographic groups at a given discrimination threshold.  
+- **Gini Aggregation Rate for Biometric Equitability (GARBE):** Developed as a fairness measure, GARBE can be used in conjunction with Pareto optimisation to select among alternative algorithms based on the trade-off between accuracy and fairness.  
+- **Fair Sensitivity Analysis (Fair SA):** This evaluation framework measures group fairness through the lens of robustness. It jointly assesses a model's vulnerability to image perturbations and variations in demographics, allowing for the analysis of how different subgroups are treated under varying levels of perturbation.  
+- **Equal Opportunity:** This fairness criterion ensures that individuals from different groups who are qualified for a positive outcome have an equal chance of receiving it, focusing on the true positive rate across groups.  
+- **Equality of Odds:** This metric requires that both the true positive rate and the false positive rate are the same across different groups, aiming for similar error distributions.  
+- **Predictive Parity:** This metric ensures that the positive predictions made by the model have the same precision across different groups, meaning that when the model predicts a positive outcome, the probability of it being correct is the same for all groups.  
+- **Treatment Equality:** This metric focuses on balancing the ratio of the false positive rate to the false negative rate across different groups, often used in contexts like predictive policing to ensure equitable error rates.  
 
-The Face Fairness Benchmark is an ongoing project that aims to provide a comprehensive evaluation of facial recognition systems across a diverse range of demographic factors. The next steps in this project include:
+## Techniques and Strategies for Mitigating Bias and Improving Fairness
 
-- Expanding the benchmark to include additional demographic factors such as age, facial expressions, and environmental conditions.
-- Developing a standardized set of metrics for evaluating fairness in facial recognition systems.
-- Establishing an open-source platform for sharing benchmark data and results to promote transparency and collaboration in the AI community.
-- Collaborating with industry partners and regulatory bodies to ensure that the benchmark aligns with industry standards and best practices.
-- Conducting further experiments to evaluate the performance of facial recognition systems under different conditions and scenarios.
+Several techniques and strategies are being explored and implemented to mitigate bias and enhance fairness in face biometric technologies. These approaches can be broadly categorised as data-centric, algorithm-level interventions, post-processing techniques, and human oversight and evaluation.
+
+### Data-Centric Approaches
+
+One of the primary strategies for mitigating bias involves focusing on the data used to train these algorithms. Collecting diverse datasets that accurately represent the global population, including various demographic groups, races, genders, and ages, is crucial. Ensuring a balanced representation of these groups within the training data can help reduce performance disparities. However, achieving balance in terms of numbers alone may not be sufficient to address all forms of bias.
+
+> Leverage the existing large-scale research. For example, you can use Google's Skin Tone reseach (Monk Scale) to compare the representativeness of your dataset. <https://skintone.google/>
+
+Techniques like data augmentation, which involves applying transformations such as rotations and brightness adjustments to existing images, can be used to create more varied and robust datasets. Additionally, the use of AI-generated imagery is being explored as a way to enhance dataset diversity, potentially addressing issues of underrepresentation while also mitigating privacy concerns associated with real-world images.
+
+To ensure the quality and fairness of training data, external and independent audits of datasets are essential. These audits can help identify imbalances and biases that might not be immediately apparent. Furthermore, ensuring that the data is accurately and consistently labeled is critical, as poorly labeled data can introduce or exacerbate biases in the trained models.
+
+### Algorithm-Level Interventions
+
+Beyond the data itself, modifications to the algorithms play a significant role in improving fairness. Enhancing the overall accuracy of face recognition algorithms often leads to a reduction in demographic differentials. Techniques such as multi-scale feature vision and spatial attention, which allow algorithms to focus on relevant facial features at different resolutions, can contribute to improved accuracy and potentially reduce bias.
+
+> Test your algorithm with "what-if" kind of experiments regularly. See examples: https://pair-code.github.io/what-if-tool/
+
+Adversarial training is another promising approach, where models are trained on datasets that include both biased and unbiased samples to help them learn to identify and correct biases during the recognition process. Debiasing variational autoencoders (DB-VAE) are an example of such techniques that aim to automatically discover and mitigate hidden biases within the training data.
+
+Imposing fairness constraints directly into the algorithm's learning process can also force classifiers to perform more equitably across different sensitive groups . Finally, the continuous upgrading of algorithms as new and more advanced versions are developed is important for addressing evolving challenges related to bias.
+
+### Human Oversight and Evaluation
+
+Human involvement remains crucial in ensuring fairness in face biometrics. Maintaining an appropriate level of human control over the deployment and use of these technologies is essential, particularly in high-stakes applications. Implementing blind taste tests, where human evaluators assess the performance of algorithms without knowing the demographic attributes of the individuals being evaluated, can help minimise unconscious biases in the assessment process.
+
+Regular data audits and algorithmic audits are vital for identifying and addressing biases that may arise over time or in specific use cases. Engaging with communities that are disproportionately affected by biases in face recognition technology and seeking their input can provide valuable insights and help ensure that mitigation strategies are effective and address the real-world concerns of these groups.

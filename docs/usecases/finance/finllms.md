@@ -35,7 +35,7 @@ FLANG (Financial LANGuage model) leverages financial data alongside English data
 
 ## Available Datasets
 
-Below, we summarised some commonly used financial text datasets. You can run [our exploratory interactive notebook](./eda-fin-data.ipynb) to preview and play with these data.
+Below, we summarised some commonly used financial text datasets. See the preview of these datasets on [GitHub](https://github.com/asabuncuoglu13/faid-test-financial-sentiment-analysis/blob/main/notebooks/00-eda-fin-data.ipynb).
 
 ### Loughran-McDonald Sentiment Word Lists
 

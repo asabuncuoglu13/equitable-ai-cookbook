@@ -49,12 +49,14 @@ We can list three main challenges to define and measure fairness in news sentime
 2. The pre-trained LLM carries some bias for each source, topic and stance on a given topic.
 3. Human monitoring is also open to bias depending on the socioeconomic and political view
 
+![](../../media/fairness-specific-audit.png)
+
 A robust recipe is necessary to overcome these challenges and enable a proactive fairness evaluation. For example, in a news sentiment analysis application, we can define following steps beyond comparing some fairness metrics (Of course, also compare the metrics like FMR and FNMR):
 
-- [Counterfactual inputs] Does the model behaviour change when the source changes? (e.g. Chinese vs German sources)
+- [Counterfactual inputs] Does the model behaviour change when we explicitly change sensitive attribute related phrases?
 - [Comparative analysis of demographic parities between topic clusters] How do fairness metrics change in different topic clusters?
 - [Interpret the results] And, we also need to answer what does it mean to reduce bias? Bias is an essential component of achieving pattern recognition. So, the model eventually has some bias based on the data. And when we develop a model, this model should also answer some business needs. Any financial services try to increase their profit. But it should also align with the greater good, considering environmental, social and governance (ESG) aspects. 
 
 :::{note}
-We conducted a three-step representation bias evaluation for FinBERT's use in financial news analysis. [See the experiment notebooks.](https://github.com/asabuncuoglu13/faid-test-financial-sentiment-analysis/tree/main/notebooks/bias-eval) The first step of evaluation is to check the behaviour of the model against prompts related to countries from \textit{Global South} (GS) and \textit{Global North} (GN). We created a synthetic dataset to test the FinBERT's classification accuracy when the prompt explicitly reveals country information. Next, we monitored the performance on Indian financial news to check if the model performance is consistent when the data source includes different technical jargon, currency and other implicit bias sources.  Finally, we run interpretability methods such as LIME and saliency maps to see the word-level impact in individual level.
+As illustrated in the figure above, we conducted a three-step representation bias evaluation for FinBERT's use in financial news analysis. [See the experiment notebooks.](https://github.com/asabuncuoglu13/faid-test-financial-sentiment-analysis/tree/main/notebooks/bias-eval) The first step of evaluation is to check the behaviour of the model against prompts related to countries from \textit{Global South} (GS) and \textit{Global North} (GN). We created a synthetic dataset to test the FinBERT's classification accuracy when the prompt explicitly reveals country information. Next, we monitored the performance on Indian financial news to check if the model performance is consistent when the data source includes different technical jargon, currency and other implicit bias sources.  Finally, we run interpretability methods such as LIME and saliency maps to see the word-level impact in individual level.
 :::

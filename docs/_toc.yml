@@ -36,14 +36,12 @@ parts:
     chapters:
     - file: usecases/finance/introduction
     - file: usecases/finance/finllms
-    - file: usecases/finance/eda-fin-data
     - file: usecases/finance/interaction
     - file: usecases/finance/interpretability
     - file: usecases/finance/readinglist
   - caption: "Use Case: Biometrics"
     chapters:
     - file: usecases/biometrics/introduction
-    - file: usecases/biometrics/face-skin-tone
   - caption: "References"
     chapters:
     - file: bibliography
