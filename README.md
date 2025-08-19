@@ -1,10 +1,10 @@
-# Equitable AI Cookbook
+# Trusted AI Cookbook
 
 A series of essays and experiments to accelerate the equitable AI development. This repository contains code, data, and materials that are part of an ongoing research project. Please note that the work is in a research preview stage and may produce incomplete or inconsistent results. It also contains some content in "under-development" or "in-review" stages. Use at your own discretion, and feel free to contribute or report any issues.
 
 **Cite as:**
 
-A. Sabuncuoglu, ‘Equitable AI Cookbook’, 2024. doi: 10.5281/zenodo.14231596.
+A. Sabuncuoglu, ‘Trusted AI Cookbook’, 2024. doi: 10.5281/zenodo.14231596.
 
 ```
 @misc{sabuncuoglu_equitable_2024,
@@ -20,7 +20,7 @@ A. Sabuncuoglu, ‘Equitable AI Cookbook’, 2024. doi: 10.5281/zenodo.14231596.
 
 ### Building the book
 
-If you'd like to develop and/or build the Equitable AI Cookbook book, you should:
+If you'd like to develop and/or build the Trusted AI Cookbook book, you should:
 
 1. Clone this repository
 2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)

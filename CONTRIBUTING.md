@@ -25,8 +25,8 @@ and "help wanted" is open to whoever wants to implement it.
 
 ## Write Documentation
 
-Equitable AI Cookbook could always use more documentation, whether as part of the
-official Equitable AI Cookbook docs, in docstrings, or even on the web in blog posts,
+Trusted AI Cookbook could always use more documentation, whether as part of the
+official Trusted AI Cookbook docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 ## Submit Feedback
@@ -42,7 +42,7 @@ If you are proposing a feature:
 
 ## Get Started
 
-Ready to contribute? Here's how to set up `Equitable AI Cookbook` for local development.
+Ready to contribute? Here's how to set up `Trusted AI Cookbook` for local development.
 
 1. Fork the repo on GitHub.
 2. Clone your fork locally.
@@ -53,4 +53,4 @@ Ready to contribute? Here's how to set up `Equitable AI Cookbook` for local deve
 
 ## Code of Conduct
 
-Please note that the Equitable AI Cookbook project is released with a [Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
+Please note that the Trusted AI Cookbook project is released with a [Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.

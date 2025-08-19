@@ -1,6 +1,6 @@
-# Safety Recipes
+# Useful Recipes during Assurance Lifecycle
 
-We developed these recipes for fairness, however it is applicable to broader safety characteristics such as security and privacy. We have five main courses in the menu: Trecability, responsibility, explainability, auditability, digestability. If you like abbreviations, we named this recipe framework TREAD. 
+We identified these recipes by examining multiple safety assurance cases developed in academia and industry. We have five main courses in the menu: Trecability, responsibility, explainability, auditability, digestability. If you like abbreviations, we named this recipe framework TREAD. 
 
 ## Recipe 1: Tracability
 
@@ -12,10 +12,6 @@ We should aim for developing a tracable supply chain management for our ML codeb
 4. **Dependency Management:** Use standardised approaches such as Bill of Materials (SBOM, AIBOM) to manage dependencies of codebase. Run regular vulnerability analysis for these dependencies.
 5. **Monitor and Audit Changes:** Implement change logs for updates to data, model parameters, or deployment environments. Regularly audit changes to identify potential vulnerability sources.
 6. **Enable Root Cause Analysis:** Build diagnostic tools to reproduce model predictions, including intermediate outputs, feature importance, and model decision pathways. Include input-output mappings in the logging system for debugging.
-
-```{note}
-Check out the [CI/CD chapter](../cicd/001-intro.md) to see this recipe in action.
-```
 
 ## Recipe 2: Responsibility
 

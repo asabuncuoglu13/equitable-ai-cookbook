@@ -9,7 +9,7 @@ A well-organized codebase is crucial for maintaining and scaling your ML project
 
 ## CI/CD Pipeline Stages
 
-![](../media/cicd-detailed.png)
+![](../../media/cicd-detailed.png)
 
 1. **Version Control (Git)**
    - All code, configurations, and documentation are stored in a version control system (e.g., Git).

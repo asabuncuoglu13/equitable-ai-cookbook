@@ -44,7 +44,7 @@ Creating a structured, step-by-step analysis that considers each step of the dev
 This structured framework brings existing concepts together to help researchers explore and understand a particular problem domain. In our case, we developed this conceptual framework to guide our risk taxonomy development. The framework consists of four levels: ML Steps, Components, Assessment and Implications.
 
 -	**ML Steps:** A traditional ML pipeline includes data collection, data pre-processing, training, validation, deployment and monitoring steps. We consider three main stages in our monitoring process for simplicity.
--	**Components:** For each development stage, we should consider data, algorithm and interaction components. For each component, we also use a standardised recording format. You can see an example for fairness reporting in Chapter [Fairness Reporting](../fairness/recording_standard.md).
+-	**Components:** For each development stage, we should consider data, algorithm and interaction components. For each component, we also use a standardised recording format. You can see an example for fairness reporting in Chapter [Fairness Reporting](./cicd//recording-standard.md).
 -	**Assessment:** For each component of each step, we use the selected evaluation techniques, define potential harms, rank them based on their impacts, and consider mitigation techniques. It is a similar approach to risk analysis process of the cybersecurity domain:
     - **Evaluation:** Define security, privacy and fairness, and other safety-related metrics and apply evaluation techniques based on the selected metrics. 
     - **Potential harm analysis:** We followed a categorical harm analysis approach, based on AHA! and CSET-AIID harm taxonomies:
@@ -78,6 +78,42 @@ The final step is deployment and inference:
 - (Privacy) Inferences made on sensitive data during deployment might lead to inadvertent information leakage. Sharing inference results with third parties might inadvertently expose sensitive information. 
 - (Fairness) Models might perpetuate biases, leading to unfair treatment or decisions for certain groups.
 The ML security, privacy and fairness domains produce a vast amount of scholarly work on ML attacks and possible mitigations. Further, big tech companies, governments and NGOs publish various frameworks for secure, private and fair governance of AI. Managing these risks involves a combination of technological measures, rigorous compliance with data protection laws, ongoing monitoring, and continuous improvement in the understanding and implementation of ethical AI principles. 
+
+The following state diagram summarizes the main steps of possible evaluation points for monitoring in a traditional ML flow.
+
+```{mermaid}
+stateDiagram-v2
+    [*] --> VersionControl
+    VersionControl --> DataPipeline
+    VersionControl --> ModelPipeline
+
+    state DataPipeline {
+    DataIngestion --> DataCleaning: Analyze Data \n Distribution
+    DataIngestion --> DataCleaning: Raw Data
+    DataIngestion --> DataCleaning: External Data
+    DataCleaning --> FeatureEngineering: Check for \n Missing Values
+    DataCleaning --> FeatureEngineering: Handle \n Missing Values
+    DataCleaning --> FeatureEngineering: Cleaned Data
+    }
+
+    state ModelPipeline {
+        ModelTraining --> ModelEvaluation: Monitor \n Training Metrics
+        ModelTraining --> ModelEvaluation: Train \n Model
+        ModelTraining --> ModelEvaluation: Training \n Metrics
+        ModelEvaluation --> ModelDeployment: Evaluate Bias \n in Metrics
+        ModelEvaluation --> ModelDeployment: Evaluation \n Metrics
+        ModelEvaluation --> ModelDeployment: Bias \n Evaluation
+        ModelDeployment --> PostDeploymentMonitoring: Check for \n Deployment Bias
+        ModelDeployment --> PostDeploymentMonitoring: Deploy \n Model
+    }
+
+    FeatureEngineering --> [*]: Monitor Bias \n in Data
+
+    PostDeploymentMonitoring --> [*]: Monitor \n Real-Time Bias
+    PostDeploymentMonitoring --> [*]: Monitor \n Model Performance
+    PostDeploymentMonitoring --> [*]: Collect \n User Feedback
+
+```
 
 ## Limitations
 

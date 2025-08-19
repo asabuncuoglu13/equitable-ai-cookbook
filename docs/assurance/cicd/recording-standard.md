@@ -9,13 +9,13 @@ Auditing the fairness of AI models is a challenging process as defining what fai
 
 In this process, keeping a recording of experiment findings and reporting them is a challenge for many development teams. FAID reports can support developers visualise and share the fairness-related data with other stakeholders in the development process.
 
-![](../media/reporting.png)
+![](../../media/reporting.png)
 
 ## Standardised Recording of Metrics
 
 FAID utilises Franklin et al.'s Fairness Metrics Ontology {cite}`franklin_ontology_2022` as the standard relational map of fairness notions and metrics. So, any fairness experiment report follows the organisational hierarchy of this ontology:
 
-![Fairness Ontology](../media/fairness-ontology.png)
+![Fairness Ontology](../../media/fairness-ontology.png)
 
 > See the ontology schema here: <https://github.com/frankj-rpi/fairness-metrics-ontology/tree/main>
 

@@ -1,4 +1,4 @@
-# Understanding Fairness Notions in Data-Driven Decision Making
+# Fairness Notions and Metrics
 
 In data-driven decision making, algorithmic systems can encode and amplify bias. We see the reflection of societal biases in training datasets, and in development assumptions {cite}`jacobs_21`. Indeed, researchers and practitioners actually encode bias while constructing "measurement models" to quantify abstract concepts as a combination of observed features. This process is referred as **measurement modeling** can introduce potential mismatches between the theoretical understanding and its operationalization {cite}`jacobs_21`. Jacobs et al. argues that fairness-related harms are mainly a result of such mismatches.
 
@@ -76,11 +76,8 @@ Addressing fairness technically has raised concerns about the trade-offs between
 
 **In conclusion,** understanding and implementing fairness notions in data-driven decision-making processes is essential for promoting equity and mitigating biases. By incorporating both group and individual fairness considerations, alongside addressing implementation challenges, we can strive towards more just and equitable outcomes in algorithmic decision making. The figure below summarises the overall relationship between fairness notions and metrics as an ontology diagram:
 
-![Fairness Ontology Diagram](../media/fairness-ontology.png)
+![Fairness Ontology Diagram](../../media/fairness-ontology.png)
 The figure is obtained from {cite}`franklin_ontology_2022` and is available on [Github](https://github.com/frankj-rpi/fairness-metrics-ontology).
-
-
-
 
 # Useful Resources
 

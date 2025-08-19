@@ -1,7 +1,7 @@
-# Design Patterns for Monitoring Fairness/Safety
+# Design Patterns for Testing and Monitoring
 
 ```{note}
-1. We shared more generalisable, system-level patterns in [Safety Recipes Chapter](../safety/recipes.md). 
+1. We shared more generalisable, system-level patterns in [Safety Recipes Chapter](../assurance/recipes.md). 
 2. Then, we shared some desing principles for organising the metadata flow in an organisational structure.
 3. This chapter focuses on structuring the development codebase for monitoring fairness and other safety characteristics.
 ```
@@ -14,7 +14,7 @@ Beyond being reusable patterns, design patterns presents a structured cognitive 
 
 **An example design pattern from OOP:** Object-oriented programming (OOP) patterns represent a widely adopted approach to software design, particularly since the 1990s. They have become standard practices in languages such as Java and Kotlin, as well as other object-oriented programming paradigms. For example, **Abstract Factory** design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. Abstract factory and other methods that create interfaces are generally based on *abstraction,* which involves identifying common features among different entities and creating a generalized representation. This executive function is fundamental to human thinking. The cognitive base of these design patterns are actually based on executive functions such as planning, inhibition, monitoring, and prioritising.
 
-## Defining Patterns for AI Fairness
+## Defining Patterns for AI Safety
 
 As the design patterns in OOP naturally fits to the "world" of "objects" in the programming paradigm, the fairness design patterns should fit into the "world" of "achieving fair decision making processes." The closest candidate of design patterns in the world of fairness is designing "policy" and "test" recipes/strategies for fairness experiments. These recipes can be utilised in designing structured unit tests for continuous integration processes. In this sense, designing patterns for fairness is more close to designing patterns for unit testing.
 
@@ -75,7 +75,7 @@ In their seminal work {cite}`NIPS15_hiddendebt`, Sculley and other Google resear
 
 #### Technical Debt and Bias in ML Systems
 
-In [Common Bias Types in ML Pipeline (and some solutions)](./bias.md) chapter, we introduced potential bias types that can occur throughout the ML pipeline. Technical debt, in various forms, can exacerbate or even directly lead to bias in machine learning systems, particularly within the financial AI domain.  **Entanglement**, a key concept from the sources, describes how changes in one part of an ML system can cascade and impact other components in unexpected ways. For instance, if an ML system incurs technical debt through a "**pipeline jungle**" – a convoluted data processing pipeline –  even seemingly small modifications to address one data issue could inadvertently introduce or amplify biases in the data used for training. This entanglement can make it extremely difficult to isolate and mitigate bias, as fixing one problem might unknowingly create another. 
+In [Common Bias Types in ML Pipeline (and some solutions)](../components/fairness/bias.md) chapter, we introduced potential bias types that can occur throughout the ML pipeline. Technical debt, in various forms, can exacerbate or even directly lead to bias in machine learning systems, particularly within the financial AI domain.  **Entanglement**, a key concept from the sources, describes how changes in one part of an ML system can cascade and impact other components in unexpected ways. For instance, if an ML system incurs technical debt through a "**pipeline jungle**" – a convoluted data processing pipeline –  even seemingly small modifications to address one data issue could inadvertently introduce or amplify biases in the data used for training. This entanglement can make it extremely difficult to isolate and mitigate bias, as fixing one problem might unknowingly create another. 
 
 Technical debt often manifests as poorly documented systems, convoluted code, or an over-reliance on quick fixes rather than robust solutions.  This lack of clarity can mask potential biases in data, algorithmic design, or human use. For example, **"glue code"**, or ad-hoc code written to integrate different parts of a system, can create opaque data dependencies that obscure the origin and potential biases present in input data. This obfuscation makes it challenging to identify and address issues like **historical bias**, where past inequalities embedded in data continue to perpetuate discriminatory outcomes.  Similarly, **"dead experimental codepaths"** - remnants of past experiments left in the codebase - can introduce unforeseen feedback loops that exacerbate biases.  Without a clear understanding of how different components interact due to accumulated technical debt, identifying the root cause of bias becomes increasingly difficult. 
 

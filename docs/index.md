@@ -1,18 +1,26 @@
-# Equitable AI Cookbook
+# Trusted AI Cookbook
 
-Equitable AI involves creating and using artificial intelligence systems in a fair and just manner, ensuring they do not reinforce existing biases or discriminate against certain groups. It focuses on fairness, transparency, accountability, inclusivity, and ethical considerations to prevent unfair outcomes and promote equal opportunities for all individuals and communities.
+Trusted AI layers: Safe, responsible, equitable.
+
+_Safe_ aspect is the core of the trusted AI. It includes sub-components such as robustness, security, and privacy. These characteristics build a highly reliable system for every user.
+
+_Responsible_ aspect is the differentiator of a product towards being reliable to trustable. Developing the system to be fair, transparent, and sustainable are some example characteristics. 
+
+_Equitable_ aspect involves creating and using artificial intelligence systems in a just manner, ensuring they both behave fair, and improves equality and inclusivity in society. We tend to believe technology is neutral and how you use it defines it is a good or bad application of a specific technology. It might be true for some traditional rule-based system (although I also doubt that), but AI by its nature can be ill-designed, since the current systems mostly trained by utilising vast data. Hence, the data collection and selection practices defines its features. Furthermore, access to large computational power is a must in the development process, which limits developing capability to a selected community.
 
 ```{note}
 This cookbook is a work-in-progress. You can contribute to the development by opening new issues and pull requests on Github.
 ```
 
-In this cookbook, *equitable AI* refers to a broad term to cover responsible[^rai], trustworthy[^airmf] and inclusive AI[^iai] development. These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components: Safe, secure and resilient, explainable and interpretable, privacy-enhanced, fair with harmful bias managed, valid and reliable, and accountable and transparent. Each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
+In this cookbook, *trusted AI* refers to a broad term to cover responsible[^rai], trustworthy[^airmf] and inclusive AI[^iai] development.
+
+These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components: Safe, secure and resilient, explainable and interpretable, privacy-enhanced, fair with harmful bias managed, valid and reliable, and accountable and transparent. Each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
 
 ![NIST Trustworthy AI Characteristics](./media/nist-trustworthy.png)
 
 This cookbook is an effort to bring *best practices* from the literature and share some hands-on practical experiments to take some confident steps for achieving trustworthiness in the era of *large foundational models*. "Best practices" can widely refer to a set of techniques, methodologies, processes, or guidelines that are accepted as superior or most effective in a particular field or context. When the desired outcome is achieving equal access/outcomes/participation/benefits and *trustworthiness*, defining best practices becomes challenging, as these are complex sociotechnical terms.
 
-This repository contains an extensive list of techniques and experiments as an initial effort to achieve this goal in the "digital economy" domain. In the digital economy domain, we selected three use cases:
+This repository contains an extensive list of techniques and experiments as an initial effort to achieve this goal in the "digital economy" domain. You are welcome to add your use cases via pull reqest. In the digital economy domain, we selected three use cases:
 
 ::::{grid}
 :gutter: 2

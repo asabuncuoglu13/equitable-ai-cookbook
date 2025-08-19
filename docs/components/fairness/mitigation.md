@@ -6,9 +6,9 @@
 
 Practitioners can mitigate bias in AI systems by applying a variety of approaches throughout the entire AI lifecycle, from project planning to deployment and monitoring. It's crucial to adopt a context-based and society-centered approach to understanding AI fairness, acknowledging the plurality of views on its meaning. A multi-pronged approach that integrates formal and substantive/transformative approaches to non-discrimination is necessary.
 
-![](../media/hierarchical-framework.png)
+![](../../media/hierarchical-framework.png)
 
-We already presented our evaluation and monitoring approach in the [Chapter - Continuous Safety Monitoring](../safety/monitoring.md) with the hierarchical structure illustrated with the figure above. Follow a similar structure to shape your mitigation process and align it with your risk management process.
+We already presented our evaluation and monitoring approach in the [Chapter - Continuous Safety Monitoring](../../assurance/monitoring.md) with the hierarchical structure illustrated with the figure above. Follow a similar structure to shape your mitigation process and align it with your risk management process.
 
 ### Project Planning and Problem Formulation
 
@@ -77,3 +77,64 @@ In this stage, understanding the stakeholder needs and equity considerations is 
 *   **Consider Research Bias:** Be aware of potential biases in how AI research is funded, conducted, and disseminated, which can lead to gaps in public interest research.
 
 Throughout all stages, it's essential to remember that fairness is not a purely technical construct and requires interdisciplinary analysis involving social, philosophical, and legal perspectives. Abstraction in technical solutions alone can be ineffective if it doesn't account for the broader sociotechnical system. A shift towards a process-oriented and risk-based design that includes social actors with a clear understanding of potential harms is crucial. By embracing a culture of continuous and proactive approach about overall AI safety, practitioners can achieve "safety-by-design".
+
+# Bias Detection throughout the Pipeline
+
+Monitoring, detecting and evaluating bias throughout an ML development pipeline is crucial for ensuring fairness and equity in your models. Here’s a structured approach to incorporating bias evaluation and continuous monitoring in your pipeline, along with recommended tools and libraries.
+
+```{seealso}
+Checkout our [financial sentiment analysis fairness evaluation repository](https://github.com/asabuncuoglu13/faid-test-financial-sentiment-analysis) that demonstrates how we converted a bias analysis notebook to a maintainable and automated codebase with CI/CD integrations.
+```
+
+# Proactive Fairness Monitoring
+
+We view bias as a systemic error with multiple components. To evaluate bias in a machine learning model, practitioners typically use "protected attributes" to divide a population into groups. According to the EHRC guide, these attributes include age, disability, gender reassignment, pregnancy and maternity (including breastfeeding), race, religion or belief, sex, and sexual orientation {cite}`ehrc_24`. For each protected attribute, we can identify privileged and underprivileged groups based on whether the group has a systematic advantage. Our goal throughout the pipeline is to assess whether any bias occurs that could lead to discrimination at the individual or group level (see [Fairness Notions](../fairness/notions.md) for a detailed explanation).
+
+## Bias Sources throughout the Pipeline
+
+The below table demonstrates bias sources listed in the recent [International AI Safety Report](https://www.gov.uk/government/publications/international-ai-safety-report-2025). The bias sources and descriptions are directly obtained from the report:
+
+| Lifecycle Stage          | Bias Source              | Description  | Example (Credit Scoring Risk) |
+|-------------------------|-------------------------|-------------|--------------------------------|
+| **Data Collection**      | Sampling Bias          | Certain perspectives, demographics, or groups are overrepresented or underrepresented in the data. | Credit scoring data primarily collected from urban customers may not generalize well to rural populations. |
+|                         | Selection Bias         | Only certain data types or contexts are included, limiting representativeness. | Excluding alternative credit data, such as rent or utility payments, may disadvantage individuals without traditional credit history. |
+| **Data Annotation**      | Labeller Bias         | Annotators' backgrounds, perspectives, and cultural biases affect their classification of data, influencing the labeling process. | Loan officers manually classifying high-risk applicants may unconsciously rate applicants from certain backgrounds as riskier. |
+| **Data Curation**        | Historical Bias        | Reflecting or perpetuating past societal biases within curated data. | Using past loan approval data that historically favored certain demographics may lead to models reinforcing systemic discrimination. |
+| **Data Pre-processing**  | Feature Selection Bias | Excluding relevant features from a dataset. | Removing non-traditional financial indicators, like employment stability, can reduce the accuracy of risk assessments for self-employed individuals. |
+| **Model Training**       | Label Imbalance       | Unequal representation in labeled data, leading to biased model outputs. | Training a credit scoring model primarily on high-income applicants may cause it to inaccurately assess low-income borrowers. |
+| **Deployment Context**   | Contextual Bias       | A model is trained on data from a context that differs from its application, leading to worse outcomes for certain groups. | A credit scoring model trained in a high-income country may not perform well in a developing economy with different financial behaviors. |
+| **Evaluation & Validation** | Benchmark Bias      | Evaluation benchmarks favor certain groups or knowledge bases over others. | Testing a credit model primarily on data from prime borrowers may result in poor predictions for subprime borrowers. |
+| **Feedback Mechanisms**  | Feedback Loop Bias   | Models learn from biased user feedback, reinforcing initial biases. | A credit scoring system that lowers scores for rejected applicants (assuming they are high-risk) may prevent them from improving their credit over time. |
+
+### Data Pipeline: Collection, Preprocessing, Feature Engineering
+
+An essential step in identifying bias is checking the data distribution in both raw and processed data. There are effective tools available to analyze feature distribution and identify imbalances. For instance, [**ydata-profiling**](https://github.com/ydataai/ydata-profiling) can generate profiling reports from a pandas DataFrame, and the [**Great Expectations**](https://github.com/great-expectations/great_expectations) library can validate, document, and profile data. 
+
+It's crucial to ensure that data cleaning and feature engineering processes do not inadvertently introduce bias. The selected/generated features can introduce bias. Or, features can be proxies for the sensitive attributes (can carry hidden correlation). Therefore, it's important to run profiling after each step using a human-in-the-loop approach.
+
+**The generated report should include**:
+- Summary statistics and distribution visualizations.
+- Details of missing values and imbalanced classes.
+- Findings regarding assumptions and experiments conducted on the data.
+- Correlation analysis between features and sensitive attributes.
+
+## Model Pipeline: Training, Evaluation, Deployment
+
+In this step, we should evaluate models using fairness metrics along with traditional performance metrics. Based on the evaluation results, we will apply bias mitigation techniques. We can also use A/B testing (or similar methodologies) to ensure new models do not introduce bias compared to previous versions.
+
+We can evaluate the model performance with different evaluation metrics using fairness mitigation libraries such as [**fairlearn**](https://fairlearn.org/) and [**AI Fairness 360 (AIF360)**](https://aif360.readthedocs.io).
+
+For the monitoring, we can utilise **Prometheus**, **Grafana**, **Evidently**. Thesese platforms provide different capabilities with different customisation levels for AI production pipelines. 
+
+
+**The generated report should include**:
+- Evaluation results of models using fairness metrics like disparate impact, equal opportunity difference, and others.
+- Steps of bias mitigation techniques.
+
+## How is this process proactive?
+
+In this ML pipeline, we created a workflow that you can monitor the development process of an ML project. However, establishing clear fairness metrics and thresholds for each stage depends on the use case. For example, a credit scoring application might require a different setup than a financial news analyser NLP model.
+
+For each use case, using lifecycle management tools to integrate continuous monitoring into your CI/CD pipeline, setting up automated alerts for when bias metrics exceed predefined thresholds, building mechanisms to support running regular external audits of the entire pipeline, and engaging with diverse stakeholders to gather feedback is essential to align the fairness evaluation scores with real-world impacts.
+
+By integrating these tools and following this structured approach, you can proactively evaluate and mitigate bias throughout the entire ML lifecycle, ensuring fairness and equity in your models.

@@ -4,7 +4,7 @@ Throughout the development of ML models, developers and other stakeholders use v
 
 Logging, updating, monitoring, and testing these artefacts can support developers in continuous monitoring of fairness as well as other safety characteristics. 
 
-![Metadata flow diagram](../media/metadataflow.png)
+![Metadata flow diagram](../../media/metadataflow.png)
 
 Below, we listed some of the most commonly used ML development-related metadata recording formats:
 
@@ -43,6 +43,6 @@ Based on the commonly used Unified Modelling Language (UML) in software engineer
 
 > **Fairness-related metadata:** The EU AI Act alignment of the proposed use case card, and direct links to open issues gives a valuable system and organization level view on fairness challenges.
 
-![A simplified example use case card for a financial sentiment analysis system. The template is obtained from Hupont et al., 2023.](../media/use-case-card.png)
+![A simplified example use case card for a financial sentiment analysis system. The template is obtained from Hupont et al., 2023.](../../media/use-case-card.png)
 
 With our approach to argument-based assurance and several examples of evidence illustrated, we now turn to an illustrative example of how the methodology and transparency artifacts can be consolidated.

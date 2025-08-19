@@ -1,10 +1,10 @@
 # Continuous Delivery of Safe AI
 
-![](../media/systemdesign.png)
+![](../../media/systemdesign.png)
 
-The above diagram illustrates a simplified ML development pipeline. A typical pipeline consists of multiple branches with iterative processes, involving multiple contributors. Different forms of bias types can occur in each step. 
+The above diagram illustrates a simplified ML development pipeline. A typical pipeline consists of multiple branches with iterative processes, involving multiple contributors. Different forms of bias types can occur in each step. In this complex environment, metadata management appears as an important part of assurance process.
 
-Defining fairness-aware CI/CD type flows that can automate building multiple artefacts for different teams can support building a common understanding in bias mitigation for organisations. In this article, we demonstrate potential approaches to monitor ML pipelines throughout the development lifecycle.
+Defining safety-aware CI/CD type flows that can automate building multiple artefacts for different teams can support building a common understanding in bias mitigation for organisations. In this article, we demonstrate potential approaches to monitor ML pipelines throughout the development lifecycle.
 
 ## Prerequisites
 
@@ -41,83 +41,32 @@ CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous D
 
 You can use tools like [wandb](https://wandb.ai/site), [Neptune](https://neptune.ai/), and [mlflow](https://mlflow.org/) to track and maintain records of your ML experiments. These open-source platforms allow you to register models and experiments for easy maintainability.
 
-While these libraries are useful for tracking progress and sharing insights with your team, they aren't optimized for fairness-focused processes. In such cases, it's important to foster interdisciplinary conversations and track fairness metrics, discrimination cases, and related outputs.
+While these libraries are useful for tracking progress and sharing insights with your team, they aren't optimised for AI Safety assurance-focused processes (Inspect AI from UK AISI can be an exception, but its coverage of safety in terms overlook characteristics of responsible AI such as fairness is limited). In such cases, it's important to foster interdisciplinary conversations and track fairness metrics, discrimination cases, and related outputs.
 
-We developed a set of useful functions to integrate metadata management for fairness and safety monitoring easily with these tools in [FAID repository on GitHub](https://github.com/asabuncuoglu13/faid). Developers can also add the scripts directly to their codebase for customized tracking formats (see [FAID's Guide on this issue](https://github.com/asabuncuoglu13/faid/tree/main/docs)). 
+An example flow of experiment tracking as part of metadata management is illustrated below:
 
-If you're already using these libraries, FAID's logging behavior will feel familiar.
-
-```python
-import random
-import wandb
-import mlflow
-from faid import logging as faidlog
+```
+import libraries[wandb, mlflow, ...]
+init project, config, libraries
+set experiment_context
+run experiment
+log metrics for each epoch
 ```
 
-### Initialise
+In this flow, we have four key entities: Context, Model, Data, and Metrics. Effectively tracking these entities can allow us to effectively achieve transparency characteristic of trusted AI. And ease the final development of transparency artefacts such as use case cards, model cards, and data cards.
 
-You first initialise the project with the name and config details. These functions basically creates the metadata for the experiment. 
+## Why do we need an additional effort for good logging practices
 
-```python
-# Init weight&biases
-run = wandb.init(project= project, config= config)
-```
+Although, in software engineering domain, we achieved good test engineering practices (I might need to reassess statement after all the fuss around vibe coding), ML community doesn't follow the same practices in most development scenarios. When experimenting with data and models, we generate a large amount of information, coming from different departments. For example, in a data science department, one responsibility can be assessing fairness, while another developer might focus on improving robustness across timeframes. These two data scientists can come up with different considerations for the model, hence requires an extensive review before the update of the model. 
 
-```python
-# Init mlflow
-mlflow.set_experiment(project)
-```
-
-```python
-# init the log files --> this will create model, data, fairness-experiment, risk and transparency logs
-faidlog.init()
-# create (or get) fairness experiment context
-ctx = faidlog.ExperimentContext(name=experiment_name)
-```
-
-# Run Experiments and Record Logs
-
-After initialising and create a managable workflow, you can log whatever metric, outcome, or any other variable you want to store and monitor using these libraries.
-
-```python
-# Log the hyperparameters
-# simulate training
-epochs = 10
-offset = random.random() / 5
-for epoch in range(2, epochs):
-    acc = 1 - 2 ** -epoch - random.random() / epoch - offset
-    loss = 2 ** -epoch + random.random() / epoch + offset
-
-    # log metrics to wandb
-    metrics = {"acc": acc, "loss": loss}
-```
-
-```python
-wandb.log(metrics)
-```
-
-```python
-mlflow.log_params(metrics)
-```
-
-```python
-ctx.add_model_entry(key="metrics", entry=metrics)
-```
-
-FAID fairness recording format has four main entries: Context, Model, Data, and Metrics. This categorisation is designed to ease the transfer these experiment-level metadata to the final transparency artefact: Use Case Cards, Model Cards, and Data Cards.
-
-## Why Do You Need a Separate Logging Library for Fairness?
-
-When experimenting with data and models, you generate a large amount of information. However, not all of this information is relevant to fairness. Fairness researchers require a specific set of data points and metrics to assess and ensure fairness throughout the machine learning pipeline. Extracting and providing this specific information can become an additional burden for ML engineers, who may already be managing numerous tasks.
-
-A dedicated logging library for fairness can streamline this process. By proactively defining fairness requirements and automatically monitoring the parameters related to these requirements, we can:
+A good logging practice that focuses on trusted AI characteristics can streamline this process. By proactively defining the minimum requirements and automatically monitoring the parameters related to these requirements, we can:
 
 1. **Reduce Workload**: Automate the extraction and logging of relevant fairness metrics, freeing ML engineers from the manual task of selecting and providing this information.
 2. **Minimize Errors**: Decrease the likelihood of mistakes that can occur with manual data handling and reporting.
 3. **Ensure Consistency**: Maintain a standardized approach to logging fairness-related data, which can enhance the reliability and comparability of fairness assessments.
 4. **Enhance Focus**: Allow fairness researchers to concentrate on analyzing the relevant data without the distraction of unrelated information.
 
-## Using FAID with [CMF](https://hewlettpackard.github.io/cmf/) and [DVC](https://dvc.org/)
+## What about version control in ML (e.g. [CMF](https://hewlettpackard.github.io/cmf/) and [DVC](https://dvc.org/))?
 
 The design principles of our metadata management shares the similar design decisions with CMF and DVC to allow quick and easy integration with these data and model driven version control systems. While developing our tool, we also checked the compatability of using the tool together with CMF and DVC to allow version control throughout the fairness research lifecycle.
 
@@ -125,7 +74,7 @@ The design principles of our metadata management shares the similar design decis
 #TODO: Add VCS workflows
 ```
 
-## Opening Data and Models
+## A checklist for opening data and models
 
 Creating an open-source ML repository demands additional requirements to responsibly release the outputs. Model Openness Framework defines three layers while assessing openness and completeness of AI development artifacts. 
 
@@ -135,7 +84,7 @@ Creating an open-source ML repository demands additional requirements to respons
 
 Delivering all these artifacts continuously in a transparent way requires a good carefully designed comprehensive orchestration flow.
 
-## Useful Readings
+## Useful resources
 
 1. [How To Organize Continuous Delivery of ML/AI Systems: a 10-Stage Maturity Model](https://outerbounds.com/blog/continuous-delivery-of-ml-ai/)
 2. [Examples from Neptune AI](https://neptune.ai/blog/build-mlops-pipelines-with-github-actions-guide)

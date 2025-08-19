@@ -1,6 +1,6 @@
-# AI Safety Assurance
+# Assurance Mechanisms
 
-The quest for fair and responsible data and model development is crucial for ensuring overall AI safety. In 2023, the UK government organized an international summit to address AI risks and discuss coordinated mitigation strategies. One significant outcome of this summit is the [Bletchley Declaration](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023), which emphasizes understanding AI risks within _"the context of a wider global approach to understanding the impact of AI in our societies."_
+The quest for safe, responsible, and equitable data and model development is crucial for ensuring overall AI safety. In 2023, the UK government organized an international summit to address AI risks and discuss coordinated mitigation strategies. One significant outcome of this summit is the [Bletchley Declaration](https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023), which emphasizes understanding AI risks within _"the context of a wider global approach to understanding the impact of AI in our societies."_
 
 AI assurance is the process of evaluating and assuring expected properties of AI systems throughout their lifecycle. It involves techniques like verification, validation, and safety analysis to ensure AI systems operate ethically, accurately, and consistently. Throughout the AI-enabled system development process, assuring safety requires two main stages:
 
@@ -12,6 +12,13 @@ AI assurance is the process of evaluating and assuring expected properties of AI
 > See [Trustworthy and Ethical Assurance Platform](https://alan-turing-institute.github.io/AssurancePlatform/) for a detailed view of building arguments for assurance. You can use the platform to create your AI safety arguments.
 
 An argument-based approach to assurance aims to demonstrate the rationale behind decisions or actions taken regarding a system through a structured argumentation process that demonstrates how arguments about a system's goals are justified by evidence. This process results in the creation of an assurance case, a document that sets out the argument for the system's trustworthiness. 
+
+_Key properties of an argument[^nasa]:_
+
+- The argument should be grounded, which means the ‘truth’ of argument premises can be agreed by all relevant parties.
+- It should also be realistic. The identified assumptions should correspond well to what will happen (or is happening) in the actual world.
+- Robustness refers to incorporating good engineering practice and extending safety for generalisation.
+- Finally, the argument should be balanced in terms of identifying the strengths of the system as well as weaknesses.
 
 The main components of an assurance case are:
 
@@ -25,7 +32,7 @@ The main components of an assurance case are:
 
 - Create goals around trustworthiness characteristics, and relevant legal and regulatory requirements. For example, a development team in the EU area, can use NIST's AI RMF and EU AI Act as a starting point.
 - The context can be structured with the business, design, and user research teams. User researchers can inform about the considerations around AI-enabled, and rule-based solutions.
-- Creating the property arguments is the most challenging step of this process. It requires developers and other stakeholders to discuss the possible issues and mitigation approaches. So, each team member should conduct a comprehensive literature review and adapt the existing guidelines and techniques to their use case. So, we created a hierarchical mechanism to structurally create these properties. The strategy consists of four main levels: (1) ML Stages, (2) Components, (3) Assessment, and (4) Implications. See [Continuous Safety Monitoring](../safety/monitoring.md) chapter.
+- Creating the property arguments is the most challenging step of this process. It requires developers and other stakeholders to discuss the possible issues and mitigation approaches. So, each team member should conduct a comprehensive literature review and adapt the existing guidelines and techniques to their use case. So, we created a hierarchical mechanism to structurally create these properties. The strategy consists of four main levels: (1) ML Stages, (2) Components, (3) Assessment, and (4) Implications. See [Continuous Safety Monitoring](../assurance/monitoring.md) chapter.
 - We suggest developing strategies while creating properties actively similar to defining abstract objects throughout the software engineering.
 - Once the properties are structured, the team should decide what kind of evidences they need to collect, and how they can collect it efficiently and continuously. Automating this process, can help them to define pass-fail type tests throughout building the model.
 
@@ -33,9 +40,7 @@ The main components of an assurance case are:
 
 Throughout the development of ML models, developers and other stakeholders use various documentation formats to enhance reproducibility and communicate the details of artefacts with both internal and external stakeholders. Organizations use metadata recording formats, such as model cards, data cards, and algorithmic transparency frameworks to improve transparency across development and deployment workflows. We refer to these documentation tools as "transparency artefacts," which are designed to enhance clarity, accountability, and trust in ML systems.
 
-We can use these transparency artefacts as justified evidence to verify the team took the required actions and created enough evidence for the given arguments. The key requirement for this kind of evidence is they must be grounded in measurable and reproducible outcomes such as benchmarking results, auditing trails, or red teaming reports.
-
-Check our [Evidence Collection Guide](../cicd/004-save-evidence.md) to learn more about using transparency artefacts in your codebase.
+We can use these transparency artefacts ([see this page](../assurance/cicd/transparency-artefacts.md)) as justified evidence to verify the team took the required actions and created enough evidence for the given arguments. The key requirement for this kind of evidence is they must be grounded in measurable and reproducible outcomes such as benchmarking results, auditing trails, or red teaming reports.
 
 ### Choosing Metrics
 
@@ -75,3 +80,5 @@ The UK's DSIT regularly releases enterprise-level AI assurance use cases. Two ex
 - **[Case 2 - Credo AI Governance](https://www.gov.uk/ai-assurance-techniques/credo-ai-governance-platform-reinsurance-provider-algorithmic-bias-assessment-and-reporting):** Credo Reinsurance's case centers on their machine learning operations (MLOps) system. Their Credo AI system automatically identifies biases in models pre-deployment. The platform evaluates fairness outcomes against established standards. However, due to compliance with anti-discrimination regulations (e.g., NYC’s LL-144), they can only compile necessary data quarterly, not in real-time. ([Link to platform page](https://www.credo.ai/product))
 
 See more use cases in [DSIT - AI Assurance Use Cases](https://www.gov.uk/ai-assurance-techniques).
+
+[^nasa]: C. Michael Holloway, NASA

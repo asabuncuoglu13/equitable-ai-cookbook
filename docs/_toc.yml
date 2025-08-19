@@ -4,34 +4,38 @@
 format: jb-book
 root: index
 parts:
-  - caption: "AI Safety"
+  - caption: "Designing Trust"
     chapters:
-    - file: safety/responsible-innovation
-    - file: safety/trustworthiness
-    - file: safety/recipes
-    - file: safety/assurance
-    - file: safety/monitoring
-    - file: safety/red-teaming
-  - caption: "A Proactive Monitoring Pipeline"
+    - file: design/introduction
+    - file: design/responsible-innovation
+    - file: design/patterns
+    - file: design/management
+    - file: design/ubicomp
+  - caption: "Assurance and Verification"
     chapters:
-    - file: cicd/001-intro
-    - file: cicd/002-ml-workflow
-    - file: cicd/003-detect-bias
-    - file: cicd/004-save-evidence
-    - file: cicd/005-observer
+    - file: assurance/introduction
+    - file: assurance/recipes
+    - file: assurance/monitoring
+    - file: assurance/recording
+    - file: assurance/responsibilities
+  - caption: "DevOps Integration"
+    chapters:
+    - file: assurance/cicd/introduction
+    - file: assurance/cicd/recording-standard
+    - file: assurance/cicd/transparency-artefacts
+    - file: assurance/cicd/technical-appendix
+  - caption: "Characteristics of Trust"
+    chapters:
+    - file: components/trustworthiness
+    - file: components/fairness/notions
+    - file: components/fairness/bias
+    - file: components/fairness/mitigation
+    - file: components/security/red-teaming
   - caption: "Data Practices"
     chapters:
     - file: data-practices/introduction
     - file: data-practices/data-governance
     - file: data-practices/data-taxonomy
-  - caption: "Fairness"
-    chapters:
-    - file: fairness/notions
-    - file: fairness/bias
-    - file: fairness/patterns
-    - file: fairness/mitigation
-    - file: fairness/management
-    - file: fairness/recording_standard
   - caption: "Use Case: Finance"
     chapters:
     - file: usecases/finance/introduction
