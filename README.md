@@ -1,14 +1,14 @@
 # Trusted AI Cookbook
 
-A series of essays and experiments to accelerate the equitable AI development. This repository contains code, data, and materials that are part of an ongoing research project. Please note that the work is in a research preview stage and may produce incomplete or inconsistent results. It also contains some content in "under-development" or "in-review" stages. Use at your own discretion, and feel free to contribute or report any issues.
+A series of essays and experiments to accelerate the trusted AI development. This repository contains code, data, and materials that are part of an ongoing research project. Please note that the work is in a research preview stage and may produce incomplete or inconsistent results. It also contains some content in "under-development" or "in-review" stages. Use at your own discretion, and feel free to contribute or report any issues.
 
 **Cite as:**
 
 A. Sabuncuoglu, ‘Trusted AI Cookbook’, 2024. doi: 10.5281/zenodo.14231596.
 
 ```
-@misc{sabuncuoglu_equitable_2024,
-	title = {Equitable {AI} {Cookbook}},
+@misc{sabuncuoglu_trusted_2024,
+	title = {Trusted {AI} {Cookbook}},
 	url = {https://github.com/asabuncuoglu13/equitable-ai-cookbook/},
 	doi = {10.5281/zenodo.14231596},
 	author = {Sabuncuoglu, Alpay},
@@ -54,5 +54,5 @@ This project is created using the excellent open source [Jupyter Book project](h
 ## Wish List
 
 - [ ] Offering learning paths with a level of personalisation (regulators, researchers, developers, etc.):
-  - [ ] A complete technical AI governance pathway with code, examples and a comparative analysis across countries
-  - [ ] A complete equitable/trustworthy AI assurance pathway
+- [ ] A complete technical AI governance pathway with code, examples and a comparative analysis across countries
+- [ ] A complete AI assurance pathway

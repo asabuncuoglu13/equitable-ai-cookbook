@@ -14,7 +14,7 @@ This cookbook is a work-in-progress. You can contribute to the development by op
 
 In this cookbook, *trusted AI* refers to a broad term to cover responsible[^rai], trustworthy[^airmf] and inclusive AI[^iai] development.
 
-These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components: Safe, secure and resilient, explainable and interpretable, privacy-enhanced, fair with harmful bias managed, valid and reliable, and accountable and transparent. Each subcomponent requires a careful evaluation based on specific use cases. In this sense, *equitable AI* is a combination of various established research areas.
+These terms also requires establishing other characteristics such as security, privacy, and fairness. For example, NIST AI RMF[^airmf] defines *trustworthiness* with seven sub-components: Safe, secure and resilient, explainable and interpretable, privacy-enhanced, fair with harmful bias managed, valid and reliable, and accountable and transparent. Each subcomponent requires a careful evaluation based on specific use cases. In this sense, *trusted AI* is a combination of various established research areas.
 
 ![NIST Trustworthy AI Characteristics](./media/nist-trustworthy.png)
 
@@ -54,7 +54,7 @@ This cookbook assumes, you already have some understanding on AI and maybe devel
 
 ## Contents
 
-Although implementing "best practices" in equitable AI domain requires a cross disciplinary effort, we focused on the sociotechnical and technical techniques, particularly fairness, security and privacy. We do not go into details on governance, auditing techniques, comprehensive assurance.
+Although implementing "best practices" in trusted AI domain requires a cross disciplinary effort, we focused on the sociotechnical and technical techniques, particularly fairness, security and privacy. We do not go into details on governance, auditing techniques, comprehensive assurance.
 
 ```{tableofcontents}
 ```
